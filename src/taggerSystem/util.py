@@ -11,7 +11,7 @@ from __future__ import division
 import sys
 import time
 import logging
-import StringIO
+from io import StringIO
 from collections import defaultdict, Counter, OrderedDict
 import numpy as np
 from numpy import array, zeros, allclose
@@ -20,6 +20,9 @@ logger = logging.getLogger("hw3")
 logger.setLevel(logging.DEBUG)
 logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
 
+
+# read_conll returns a list of tuples where each tup looks like 
+# ([token list], [token lab list])
 def read_conll(fstream):
     """
     Reads a input stream @fstream (e.g. output of `open(fname, 'r')`) in CoNLL file format.
