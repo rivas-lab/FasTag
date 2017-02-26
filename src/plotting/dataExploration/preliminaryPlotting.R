@@ -1,3 +1,9 @@
+##################################################################################
+# Notes: Plotting for summary information about the notes, words, and icd9 codes.
+# TODO:
+# 1) Need to take into account the new vocabulary.
+##################################################################################
+
 library(data.table)
 library(dplyr)
 library(lubridate)
@@ -101,7 +107,7 @@ ggplot(data=admissionCounts, aes(admissionCounts)) + geom_histogram(binwidth = 2
                                                                  alpha = .8) +
   scale_x_continuous(expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) +
-  labs(title = 'Number of Admission Per Patient', y = 'Count', x = 'Number of Admissions') + 
+  labs(title = 'Number of Admissions Per Patient', y = 'Count', x = 'Number of Admissions') + 
   theme_bw() + theme(plot.title = element_text(hjust = 0.5))
 ggsave(filename = 'src/plotting/dataExploration/numberOfAdmissionsByPatient.png')
 
