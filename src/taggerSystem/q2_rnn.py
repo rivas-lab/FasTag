@@ -18,7 +18,7 @@ import numpy as np
 
 from util import print_sentence, write_conll, read_conll
 from data_util import load_and_preprocess_data, load_embeddings, ModelHelper
-from ner_model import NERModel
+from taggerModel import taggerModel
 from defs import LBLS
 from q2_rnn_cell import RNNCell
 from q3_gru_cell import GRUCell
@@ -139,7 +139,7 @@ def pad_sequences(data, max_length):
     # print(ret)
     return ret
 
-class RNNModel(NERModel):
+class RNNModel(taggerModel):
     """
     Implements a recursive neural network with an embedding layer and
     single hidden layer.
@@ -636,15 +636,15 @@ if __name__ == "__main__":
     subparsers = parser.add_subparsers()
 
     command_parser = subparsers.add_parser('test1', help='')
-    command_parser.set_defaults(func=do_test1)
+    # command_parser.set_defaults(func=do_test1)
 
     command_parser = subparsers.add_parser('test2', help='')
-    command_parser.add_argument('-dt', '--data-train', type=argparse.FileType('r'), default="data/tiny.conll", help="Training data")
-    command_parser.add_argument('-dd', '--data-dev', type=argparse.FileType('r'), default="data/tiny.conll", help="Dev data")
-    command_parser.add_argument('-v', '--vocab', type=argparse.FileType('r'), default="data/vocab.txt", help="Path to vocabulary file")
-    command_parser.add_argument('-vv', '--vectors', type=argparse.FileType('r'), default="data/wordVectors.txt", help="Path to word vectors file")
-    command_parser.add_argument('-c', '--cell', choices=["rnn", "gru"], default="rnn", help="Type of RNN cell to use.")
-    command_parser.set_defaults(func=do_test2)
+    # command_parser.add_argument('-dt', '--data-train', type=argparse.FileType('r'), default="data/tiny.conll", help="Training data")
+    # command_parser.add_argument('-dd', '--data-dev', type=argparse.FileType('r'), default="data/tiny.conll", help="Dev data")
+    # command_parser.add_argument('-v', '--vocab', type=argparse.FileType('r'), default="data/vocab.txt", help="Path to vocabulary file")
+    # command_parser.add_argument('-vv', '--vectors', type=argparse.FileType('r'), default="data/wordVectors.txt", help="Path to word vectors file")
+    # command_parser.add_argument('-c', '--cell', choices=["rnn", "gru"], default="rnn", help="Type of RNN cell to use.")
+    # command_parser.set_defaults(func=do_test2)
 
     command_parser = subparsers.add_parser('train', help='')
     command_parser.add_argument('-dt', '--data-train', type=argparse.FileType('r'), default="data/train.conll", help="Training data")
@@ -655,20 +655,20 @@ if __name__ == "__main__":
     command_parser.set_defaults(func=do_train)
 
     command_parser = subparsers.add_parser('evaluate', help='')
-    command_parser.add_argument('-d', '--data', type=argparse.FileType('r'), default="data/dev.conll", help="Training data")
-    command_parser.add_argument('-m', '--model-path', help="Training data")
-    command_parser.add_argument('-v', '--vocab', type=argparse.FileType('r'), default="data/vocab.txt", help="Path to vocabulary file")
-    command_parser.add_argument('-vv', '--vectors', type=argparse.FileType('r'), default="data/wordVectors.txt", help="Path to word vectors file")
-    command_parser.add_argument('-c', '--cell', choices=["rnn", "gru"], default="rnn", help="Type of RNN cell to use.")
-    command_parser.add_argument('-o', '--output', type=argparse.FileType('w'), default=sys.stdout, help="Training data")
-    command_parser.set_defaults(func=do_evaluate)
+    # command_parser.add_argument('-d', '--data', type=argparse.FileType('r'), default="data/dev.conll", help="Training data")
+    # command_parser.add_argument('-m', '--model-path', help="Training data")
+    # command_parser.add_argument('-v', '--vocab', type=argparse.FileType('r'), default="data/vocab.txt", help="Path to vocabulary file")
+    # command_parser.add_argument('-vv', '--vectors', type=argparse.FileType('r'), default="data/wordVectors.txt", help="Path to word vectors file")
+    # command_parser.add_argument('-c', '--cell', choices=["rnn", "gru"], default="rnn", help="Type of RNN cell to use.")
+    # command_parser.add_argument('-o', '--output', type=argparse.FileType('w'), default=sys.stdout, help="Training data")
+    # command_parser.set_defaults(func=do_evaluate)
 
-    command_parser = subparsers.add_parser('shell', help='')
-    command_parser.add_argument('-m', '--model-path', help="Training data")
-    command_parser.add_argument('-v', '--vocab', type=argparse.FileType('r'), default="data/vocab.txt", help="Path to vocabulary file")
-    command_parser.add_argument('-vv', '--vectors', type=argparse.FileType('r'), default="data/wordVectors.txt", help="Path to word vectors file")
-    command_parser.add_argument('-c', '--cell', choices=["rnn", "gru"], default="rnn", help="Type of RNN cell to use.")
-    command_parser.set_defaults(func=do_shell)
+    # command_parser = subparsers.add_parser('shell', help='')
+    # command_parser.add_argument('-m', '--model-path', help="Training data")
+    # command_parser.add_argument('-v', '--vocab', type=argparse.FileType('r'), default="data/vocab.txt", help="Path to vocabulary file")
+    # command_parser.add_argument('-vv', '--vectors', type=argparse.FileType('r'), default="data/wordVectors.txt", help="Path to word vectors file")
+    # command_parser.add_argument('-c', '--cell', choices=["rnn", "gru"], default="rnn", help="Type of RNN cell to use.")
+    # command_parser.set_defaults(func=do_shell)
 
     ARGS = parser.parse_args()
     if ARGS.func is None:
