@@ -28,6 +28,7 @@ import copy
 logger = logging.getLogger("hw3.q2")
 logger.setLevel(logging.DEBUG)
 logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
+printShapes = False# set to true if you want to print the shapes of different parameters
 
 class Config:
     """Holds model hyperparams and data information.
@@ -42,6 +43,7 @@ class Config:
     max_length = 120 # longest sequence to parse
     n_classes = 5
     max_n_labels = 100# max number of labels a note can have. Will be changed later. actually set in data_utils.py
+    # above is deprecated. Remove soon
     dropout = 0.5
     embed_size = 50
     hidden_size = 300
@@ -160,11 +162,12 @@ class RNNModel(taggerModel):
         (Don't change the variable names)
         """
         ### YOUR CODE HERE (~4-6 lines)
-        # print('placeholder stuff')
-        # print('max length')
-        # print(self.max_length)
-        # print('n features')
-        # print(Config.n_features)
+        if printShapes:
+            print('placeholder stuff')
+            print('max length')
+            print(self.max_length)
+            print('n features')
+            print(Config.n_features)
         # So I think the placeholders will have to change. instead of using max_length because we'll have 
         # a variable number of labels
         # max length of the max legnth allowable for a note
@@ -172,13 +175,14 @@ class RNNModel(taggerModel):
         self.labels_placeholder = tf.placeholder(tf.int32, shape= (None, Config.n_classes))
         self.mask_placeholder = tf.placeholder(tf.bool, shape= (None, self.max_length))
         self.dropout_placeholder = tf.placeholder(tf.float32, shape= ())
-        # print('shape of input placeholders')
-        # print(self.input_placeholder.get_shape())
-        # print('shape of labels')
-        # print(self.labels_placeholder.get_shape())
-        # print('******************************')
-        # print('')
-        # print('******************************')
+        if printShapes:
+            print('shape of input placeholders')
+            print(self.input_placeholder.get_shape())
+            print('shape of labels')
+            print(self.labels_placeholder.get_shape())
+            print('******************************')
+            print('')
+            print('******************************')
         # 1/0
         ### END YOUR CODE
 
@@ -237,16 +241,18 @@ class RNNModel(taggerModel):
         pretrainedEmbeddings = tf.Variable(self.pretrained_embeddings)
 
         embeddings = tf.nn.embedding_lookup(params = pretrainedEmbeddings, ids =self.input_placeholder)
-        # print('embedding shape before reshape')
-        # print(embeddings.get_shape())
+        if printShapes:
+            print('embedding shape before reshape')
+            print(embeddings.get_shape())
 
         # embeddings = tf.reshape(embeddings, shape = tf.pack([-1, embeddings.get_shape()[1], embeddings.get_shape()[2]*embeddings.get_shape()[3]]))
         embeddings = tf.reshape(embeddings, shape = tf.stack([-1, embeddings.get_shape()[1], embeddings.get_shape()[2]*embeddings.get_shape()[3]])) 
-        # print('embedding shape after reshape')
-        # print(embeddings.get_shape())
-        # print('******************************')
-        # print('')
-        # print('******************************')
+        if printShapes:
+            print('embedding shape after reshape')
+            print(embeddings.get_shape())
+            print('******************************')
+            print('')
+            print('******************************')
         # 1/0
         # changed above. pack -> stack because of new tf version
         ### END YOUR CODE
@@ -322,11 +328,16 @@ class RNNModel(taggerModel):
             # print('shape of b2')
             # print(b2.get_shape())
             state = tf.zeros(name = 'state', shape = (tf.shape(x)[0],Config.hidden_size))# can either do one or Config.batch_size
-        #     print('shape of state')
-        #     print(state.get_shape())
-        # print('******************************')
-        # print('')
-        # print('******************************')
+            if printShapes:
+                print('shape of outside cell stuff U')
+                print(U.get_shape())
+                print('shape of b2')
+                print(b2.get_shape())
+                print('shape of state')
+                print(state.get_shape())
+                print('******************************')
+                print('')
+                print('******************************')
         # 2/0
         ### END YOUR CODE
 
@@ -339,8 +350,9 @@ class RNNModel(taggerModel):
                 ot, state = cell(x[:,time_step,:], state)
                 o_drop_t = tf.nn.dropout(x = ot, keep_prob = dropout_rate)
                 yHat = tf.matmul(o_drop_t, U) + b2
-                # print('yhat shape')
-                # print(yHat.get_shape())
+                if printShapes:
+                    print('yhat shape')
+                    print(yHat.get_shape())
                 preds.append(yHat)
                 # Here is where you should only append preds of last one because you don't care about 
                 # preds before. Don't count htose as error.                
@@ -352,10 +364,9 @@ class RNNModel(taggerModel):
         ### YOUR CODE HERE (~2-4 lines)
         # preds = tf.pack(preds)
         preds = tf.stack(preds) # once again no pack argument
-        # print('preds shape')
-        # print(preds.get_shape())
-        # 2/0
-        # preds = tf.transpose(preds, perm = [1, 0, 2])
+        if printShapes:
+            print('preds shape')
+            print(preds.get_shape())
         ### END YOUR CODE
 
         # assert preds.get_shape().as_list() == [None, self.max_length, self.config.n_classes], "predictions are not of the right shape. Expected {}, got {}".format([None, self.max_length, self.config.n_classes], preds.get_shape().as_list())
@@ -394,8 +405,9 @@ class RNNModel(taggerModel):
         # batchError = tf.nn.sparse_softmax_cross_entropy_with_logits(logits = preds, labels = self.labels_placeholder)
         batchError = tf.nn.softmax_cross_entropy_with_logits(logits = preds, labels = self.labels_placeholder)
         # changed to above because I think the other one was for calculating loss at each step
-        # print('batch error shape')
-        # print(batchError.get_shape())
+        if printShapes:
+            print('batch error shape')
+            print(batchError.get_shape())
         # print('mask pkace hoolder shape')
         # print(self.mask_placeholder.get_shape())
         # 3/0
@@ -479,7 +491,8 @@ class RNNModel(taggerModel):
         self.pretrained_embeddings = pretrained_embeddings
         # print('first')
         # print(Config.max_n_labels)
-        Config.max_n_labels = helper.max_n_labels
+        # Config.max_n_labels = helper.max_n_labels
+        Config.n_classes = helper.n_labels
         # print('then')
         # print(Config.max_n_labels)
 
@@ -562,6 +575,7 @@ def do_train(args):
 
         with tf.Session() as session:
             session.run(init)
+            # 1/0
             model.fit(session, saver, train, dev)
             if report:
                 report.log_output(model.output(session, dev_raw))

@@ -26,7 +26,7 @@ START_TOKEN = "<s>"
 END_TOKEN = "</s>"
 MAXNLABELS = 3
 ICDCODELIST = []
-ICDCODEDICT = {}
+ICDCODEDICT = {}# this allows us to map codes to integer values.
 
 def casing(word):
     if len(word) == 0: return word
@@ -71,26 +71,36 @@ class ModelHelper(object):
     """
     This helper takes care of preprocessing data, constructing embeddings, etc.
     """
-    def __init__(self, tok2id, max_length, max_n_labels):
+    def __init__(self, tok2id, max_length, n_labels):
         self.tok2id = tok2id# token to arb id mapping
         self.START = [tok2id[START_TOKEN], tok2id[P_CASE + "aa"]]
         self.END = [tok2id[END_TOKEN], tok2id[P_CASE + "aa"]]
         self.max_length = max_length # max lengths of longest input
-        self.max_n_labels = max_n_labels# max number of labels for a note
+        # self.max_n_labels = max_n_labels# max number of labels for a note
+        self.n_labels = n_labels# number of ICD codes in the dataset
 
     def vectorize_example(self, sentence, labels=None):
         # global ICDCODEDICT
         # ICDCODEDICT = 
         sentence_ = [[self.tok2id.get(normalize(word), self.tok2id[UNK]), self.tok2id[P_CASE + casing(word)]] for word in sentence]
         if labels:
-            labels_ = [ICDCODEDICT[l] for l in labels]
-            if len(labels_) >= self.max_n_labels:
-                labels_ = labels_[:self.max_n_labels]
-            else:
-                labels_.extend([None]*(self.max_n_labels - len(labels_)))
+            # print('old labels')
+            # print(labels)
+            labels_ = np.zeros(self.n_labels)
+            labels_[[ICDCODEDICT[l] for l in labels]] = 1#turning labels_ into binary vector where
+            # print('new labels')
+            # print(labels_)
+            # print('*************************')
+            # print('')
+            # print('*************************')
+            # 1 represents presence of disease wtih that value in ICDCODEDICT
+            # if len(labels_) >= self.max_n_labels:
+            #     labels_ = labels_[:self.max_n_labels]
+            # else:
+                # labels_.extend([None]*(self.max_n_labels - len(labels_)))
             return sentence_, labels_
         else:
-            return sentence_, [None]*self.max_n_labels
+            return sentence_, np.zeros()*self.n_labels
     # converts a sentence over to it's word ID and converts the case (aa (all lower). AA (all upper), aA, or Aa)
     # over to integers. Then each word becomes two features. It's word ID and the ID of the case.
     # classes are also converted into numbers. We'll have to convert out ICD9 codes to ints, or maybe we
@@ -117,11 +127,12 @@ class ModelHelper(object):
         logger.info("Built dictionary for %d features.", len(tok2id))
 
         max_length = max(len(sentence) for sentence, _ in data)
+        n_labels = len(ICDCODEDICT.values())
         # print('printing token 2 id stuff')
         # print(tok2id)
         # print('')
         # print('')
-        return cls(tok2id, max_length, MAXNLABELS)
+        return cls(tok2id, max_length, n_labels)
 
     def save(self, path):
         # Make sure the directory exists.
@@ -158,9 +169,9 @@ def load_and_preprocess_data(args):
     dev, ICDCODELIST = read_clinicalNote(args.data_dev, ICDCODELIST)
     logger.info("Done. Read %d notes", len(dev))
     logger.info("Total read time %f", time.time() - start)
-    helper = ModelHelper.build(train)
     ICDCODEDICT = {code: i for i, (code, _) in enumerate(Counter(ICDCODELIST).most_common())}
-    assert len(ICDCODEDICT.values()) == len(set(ICDCODEDICT.values()))#just making sure all values are unique
+    assert len(ICDCODEDICT.values()) == len(set(ICDCODELIST))#just making sure all values are unique
+    helper = ModelHelper.build(train)
     logger.info("There are a total of %d ICD codes", len(ICDCODEDICT.values()))
     # print('icd dictionary')
     # print(ICDCODEDICT)
@@ -168,6 +179,8 @@ def load_and_preprocess_data(args):
     train_data = helper.vectorize(train)
     # print(train_data)
     dev_data = helper.vectorize(dev)
+    # print('here is the dictionary')
+    # print(ICDCODEDICT)
     # 1/0
     # print('')
     # print(dev_data)
@@ -179,6 +192,7 @@ def load_and_preprocess_data(args):
     # turned into two features, word ID and the upper or lower case case (aa, AA, Aa, aA)
     # We can just use word for not I think that'd be best.
     # print(helper.max_n_labels)
+    # 1/0
     # 1/0
     return helper, train_data, dev_data, train, dev
 

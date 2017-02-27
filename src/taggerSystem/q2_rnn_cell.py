@@ -17,6 +17,7 @@ import numpy as np
 logger = logging.getLogger("hw3.q2.1")
 logger.setLevel(logging.DEBUG)
 logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
+printShapes = False# set to true if you want to print the shapes of different parameter
 
 class RNNCell(tf.contrib.rnn.BasicRNNCell):# this was changed form tf.nn.rnn_cell.RNNCell because RNNCell was moved after 1.0 update
     """Wrapper around our RNN cell implementation that allows us to play
@@ -65,25 +66,27 @@ class RNNCell(tf.contrib.rnn.BasicRNNCell):# this was changed form tf.nn.rnn_cel
             ### YOUR CODE HERE (~6-10 lines)
             W_h = tf.get_variable(name = 'W_h', shape = (self.state_size, self.state_size), 
                 initializer = tf.contrib.layers.xavier_initializer())
-            # print('wh shape')
-            # print(W_h.get_shape())
+
             W_x = tf.get_variable(name = 'W_x', shape = (self.input_size, self.state_size), 
                 initializer = tf.contrib.layers.xavier_initializer())
-            # print('wx shape')
-            # print(W_x.get_shape())
-            # print('inputs size')
-            # print(inputs.get_shape())
-            # print('state size')
-            # print(state.get_shape())
             b = tf.get_variable(name = 'b', shape = [self.state_size], initializer = tf.constant_initializer(0))
-            # print('size of b')
-            # print(b.get_shape())
+
             h_t = tf.nn.sigmoid(tf.matmul(inputs, W_x) + tf.matmul(state, W_h) + b) 
-            # print('ht shape')
-            # print(h_t.get_shape())
-            # print('******************************')
-            # print('')
-            # print('******************************')   
+            if printShapes:
+                print('shapes of inner RNN cell')
+                print('wh shape')
+                print(W_h.get_shape())
+                print('wx shape')
+                print(W_x.get_shape())
+                print('inputs size')
+                print(inputs.get_shape())
+                print('state size')
+                print(state.get_shape())
+                print('ht shape')
+                print(h_t.get_shape())
+                print('******************************')
+                print('')
+                print('******************************')   
             new_state = h_t
             # 1/0
             pass
