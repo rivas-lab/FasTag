@@ -24,6 +24,7 @@ P_CASE = "CASE:"
 CASES = ["aa", "AA", "Aa", "aA"]
 START_TOKEN = "<s>"
 END_TOKEN = "</s>"
+MAXNLABELS = 3
 ICDCODELIST = []
 ICDCODEDICT = {}
 
@@ -70,11 +71,12 @@ class ModelHelper(object):
     """
     This helper takes care of preprocessing data, constructing embeddings, etc.
     """
-    def __init__(self, tok2id, max_length):
+    def __init__(self, tok2id, max_length, max_n_labels):
         self.tok2id = tok2id# token to arb id mapping
         self.START = [tok2id[START_TOKEN], tok2id[P_CASE + "aa"]]
         self.END = [tok2id[END_TOKEN], tok2id[P_CASE + "aa"]]
         self.max_length = max_length # max lengths of longest input
+        self.max_n_labels = max_n_labels# max number of labels for a note
 
     def vectorize_example(self, sentence, labels=None):
         # global ICDCODEDICT
@@ -82,9 +84,13 @@ class ModelHelper(object):
         sentence_ = [[self.tok2id.get(normalize(word), self.tok2id[UNK]), self.tok2id[P_CASE + casing(word)]] for word in sentence]
         if labels:
             labels_ = [ICDCODEDICT[l] for l in labels]
+            if len(labels_) >= self.max_n_labels:
+                labels_ = labels_[:self.max_n_labels]
+            else:
+                labels_.extend([None]*(self.max_n_labels - len(labels_)))
             return sentence_, labels_
         else:
-            return sentence_, [None for _ in sentence]
+            return sentence_, [None]*self.max_n_labels
     # converts a sentence over to it's word ID and converts the case (aa (all lower). AA (all upper), aA, or Aa)
     # over to integers. Then each word becomes two features. It's word ID and the ID of the case.
     # classes are also converted into numbers. We'll have to convert out ICD9 codes to ints, or maybe we
@@ -115,7 +121,7 @@ class ModelHelper(object):
         # print(tok2id)
         # print('')
         # print('')
-        return cls(tok2id, max_length)
+        return cls(tok2id, max_length, MAXNLABELS)
 
     def save(self, path):
         # Make sure the directory exists.
@@ -172,6 +178,8 @@ def load_and_preprocess_data(args):
     #train_data and dev_data are the numeric representations of these. Each word is
     # turned into two features, word ID and the upper or lower case case (aa, AA, Aa, aA)
     # We can just use word for not I think that'd be best.
+    # print(helper.max_n_labels)
+    # 1/0
     return helper, train_data, dev_data, train, dev
 
 # embeddings are read in from wordvecter.txt where each line correpsonds to the word embedding

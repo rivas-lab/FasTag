@@ -41,6 +41,7 @@ class Config:
     n_features = (2 * window_size + 1) * n_word_features # Number of features for every word in the input.
     max_length = 120 # longest sequence to parse
     n_classes = 5
+    max_n_labels = 100# max number of labels a note can have. Will be changed later. actually set in data_utils.py
     dropout = 0.5
     embed_size = 50
     hidden_size = 300
@@ -102,21 +103,14 @@ def pad_sequences(data, max_length):
     # Use this zero vector when padding sequences.
     zero_vector = [0] * Config.n_features
     zero_label = 4 # corresponds to the 'O' tag
-    # print('data')
-    # print(data)
-    # print('max len')
-    # print(max_length)
     for sentence, labels in data:
         ### YOUR CODE HERE (~4-6 lines)
-        # print(sentence)
-        # pad or truncate sentence
+
         if len(sentence) > max_length:
-            # pass
             newSentence = copy.deepcopy(sentence)
             newLabels = copy.deepcopy(labels)
-            ret.append((newSentence[0:max_length], newLabels[0:max_length], [True]*max_length))
-            # truncate sentence and labels
-            # create mask of all ones
+            ret.append((newSentence[0:max_length], newLabels, [True]*max_length))
+
         elif len(sentence) < max_length:
             pass
             extendLength = (max_length - len(sentence))
@@ -124,19 +118,12 @@ def pad_sequences(data, max_length):
             newSentence = copy.deepcopy(sentence)
             newSentence.extend([zero_vector]*extendLength)
             newLabels = copy.deepcopy(labels)
-            newLabels.extend([zero_label]*extendLength)
+            # newLabels.extend([zero_label]*extendLength)
             ret.append((newSentence, newLabels, mask))
         else:
-            # print('I should not have said that')
             ret.append((copy.deepcopy(sentence), copy.deepcopy(labels), [True]*max_length))
             pass
-            # padd sentence and labels
-            # create mask of ones where original sentence was
-        # pass
         ### END YOUR CODE ###
-    # 1/0
-    # print('new stuff')
-    # print(ret)
     return ret
 
 class RNNModel(taggerModel):
@@ -173,10 +160,26 @@ class RNNModel(taggerModel):
         (Don't change the variable names)
         """
         ### YOUR CODE HERE (~4-6 lines)
+        # print('placeholder stuff')
+        # print('max length')
+        # print(self.max_length)
+        # print('n features')
+        # print(Config.n_features)
+        # So I think the placeholders will have to change. instead of using max_length because we'll have 
+        # a variable number of labels
+        # max length of the max legnth allowable for a note
         self.input_placeholder = tf.placeholder(tf.int32, shape= (None, self.max_length, Config.n_features))
-        self.labels_placeholder = tf.placeholder(tf.int32, shape= (None, self.max_length))
+        self.labels_placeholder = tf.placeholder(tf.int32, shape= (None, Config.n_classes))
         self.mask_placeholder = tf.placeholder(tf.bool, shape= (None, self.max_length))
         self.dropout_placeholder = tf.placeholder(tf.float32, shape= ())
+        # print('shape of input placeholders')
+        # print(self.input_placeholder.get_shape())
+        # print('shape of labels')
+        # print(self.labels_placeholder.get_shape())
+        # print('******************************')
+        # print('')
+        # print('******************************')
+        # 1/0
         ### END YOUR CODE
 
     def create_feed_dict(self, inputs_batch, mask_batch, labels_batch=None, dropout=1):
@@ -234,23 +237,18 @@ class RNNModel(taggerModel):
         pretrainedEmbeddings = tf.Variable(self.pretrained_embeddings)
 
         embeddings = tf.nn.embedding_lookup(params = pretrainedEmbeddings, ids =self.input_placeholder)
-        # print('Embedding mayham')
-        # print('embed shape')
+        # print('embedding shape before reshape')
         # print(embeddings.get_shape())
-        # print('max leng')
-        # print(self.max_length)
-        # print('n feats')
-        # print(Config.n_features)
-        # print('embedSize')
-        # print(Config.embed_size)
-        # print('*****************************************************')
-        # print('*****************************************************')
 
         # embeddings = tf.reshape(embeddings, shape = tf.pack([-1, embeddings.get_shape()[1], embeddings.get_shape()[2]*embeddings.get_shape()[3]]))
         embeddings = tf.reshape(embeddings, shape = tf.stack([-1, embeddings.get_shape()[1], embeddings.get_shape()[2]*embeddings.get_shape()[3]])) 
-        # changed above. pack -> stack because of new tf version
-        # print('new shape')
+        # print('embedding shape after reshape')
         # print(embeddings.get_shape())
+        # print('******************************')
+        # print('')
+        # print('******************************')
+        # 1/0
+        # changed above. pack -> stack because of new tf version
         ### END YOUR CODE
         return embeddings
 
@@ -294,9 +292,6 @@ class RNNModel(taggerModel):
             pred: tf.Tensor of shape (batch_size, max_length, n_classes)
         """
         x = self.add_embedding()
-        # print('shape of x')
-        # print(x.get_shape())
-        # 1/0
         dropout_rate = self.dropout_placeholder
 
         preds = [] # Predicted output at each timestep should go here!
@@ -314,28 +309,25 @@ class RNNModel(taggerModel):
         # Define U and b2 as variables.
         # Initialize state as vector of zeros.
         ### YOUR CODE HERE (~4-6 lines)
+        # 3/0
         with tf.variable_scope('RNN_OutsideCell', reuse = False) as scope:
-            # print('alright alright alright')
+            # 4/0
+            # print('shape of outside cell stuff U')
             U = tf.get_variable(name = 'U', shape = (Config.hidden_size, Config.n_classes), 
                 initializer = tf.contrib.layers.xavier_initializer())
-
-            b2 = tf.get_variable(name = 'b2', shape = [Config.n_classes], initializer = tf.constant_initializer(0))
-            # print('U shape')
+            # 5/0
             # print(U.get_shape())
-            # print('b2 shape')
+            b2 = tf.get_variable(name = 'b2', shape = [Config.n_classes], initializer = tf.constant_initializer(0))
+            # 6/0
+            # print('shape of b2')
             # print(b2.get_shape())
-            # print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
-            # print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
-            # print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
-            # print('heres the shep')
-            # print(tf.shape(x)[0])
-            # print(x.get_shape())
-            # 1/0
             state = tf.zeros(name = 'state', shape = (tf.shape(x)[0],Config.hidden_size))# can either do one or Config.batch_size
-            # print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
-            # print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
-            # print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
-            # print(state.get_shape())
+        #     print('shape of state')
+        #     print(state.get_shape())
+        # print('******************************')
+        # print('')
+        # print('******************************')
+        # 2/0
         ### END YOUR CODE
 
         with tf.variable_scope("RNN"):
@@ -344,36 +336,36 @@ class RNNModel(taggerModel):
                 if time_step == 1:#second time step
                     tf.get_variable_scope().reuse_variables()
                     # now the model knows to reuse variables... right? Idk man... i'm just here to do my job.
-                # 1/0
-                # print('max length')
-                # print(self.max_length)
-                # print('time step shape')
-                # print(x[:,time_step,:].get_shape())
-                # 1/0
                 ot, state = cell(x[:,time_step,:], state)
-                # 1/0
                 o_drop_t = tf.nn.dropout(x = ot, keep_prob = dropout_rate)
                 yHat = tf.matmul(o_drop_t, U) + b2
-                # print('yaht shape')
+                # print('yhat shape')
                 # print(yHat.get_shape())
-                # print(yHat)
                 preds.append(yHat)
-                # o_t, h_t = cell(x_t, h_{t-1})
-                # o_drop_t = Dropout(o_t, dropout_rate)
-                # y_t = o_drop_t U + b_2
+                # Here is where you should only append preds of last one because you don't care about 
+                # preds before. Don't count htose as error.                
                 # 1/0
                 pass
                 ### END YOUR CODE
-
+        preds = preds[-1]# only care about the very last error
         # Make sure to reshape @preds here.
         ### YOUR CODE HERE (~2-4 lines)
-        # 1/0
         # preds = tf.pack(preds)
         preds = tf.stack(preds) # once again no pack argument
-        preds = tf.transpose(preds, perm = [1, 0, 2])
+        # print('preds shape')
+        # print(preds.get_shape())
+        # 2/0
+        # preds = tf.transpose(preds, perm = [1, 0, 2])
         ### END YOUR CODE
 
-        assert preds.get_shape().as_list() == [None, self.max_length, self.config.n_classes], "predictions are not of the right shape. Expected {}, got {}".format([None, self.max_length, self.config.n_classes], preds.get_shape().as_list())
+        # assert preds.get_shape().as_list() == [None, self.max_length, self.config.n_classes], "predictions are not of the right shape. Expected {}, got {}".format([None, self.max_length, self.config.n_classes], preds.get_shape().as_list())
+        # should prolly put a warning here
+        # # TODO ^
+        # print('preds shape')
+        # print(preds.get_shape())
+        # print('******************************')
+        # print('')
+        # print('******************************')
         return preds
 
     def add_loss_op(self, preds):
@@ -392,10 +384,25 @@ class RNNModel(taggerModel):
             loss: A 0-d tensor (scalar)
         """
         ### YOUR CODE HERE (~2-4 lines)
-        # print('yolo')
-        batchError = tf.nn.sparse_softmax_cross_entropy_with_logits(logits = preds, labels = self.labels_placeholder)
-        # print('yolo2')
-        loss = tf.reduce_mean(tf.boolean_mask(batchError, self.mask_placeholder))                    
+        # 1/0 
+        # print('preds shape before')
+        # print(preds.get_shape())
+        # print('bales shape')
+        # print(self.labels_placeholder.get_shape())
+        # preds = 
+        # print(self.labels_placeholder)
+        # batchError = tf.nn.sparse_softmax_cross_entropy_with_logits(logits = preds, labels = self.labels_placeholder)
+        batchError = tf.nn.softmax_cross_entropy_with_logits(logits = preds, labels = self.labels_placeholder)
+        # changed to above because I think the other one was for calculating loss at each step
+        # print('batch error shape')
+        # print(batchError.get_shape())
+        # print('mask pkace hoolder shape')
+        # print(self.mask_placeholder.get_shape())
+        # 3/0
+        # loss = tf.reduce_mean(tf.boolean_mask(batchError, self.mask_placeholder))
+        loss = tf.reduce_mean(batchError) 
+        # cahnged above because no longer need masking     
+        # 2/0               
         ### END YOUR CODE
         return loss
 
@@ -427,6 +434,7 @@ class RNNModel(taggerModel):
         def featurize_windows(data, start, end, window_size = 1):
             """Uses the input sequences in @data to construct new windowed data points.
             """
+            # 1/0
             ret = []
             for sentence, labels in data:
                 from util import window_iterator
@@ -442,11 +450,6 @@ class RNNModel(taggerModel):
     def consolidate_predictions(self, examples_raw, examples, preds):
         """Batch the predictions into groups of sentence length.
         """
-        # print('length examples')
-        # print(len(examples_raw))
-        # print(len(examples))
-        # print('length preds')
-        # print(len(preds))
         assert len(examples_raw) == len(examples)
         assert len(examples_raw) == len(preds)
 
@@ -454,9 +457,6 @@ class RNNModel(taggerModel):
         for i, (sentence, labels) in enumerate(examples_raw):
             _, _, mask = examples[i]
             labels_ = [l for l, m in zip(preds[i], mask) if m] # only select elements of mask.
-            # print('label length')
-            # print(len(labels))
-            # print(len(labels_))
             assert len(labels_) == len(labels)
             ret.append([sentence, labels, labels_])
         return ret
@@ -477,6 +477,11 @@ class RNNModel(taggerModel):
         self.max_length = min(Config.max_length, helper.max_length)
         Config.max_length = self.max_length # Just in case people make a mistake.
         self.pretrained_embeddings = pretrained_embeddings
+        # print('first')
+        # print(Config.max_n_labels)
+        Config.max_n_labels = helper.max_n_labels
+        # print('then')
+        # print(Config.max_n_labels)
 
         # Defining placeholders.
         self.input_placeholder = None
@@ -536,16 +541,9 @@ def do_train(args):
     # Set up some parameters.
     config = Config(args)
     helper, train, dev, train_raw, dev_raw = load_and_preprocess_data(args)
-    # 1/0
     embeddings = load_embeddings(args, helper)
-    # 1/0
     config.embed_size = embeddings.shape[1]
-    # print(embeddings)
-    # print(embeddings.shape)
-    # print(config.output_path)
-    # 1/0
     helper.save(config.output_path)# token2id and max length saved to output_path
-    # 1/0
     handler = logging.FileHandler(config.log_output)
     handler.setLevel(logging.DEBUG)
     handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s: %(message)s'))

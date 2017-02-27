@@ -91,13 +91,7 @@ class SequencePredictor(Model):
                 cell=cell,
                 inputs=self.inputs_placeholder, 
                 dtype = tf.float32)
-        # 1/0
-        # print('preds shape for dynamic rnn')
-        # print(state.get_shape())
-        # print('sigmoid stuff')
         preds = tf.nn.sigmoid(state)
-        # print('preds shape for dynamic rnn')
-        # print(state.get_shape())
         ### END YOUR CODE
 
         return preds #state # preds
@@ -151,69 +145,15 @@ class SequencePredictor(Model):
         optimizer = tf.train.GradientDescentOptimizer(learning_rate=self.config.lr)
 
         ### YOUR CODE HERE (~6-10 lines)
-        # grads = optimizer.compute_gradients(loss)
-        # listt = [ g[0] for g in grads]
-        # listt,_ = tf.clip_by_global_norm(listt,5.0)
-        # clipped_grads = zip(listt,grads[1])
-
-
-
-
-        # optimizer = optimizer.minimize(loss)
-        # tvars = tf.trainable_variables()
         gradientVars = optimizer.compute_gradients(loss = loss)
         grads, tvars = zip(*gradientVars)
         if self.config.clip_gradients:
-            # 1/0
             tvars = tf.trainable_variables()
             grads, _ = tf.clip_by_global_norm(tf.gradients(loss, tvars), self.config.max_grad_norm)
-            # self.grad_norm = tf.global_norm(grads)
-            # grads, _ = tf.clip_by_global_norm(optimizer.compute_gradients(loss = loss), self.config.max_grad_norm)
             gradientVars = zip(grads, tvars)
-            # train_op = optimizer.apply_gradients()
-        # else:
-            # gradientVars = optimizer.compute_gradients(loss = loss)
-            # # grads = tf.gradients(loss, tvars)[0]
-            # train_op = optimizer.minimize(loss)
-            # grads = gradientVars
-
-            # gradientVars = optimizer.compute_gradients(loss = loss)
-            # self.grad_norm = tf.global_norm(grads)
         train_op = optimizer.apply_gradients(gradientVars)
-            # grads, v = zip(*gradientVars)
-            # self.grad_norm = tf.global_norm(grads)
+
         self.grad_norm = tf.global_norm(grads)
-
-
-        # self.grad_norm = tf.global_norm(grads)
-        # self.grad_norm = globalNorm
-
-
-        # gradientsAndVars = optimizer.compute_gradients(loss = loss)
-        # # 5/0
-        # gradients = [ g[0] for g in gradientsAndVars]
-        # # 6/0
-        # # print(gradients)
-        # # 1/0
-        # # tensorList = [ g[0] for g in gradients] # not my code idk what it does
-        # # print('ok')
-        # # print(self.config.clip_gradients)
-        # # 1/0
-        # if self.config.clip_gradients:
-        #     gradients, _ = tf.clip_by_global_norm(gradients, self.config.max_grad_norm)
-        # # 2/0
-        # globalNorm = tf.global_norm(gradients)
-        # # 3/0
-        # self.grad_norm = globalNorm
-        # # 4/0
-        # print(globalNorm)
-        # gradientsAndVars = zip(listt,grads[1])
-        # train_op = optimizer.apply_gradients(gradientsAndVars)
-        # 1/0
-        # - Remember to clip gradients only if self.config.clip_gradients
-        # is True.
-        # - Remember to set self.grad_norm
-
         ### END YOUR CODE
 
         assert self.grad_norm is not None, "grad_norm was not set properly!"

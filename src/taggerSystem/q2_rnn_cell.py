@@ -60,20 +60,32 @@ class RNNCell(tf.contrib.rnn.BasicRNNCell):# this was changed form tf.nn.rnn_cel
 
         # It's always a good idea to scope variables in functions lest they
         # be defined elsewhere!
+        # print('init weights and such')
         with tf.variable_scope(scope):
             ### YOUR CODE HERE (~6-10 lines)
             W_h = tf.get_variable(name = 'W_h', shape = (self.state_size, self.state_size), 
                 initializer = tf.contrib.layers.xavier_initializer())
+            # print('wh shape')
+            # print(W_h.get_shape())
             W_x = tf.get_variable(name = 'W_x', shape = (self.input_size, self.state_size), 
                 initializer = tf.contrib.layers.xavier_initializer())
+            # print('wx shape')
+            # print(W_x.get_shape())
             # print('inputs size')
             # print(inputs.get_shape())
             # print('state size')
             # print(state.get_shape())
-            b = tf.get_variable(name = 'b', shape = self.state_size, initializer = tf.constant_initializer(0))
-            # 1/0
-            h_t = tf.nn.sigmoid(tf.matmul(inputs, W_x) + tf.matmul(state, W_h) + b)    
+            b = tf.get_variable(name = 'b', shape = [self.state_size], initializer = tf.constant_initializer(0))
+            # print('size of b')
+            # print(b.get_shape())
+            h_t = tf.nn.sigmoid(tf.matmul(inputs, W_x) + tf.matmul(state, W_h) + b) 
+            # print('ht shape')
+            # print(h_t.get_shape())
+            # print('******************************')
+            # print('')
+            # print('******************************')   
             new_state = h_t
+            # 1/0
             pass
             ### END YOUR CODE ###
         # For an RNN , the output and state are the same (N.B. this
