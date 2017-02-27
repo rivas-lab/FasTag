@@ -181,10 +181,13 @@ def load_and_preprocess_data(args):
 # corresponding word vecter exists.
 def load_embeddings(args, helper):
     embeddings = np.array(np.random.randn(len(helper.tok2id) + 1, EMBED_SIZE), dtype=np.float32)
+    # print('tokens')
+    # print(helper.tok2id)
     embeddings[0] = 0.
     for word, vec in load_word_vector_mapping(args.vocab, args.vectors).items():
         word = normalize(word)
         if word in helper.tok2id:
+            # print(word)
             embeddings[helper.tok2id[word]] = vec
     logger.info("Initialized embeddings.")
     # pp = pprint.PrettyPrinter(indent=4)

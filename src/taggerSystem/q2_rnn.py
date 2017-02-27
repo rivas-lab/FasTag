@@ -245,7 +245,10 @@ class RNNModel(taggerModel):
         # print(Config.embed_size)
         # print('*****************************************************')
         # print('*****************************************************')
-        embeddings = tf.reshape(embeddings, shape = tf.pack([-1, embeddings.get_shape()[1], embeddings.get_shape()[2]*embeddings.get_shape()[3]])) 
+
+        # embeddings = tf.reshape(embeddings, shape = tf.pack([-1, embeddings.get_shape()[1], embeddings.get_shape()[2]*embeddings.get_shape()[3]]))
+        embeddings = tf.reshape(embeddings, shape = tf.stack([-1, embeddings.get_shape()[1], embeddings.get_shape()[2]*embeddings.get_shape()[3]])) 
+        # changed above. pack -> stack because of new tf version
         # print('new shape')
         # print(embeddings.get_shape())
         ### END YOUR CODE
@@ -365,7 +368,8 @@ class RNNModel(taggerModel):
         # Make sure to reshape @preds here.
         ### YOUR CODE HERE (~2-4 lines)
         # 1/0
-        preds = tf.pack(preds)
+        # preds = tf.pack(preds)
+        preds = tf.stack(preds) # once again no pack argument
         preds = tf.transpose(preds, perm = [1, 0, 2])
         ### END YOUR CODE
 
@@ -536,6 +540,8 @@ def do_train(args):
     embeddings = load_embeddings(args, helper)
     # 1/0
     config.embed_size = embeddings.shape[1]
+    # print(embeddings)
+    # print(embeddings.shape)
     # print(config.output_path)
     # 1/0
     helper.save(config.output_path)# token2id and max length saved to output_path
