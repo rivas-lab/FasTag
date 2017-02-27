@@ -27,7 +27,8 @@ ggplot(icd9CodeCounts, aes(x = count.Freq, group = 1)) + geom_step(aes(y=..y..),
   scale_x_continuous(limits = c(0, 1000), expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) + 
   labs(x = "Number of Labels", y = 'Empirical Cumulative Distribution', title = 'ICD-9 Label Distribution') + 
-  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
+  theme_bw() + theme(plot.title = element_text(hjust = 0.5, size = 18), axis.title=element_text(size=18), 
+                     legend.text = element_text(size = 15), legend.title = element_text(size = 15))
 # x <- data.frame(A=replicate(200,sample(c("a","b","c"),1)),X=rnorm(200))
 # ggplot(x,aes(x=X,color=A)) + geom_step(aes(y=..y..),stat="ecdf")
 ggsave(filename = 'src/plotting/dataExploration/icd9LabelDist.png')
@@ -55,10 +56,13 @@ ggplot(data=admissionICD9Count, aes(icd9Count)) + geom_histogram(binwidth = 2, c
   scale_colour_manual(name="Legend", values = c("mean" = "#78a5a3", "median" = "#444c5c")) +
   scale_linetype_manual(name="Legend", values = c("mean" = "dashed", "median" = "dashed")) +
   scale_alpha_manual(name="Legend", values = c('mean' = 1, 'median' = 0.6)) +
-  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
+  theme_bw() + theme(plot.title = element_text(hjust = 0.5, size = 18), axis.title=element_text(size=18), 
+                     legend.text = element_text(size = 15), legend.title = element_text(size = 15))
 ggsave(filename = 'src/plotting/dataExploration/icd9CountHist.png')
 print(meanLineName)
 print(medLineName)
+
+
 
 
 ##################################################################################
@@ -84,7 +88,8 @@ ggplot(data=admissionWordCount, aes(wordCount)) + geom_histogram(binwidth = 10, 
   scale_colour_manual(name="Legend", values = c("mean" = "#78a5a3", "median" = "#444c5c")) +
   scale_linetype_manual(name="Legend", values = c("mean" = "dashed", "median" = "dashed")) +
   scale_alpha_manual(name="Legend", values = c('mean' = 1, 'median' = 0.6)) +
-  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
+  theme_bw() + theme(plot.title = element_text(hjust = 0.5, size = 18), axis.title=element_text(size=18), 
+                     legend.text = element_text(size = 15), legend.title = element_text(size = 15))
 ggsave(filename = 'src/plotting/dataExploration/noteLengthByAdmission.png')
 print(summary(admissionWordCount$wordCount))
 
@@ -108,7 +113,8 @@ ggplot(data=admissionCounts, aes(admissionCounts)) + geom_histogram(binwidth = 2
   scale_x_continuous(expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) +
   labs(title = 'Number of Admissions Per Patient', y = 'Count', x = 'Number of Admissions') + 
-  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
+  theme_bw() + theme(plot.title = element_text(hjust = 0.5, size = 18), axis.title=element_text(size=18), 
+                     legend.text = element_text(size = 15), legend.title = element_text(size = 15))
 ggsave(filename = 'src/plotting/dataExploration/numberOfAdmissionsByPatient.png')
 
 summary(admissionCounts$admissionCounts)
