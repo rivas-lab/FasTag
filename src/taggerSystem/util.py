@@ -15,6 +15,7 @@ from io import StringIO
 from collections import defaultdict, Counter, OrderedDict
 import numpy as np
 from numpy import array, zeros, allclose
+import csv
 
 logger = logging.getLogger("hw3")
 logger.setLevel(logging.DEBUG)
@@ -47,6 +48,40 @@ def read_conll(fstream):
         assert len(current_toks) == len(current_lbls)
         ret.append((current_toks, current_lbls))
     return ret
+
+
+
+
+#############################Input#############################
+# fstream: should be an stream returned by 
+#   output of `open(fname, 'r')`)
+#############################Output############################
+# ret: a list of tuples. Each tuple contains two lists. The 
+#   first one is a list of tokens in the clinical note and the
+#   second list is a list of icd9 codes for the admission
+# icdCodeList: a list of icd9 codes so we can convert to 
+#   classes later
+#############################Description#######################
+# Expects a csv file and iterates through each row extracting
+#   the text and the icd codes associated with the note
+def read_clinicalNote(fstream, icdCodeList = []):
+    """
+    Reads a input stream @fstream (e.g. output of `open(fname, 'r')`).
+    @returns a list of examples [(tokens), (labels)]. @tokens and @labels are lists of string.
+    """
+    expectedHeader = ['', 'HADM_ID', 'SUBJECT_ID', 'ICD9_CODE', 'CHARTDATE', 'DESCRIPTION', 'TEXT']
+    codeIdx = 3
+    textIdx = -1
+    ret = []
+
+    current_toks, current_lbls = [], []
+    csvReader = csv.reader(fstream, delimiter=',', quotechar='\"')
+    assert next(csvReader) == expectedHeader #checking that the header matches what we expect.
+    for row in csvReader:
+        ret.append((row[textIdx].split(), row[codeIdx].split('-')))
+        icdCodeList.extend(row[codeIdx].split('-'))
+    return(ret, list(set(icdCodeList)))
+
 
 def test_read_conll():
     input_ = [

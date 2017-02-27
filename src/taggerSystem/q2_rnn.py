@@ -530,19 +530,16 @@ def do_test2(args):
 
 def do_train(args):
     # Set up some parameters.
-    print(args)
-    print('')
-    print(type(args))
-    print('')
     config = Config(args)
-    print(config)
     helper, train, dev, train_raw, dev_raw = load_and_preprocess_data(args)
     # 1/0
     embeddings = load_embeddings(args, helper)
-    1/0
+    # 1/0
     config.embed_size = embeddings.shape[1]
-    helper.save(config.output_path)
-
+    # print(config.output_path)
+    # 1/0
+    helper.save(config.output_path)# token2id and max length saved to output_path
+    # 1/0
     handler = logging.FileHandler(config.log_output)
     handler.setLevel(logging.DEBUG)
     handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s: %(message)s'))
@@ -654,8 +651,8 @@ if __name__ == "__main__":
     # command_parser.set_defaults(func=do_test2)
 
     command_parser = subparsers.add_parser('train', help='')
-    command_parser.add_argument('-dt', '--data-train', type=argparse.FileType('r'), default="src/taggerSystem/data_hw3_delete/tiniest.conll", help="Training data")
-    command_parser.add_argument('-dd', '--data-dev', type=argparse.FileType('r'), default="src/taggerSystem/data_hw3_delete/dev.conll", help="Dev data")
+    command_parser.add_argument('-dt', '--data-train', type=argparse.FileType('r'), default="data/icd9NotesDataTable_train.csv", help="Training data")
+    command_parser.add_argument('-dd', '--data-dev', type=argparse.FileType('r'), default="data/icd9NotesDataTable_valid.csv", help="Dev data")
     command_parser.add_argument('-v', '--vocab', type=argparse.FileType('r'), default="src/taggerSystem/data_hw3_delete/vocab.txt", help="Path to vocabulary file")
     command_parser.add_argument('-vv', '--vectors', type=argparse.FileType('r'), default="src/taggerSystem/data_hw3_delete/wordVectors.txt", help="Path to word vectors file")
     command_parser.add_argument('-c', '--cell', choices=["rnn", "gru"], default="rnn", help="Type of RNN cell to use.")

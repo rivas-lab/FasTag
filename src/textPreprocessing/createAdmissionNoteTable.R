@@ -65,11 +65,42 @@ icd9NotesDataTable = right_join(x = diagnoses, y = notes, by = 'HADM_ID')
 # Extra filtering
 ##################################################################################
 
+# filter out any words not needed
+# filter out and icd9 codes not needed
 
+
+
+
+##################################################################################
+# Split into Training and Validation
+# consider smarter splits which consider dates and admission IDs so you don't have 
+# any admissions in train and test
+##################################################################################
+trainingFrac = 0.75
+trainingIdxs = sample.int(n = floor(nrow(icd9NotesDataTable)*trainingFrac), replace = FALSE)
+icd9NotesDataTable_train = icd9NotesDataTable[trainingIdxs,]
+icd9NotesDataTable_valid = icd9NotesDataTable[-trainingIdxs,]
 
 ##################################################################################
 # Write to file
 ##################################################################################
 write.csv(icd9NotesDataTable, 'data/icd9NotesDataTable.csv')
+write.csv(icd9NotesDataTable_train, 'data/icd9NotesDataTable_train.csv')
+write.csv(icd9NotesDataTable_valid, 'data/icd9NotesDataTable_valid.csv')
+
+
+
+
+##################################################################################
+# Write filesi n a way that is easily read by python
+##################################################################################
+# open file here
+for(lineIdx in 1:nrow(icd9NotesDataTable_train)){
+  line = icd9NotesDataTable_train[lineIdx,]
+  # for each line 
+    # write one word
+}
+
+
 
 

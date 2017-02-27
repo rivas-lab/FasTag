@@ -10,8 +10,9 @@ from collections import Counter
 import pprint
 
 import numpy as np
-from util import read_conll, one_hot, window_iterator, ConfusionMatrix, load_word_vector_mapping
+from util import read_clinicalNote, one_hot, window_iterator, ConfusionMatrix, load_word_vector_mapping
 from defs import LBLS, NONE, LMAP, NUM, UNK, EMBED_SIZE
+import time
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -23,6 +24,8 @@ P_CASE = "CASE:"
 CASES = ["aa", "AA", "Aa", "aA"]
 START_TOKEN = "<s>"
 END_TOKEN = "</s>"
+ICDCODELIST = []
+ICDCODEDICT = {}
 
 def casing(word):
     if len(word) == 0: return word
@@ -74,12 +77,14 @@ class ModelHelper(object):
         self.max_length = max_length # max lengths of longest input
 
     def vectorize_example(self, sentence, labels=None):
+        # global ICDCODEDICT
+        # ICDCODEDICT = 
         sentence_ = [[self.tok2id.get(normalize(word), self.tok2id[UNK]), self.tok2id[P_CASE + casing(word)]] for word in sentence]
         if labels:
-            labels_ = [LBLS.index(l) for l in labels]
+            labels_ = [ICDCODEDICT[l] for l in labels]
             return sentence_, labels_
         else:
-            return sentence_, [LBLS[-1] for _ in sentence]
+            return sentence_, [None for _ in sentence]
     # converts a sentence over to it's word ID and converts the case (aa (all lower). AA (all upper), aA, or Aa)
     # over to integers. Then each word becomes two features. It's word ID and the ID of the case.
     # classes are also converted into numbers. We'll have to convert out ICD9 codes to ints, or maybe we
@@ -106,6 +111,10 @@ class ModelHelper(object):
         logger.info("Built dictionary for %d features.", len(tok2id))
 
         max_length = max(len(sentence) for sentence, _ in data)
+        # print('printing token 2 id stuff')
+        # print(tok2id)
+        # print('')
+        # print('')
         return cls(tok2id, max_length)
 
     def save(self, path):
@@ -113,8 +122,15 @@ class ModelHelper(object):
         if not os.path.exists(path):
             os.makedirs(path)
         # Save the tok2id map.
-        with open(os.path.join(path, "features.pkl"), "w") as f:
+        with open(os.path.join(path, "features.pkl"), "wb") as f:
+            # print(os.path.join(path, "features.pkl"))
+            # print(f)
+            # print('writing this stuff')
+            # print(self.tok2id)
+            # print(self.max_length)
+            # 1/0
             pickle.dump([self.tok2id, self.max_length], f)
+        # 1/0
 
     @classmethod
     def load(cls, path):
@@ -126,18 +142,29 @@ class ModelHelper(object):
         return cls(tok2id, max_length)
 
 def load_and_preprocess_data(args):
+    global ICDCODELIST
+    global ICDCODEDICT
+    start = time.time()
     logger.info("Loading training data...")
-    train = read_conll(args.data_train)
-    logger.info("Done. Read %d sentences", len(train))
+    train, ICDCODELIST = read_clinicalNote(args.data_train, icdCodeList = ICDCODELIST)
+    logger.info("Done. Read %d notes", len(train))
     logger.info("Loading dev data...")
-    dev = read_conll(args.data_dev)
-    logger.info("Done. Read %d sentences", len(dev))
-
+    dev, ICDCODELIST = read_clinicalNote(args.data_dev, ICDCODELIST)
+    logger.info("Done. Read %d notes", len(dev))
+    logger.info("Total read time %f", time.time() - start)
     helper = ModelHelper.build(train)
-
+    ICDCODEDICT = {code: i for i, (code, _) in enumerate(Counter(ICDCODELIST).most_common())}
+    assert len(ICDCODEDICT.values()) == len(set(ICDCODEDICT.values()))#just making sure all values are unique
+    logger.info("There are a total of %d ICD codes", len(ICDCODEDICT.values()))
+    # print('icd dictionary')
+    # print(ICDCODEDICT)
     # now process all the input data.
     train_data = helper.vectorize(train)
+    # print(train_data)
     dev_data = helper.vectorize(dev)
+    # 1/0
+    # print('')
+    # print(dev_data)
     # so from what I can undersand train and dev are the raw files loaded in.
     # They can really be anything but I think tuples of [doc tokens], [doc labels]
     # will be sufficient. Remember they won't be same size since we're not tagging
@@ -175,7 +202,6 @@ def build_dict(words, max_words=None, offset=0):
     else:
         words = cnt.most_common()
     return {word: offset+i for i, (word, _) in enumerate(words)}
-
 
 def get_chunks(seq, default=LBLS.index(NONE)):
     """Breaks input of 4 4 4 0 0 4 0 ->   (0, 4, 5), (0, 6, 7)"""
