@@ -7,6 +7,7 @@ import os
 import pickle
 import logging
 from collections import Counter
+import pprint
 
 import numpy as np
 from util import read_conll, one_hot, window_iterator, ConfusionMatrix, load_word_vector_mapping
@@ -146,6 +147,11 @@ def load_and_preprocess_data(args):
     # We can just use word for not I think that'd be best.
     return helper, train_data, dev_data, train, dev
 
+# embeddings are read in from wordvecter.txt where each line correpsonds to the word embedding
+# of the word on the same line in vocab.txt.
+# embeddings in the end is a list of lsits where each inner list is the word embedding of a word.
+# these can be accessed by tok2id[word] which returns the index into embeddings where the
+# corresponding word vecter exists.
 def load_embeddings(args, helper):
     embeddings = np.array(np.random.randn(len(helper.tok2id) + 1, EMBED_SIZE), dtype=np.float32)
     embeddings[0] = 0.
@@ -154,7 +160,8 @@ def load_embeddings(args, helper):
         if word in helper.tok2id:
             embeddings[helper.tok2id[word]] = vec
     logger.info("Initialized embeddings.")
-
+    # pp = pprint.PrettyPrinter(indent=4)
+    # pp.pprint(embeddings)
     return embeddings
 
 

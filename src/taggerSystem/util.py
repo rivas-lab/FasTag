@@ -117,7 +117,9 @@ def load_word_vector_mapping(vocab_fstream, vector_fstream):
         vocab = vocab.strip()
         vector = vector.strip()
         ret[vocab] = array(list(map(float, vector.split())))
-
+    # print(ret['UUUNKKK'])
+    # print(ret['the'])
+    # 1/0
     return ret
 
 def test_load_word_vector_mapping():
