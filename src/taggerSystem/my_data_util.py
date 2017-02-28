@@ -80,6 +80,7 @@ class ModelHelper(object):
         self.max_length = max_length # max lengths of longest input
         # self.max_n_labels = max_n_labels# max number of labels for a note
         self.n_labels = n_labels# number of ICD codes in the dataset
+        self.icdDict = None
 
     def vectorize_example(self, sentence, labels=None):
         # global ICDCODEDICT
@@ -134,6 +135,7 @@ class ModelHelper(object):
         # print(tok2id)
         # print('')
         # print('')
+        icdDict = None
         return cls(tok2id, max_length, n_labels)
 
     def save(self, path):
@@ -160,6 +162,36 @@ class ModelHelper(object):
             tok2id, max_length = pickle.load(f)
         return cls(tok2id, max_length)
 
+
+    ##################################Input##################################
+    # dataList: Object returned by vectorize. List of tuples where first elem
+    #   in tuple is a lit of lists [wordIdx, other features....] and the
+    #   second element is a binary np.array of indicating which diseases this
+    #   this admission was diagnosed with 
+    ##################################Output#################################
+    # xData: A matrix of dim (nExamples, maxLength) where entries are padded
+    #   with -1. Each non-padded entry is the word ID in an example.
+    # yData: A matrix where each row (obs) corresponds to the diagnosis vec
+    #   for the given patient.
+    ##################################Definition#############################
+    # Creates a matrix X where each index corresponds to the ith word for the
+    #   jth admission note. The matrix Y corresponds to the matrix of 
+    #   diagnosis codes for an individual. Right now only the word index is
+    #   used as a feature.
+    def matrixify(self, dataList):
+        """
+        Creates a matrix X where each index corresponds to the ith word for the
+        jth admission note. The matrix Y corresponds to the matrix of 
+        diagnosis codes for an individual. Right now only the word index is
+        used as a feature.
+        """
+        xData = np.full((len(dataList), self.max_length), -1)
+        yData = np.full((len(dataList), self.n_labels), -1)
+        for rowIdx, row in enumerate(dataList):
+            xData[rowIdx, 0:len(row[0])] = [x[0] for x in row[0]]
+            yData[rowIdx] = row[1]
+        return xData, yData
+
 def load_and_preprocess_data(data_train, data_valid):
     global ICDCODELIST
     global ICDCODEDICT
@@ -181,21 +213,8 @@ def load_and_preprocess_data(data_train, data_valid):
     train_data = helper.vectorize(train)
     # print(train_data)
     dev_data = helper.vectorize(dev)
-    print('here is the dictionary')
-    print(ICDCODEDICT)
-    # 1/0
-    print('development data')
-    print('')
-    print('')
-    print('')
-    print('')
-    print('')
-    print(dev_data)
-    print(dev)
-    print('')
-    print('')
-    print('')
-    print('')
+    xTrain, yTrain = helper.matrixify(train_data)
+    xDev, yDev = helper.matrixify(dev_data)
     # so from what I can undersand train and dev are the raw files loaded in.
     # They can really be anything but I think tuples of [doc tokens], [doc labels]
     # will be sufficient. Remember they won't be same size since we're not tagging
@@ -206,7 +225,8 @@ def load_and_preprocess_data(data_train, data_valid):
     # print(helper.max_n_labels)
     # 1/0
     # 1/0
-    return helper, train_data, dev_data, train, dev
+    helper.icdDict = ICDCODEDICT
+    return helper, train_data, dev_data, train, dev, xTrain, yTrain, xDev, yDev
 
 # embeddings are read in from wordvecter.txt where each line correpsonds to the word embedding
 # of the word on the same line in vocab.txt.
