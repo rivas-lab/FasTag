@@ -47,7 +47,7 @@ class Config:
     dropout = 0.5
     embed_size = 50
     hidden_size = 300
-    batch_size = 32
+    batch_size = 2
     n_epochs = 10
     max_grad_norm = 10.
     lr = 0.001
@@ -104,21 +104,28 @@ def pad_sequences(data, max_length):
 
     # Use this zero vector when padding sequences.
     zero_vector = [0] * Config.n_features
+    # print('features')
+    # print(Config.n_features)
     zero_label = 4 # corresponds to the 'O' tag
+
     for sentence, labels in data:
         ### YOUR CODE HERE (~4-6 lines)
-
+        # print('sentence and labels')
+        # print(sentence)
+        # print(labels)
         if len(sentence) > max_length:
             newSentence = copy.deepcopy(sentence)
             newLabels = copy.deepcopy(labels)
             ret.append((newSentence[0:max_length], newLabels, [True]*max_length))
 
         elif len(sentence) < max_length:
-            pass
+            # pass
+            # 1/0
             extendLength = (max_length - len(sentence))
             mask = [True if x < len(sentence) else False for x in range(0,max_length)]
             newSentence = copy.deepcopy(sentence)
             newSentence.extend([zero_vector]*extendLength)
+            # print(newSentence)
             newLabels = copy.deepcopy(labels)
             # newLabels.extend([zero_label]*extendLength)
             ret.append((newSentence, newLabels, mask))
@@ -126,6 +133,9 @@ def pad_sequences(data, max_length):
             ret.append((copy.deepcopy(sentence), copy.deepcopy(labels), [True]*max_length))
             pass
         ### END YOUR CODE ###
+    # print('here is the return')
+    # print(ret)
+    # 1/0
     return ret
 
 class RNNModel(taggerModel):
@@ -359,11 +369,13 @@ class RNNModel(taggerModel):
                 # 1/0
                 pass
                 ### END YOUR CODE
-        preds = preds[-1]# only care about the very last error
+        # preds = preds[-1]# only care about the very last error
         # Make sure to reshape @preds here.
         ### YOUR CODE HERE (~2-4 lines)
+        print('working with preds')
         # preds = tf.pack(preds)
         preds = tf.stack(preds) # once again no pack argument
+        preds = tf.transpose(preds, perm = [1, 0, 2])
         if printShapes:
             print('preds shape')
             print(preds.get_shape())
@@ -443,7 +455,7 @@ class RNNModel(taggerModel):
         return train_op
 
     def preprocess_sequence_data(self, examples):
-        def featurize_windows(data, start, end, window_size = 1):
+        def featurize_windows(data, start, end, window_size = 0):
             """Uses the input sequences in @data to construct new windowed data points.
             """
             # 1/0
@@ -455,8 +467,16 @@ class RNNModel(taggerModel):
                     sentence_.append(sum(window, []))
                 ret.append((sentence_, labels))
             return ret
-
+        # print('examples before')
+        # print(examples)
+        # print('start')
+        # print(self.helper.START)
+        # print('end')
+        # print(self.helper.END)
         examples = featurize_windows(examples, self.helper.START, self.helper.END)
+        # print('examples end')
+        # print(examples)
+        # 1/0
         return pad_sequences(examples, self.max_length)
 
     def consolidate_predictions(self, examples_raw, examples, preds):
@@ -481,12 +501,16 @@ class RNNModel(taggerModel):
     def train_on_batch(self, sess, inputs_batch, labels_batch, mask_batch):
         feed = self.create_feed_dict(inputs_batch, labels_batch=labels_batch, mask_batch=mask_batch,
                                      dropout=Config.dropout)
+        # 1/0
         _, loss = sess.run([self.train_op, self.loss], feed_dict=feed)
+        1/0
         return loss
 
     def __init__(self, helper, config, pretrained_embeddings, report=None):
         super(RNNModel, self).__init__(helper, config, report)
         self.max_length = min(Config.max_length, helper.max_length)
+        # print('max length of notes')
+        # print(self.max_length)
         Config.max_length = self.max_length # Just in case people make a mistake.
         self.pretrained_embeddings = pretrained_embeddings
         # print('first')
@@ -563,7 +587,7 @@ def do_train(args):
     logging.getLogger().addHandler(handler)
 
     report = None #Report(Config.eval_output)
-
+    # 1/0
     with tf.Graph().as_default():
         logger.info("Building model...",)
         start = time.time()

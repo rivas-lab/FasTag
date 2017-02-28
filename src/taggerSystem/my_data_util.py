@@ -10,7 +10,9 @@ from collections import Counter
 import pprint
 
 import numpy as np
-from util import read_clinicalNote, one_hot, window_iterator, ConfusionMatrix, load_word_vector_mapping
+import sys
+sys.path.append('src/taggerSystem/')
+from my_util import read_clinicalNote, one_hot, window_iterator, ConfusionMatrix, load_word_vector_mapping
 from defs import LBLS, NONE, LMAP, NUM, UNK, EMBED_SIZE
 import time
 
@@ -158,15 +160,15 @@ class ModelHelper(object):
             tok2id, max_length = pickle.load(f)
         return cls(tok2id, max_length)
 
-def load_and_preprocess_data(args):
+def load_and_preprocess_data(data_train, data_valid):
     global ICDCODELIST
     global ICDCODEDICT
     start = time.time()
     logger.info("Loading training data...")
-    train, ICDCODELIST = read_clinicalNote(args.data_train, icdCodeList = ICDCODELIST)
+    train, ICDCODELIST = read_clinicalNote(data_train, icdCodeList = ICDCODELIST)
     logger.info("Done. Read %d notes", len(train))
     logger.info("Loading dev data...")
-    dev, ICDCODELIST = read_clinicalNote(args.data_dev, ICDCODELIST)
+    dev, ICDCODELIST = read_clinicalNote(data_valid, ICDCODELIST)
     logger.info("Done. Read %d notes", len(dev))
     logger.info("Total read time %f", time.time() - start)
     ICDCODEDICT = {code: i for i, (code, _) in enumerate(Counter(ICDCODELIST).most_common())}
@@ -211,12 +213,14 @@ def load_and_preprocess_data(args):
 # embeddings in the end is a list of lsits where each inner list is the word embedding of a word.
 # these can be accessed by tok2id[word] which returns the index into embeddings where the
 # corresponding word vecter exists.
-def load_embeddings(args, helper):
+def load_embeddings(vocabPath, wordVecPath, helper):
+    vocabStream = open(vocabPath, 'r')
+    wordVecStream = open(wordVecPath, 'r')
     embeddings = np.array(np.random.randn(len(helper.tok2id) + 1, EMBED_SIZE), dtype=np.float32)
     # print('tokens')
     # print(helper.tok2id)
     embeddings[0] = 0.
-    for word, vec in load_word_vector_mapping(args.vocab, args.vectors).items():
+    for word, vec in load_word_vector_mapping(vocabStream, wordVecStream).items():
         word = normalize(word)
         if word in helper.tok2id:
             # print(word)
@@ -224,6 +228,8 @@ def load_embeddings(args, helper):
     logger.info("Initialized embeddings.")
     # pp = pprint.PrettyPrinter(indent=4)
     # pp.pprint(embeddings)
+    vocabStream.close()
+    wordVecStream.close()
     return embeddings
 
 
