@@ -70,7 +70,8 @@ def read_clinicalNote(path, icdCodeList = []):
     @returns a list of examples [(tokens), (labels)]. @tokens and @labels are lists of string.
     """
     expectedHeader = ['', 'HADM_ID', 'SUBJECT_ID', 'ICD9_CODE', 'CHARTDATE', 'DESCRIPTION', 'TEXT']
-    codeIdx = 3
+    expectedHeader = ["","HADM_ID","SUBJECT_ID","ICD9_CODE","CHARTDATE","DESCRIPTION","TEXT","Level2ICD","TopLevelICD","V9"]
+    codeIdx = 7
     textIdx = -1
     ret = []
 

@@ -29,6 +29,7 @@ END_TOKEN = "</s>"
 MAXNLABELS = 3
 ICDCODELIST = []
 ICDCODEDICT = {}# this allows us to map codes to integer values.
+MAXNOTESLENGTH = 1000
 
 def casing(word):
     if len(word) == 0: return word
@@ -129,7 +130,7 @@ class ModelHelper(object):
         assert sorted(tok2id.items(), key=lambda t: t[1])[0][1] == 1
         logger.info("Built dictionary for %d features.", len(tok2id))
 
-        max_length = min(max(len(sentence) for sentence, _ in data), 2)
+        max_length = min(max(len(sentence) for sentence, _ in data), MAXNOTESLENGTH)
         n_labels = len(ICDCODEDICT.values())
         # print('printing token 2 id stuff')
         # print(tok2id)
