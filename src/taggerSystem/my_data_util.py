@@ -139,7 +139,7 @@ class ModelHelper(object):
         return cls(tok2id, max_length, n_labels)
 
     def save(self, path):
-        # Make sure the directory exists.
+        # Make sure the directory exists. 
         if not os.path.exists(path):
             os.makedirs(path)
         # Save the tok2id map.

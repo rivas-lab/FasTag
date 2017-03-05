@@ -77,7 +77,7 @@ def read_clinicalNote(path, icdCodeList = []):
     current_toks, current_lbls = [], []
     with open(path, 'r') as csvfile:
         csvReader = csv.reader(csvfile, delimiter=',', quotechar='\"')
-        assert next(csvReader) == expectedHeader #checking that the header matches what we expect.
+        assert next(csvReader) == expectedHeader #checking that the header matches what we expect. 
         for row in csvReader:
             ret.append((row[textIdx].split(), row[codeIdx].split('-')))
             icdCodeList.extend(row[codeIdx].split('-'))
