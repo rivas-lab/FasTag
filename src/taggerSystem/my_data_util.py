@@ -85,7 +85,7 @@ class ModelHelper(object):
     def vectorize_example(self, sentence, labels=None):
         # global ICDCODEDICT
         # ICDCODEDICT = 
-        sentence_ = [[self.tok2id.get(normalize(word), self.tok2id[UNK]), self.tok2id[P_CASE + casing(word)]] for word in sentence]
+        sentence_ = [[self.tok2id.get(normalize(word), self.tok2id[UNK]), self.tok2id[P_CASE + casing(word)]] for word in sentence[:self.max_length]]
         if labels:
             # print('old labels')
             # print(labels)
@@ -129,7 +129,7 @@ class ModelHelper(object):
         assert sorted(tok2id.items(), key=lambda t: t[1])[0][1] == 1
         logger.info("Built dictionary for %d features.", len(tok2id))
 
-        max_length = max(len(sentence) for sentence, _ in data)
+        max_length = min(max(len(sentence) for sentence, _ in data), 2)
         n_labels = len(ICDCODEDICT.values())
         # print('printing token 2 id stuff')
         # print(tok2id)
