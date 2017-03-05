@@ -71,8 +71,8 @@ def read_clinicalNote(path, icdCodeList = []):
     """
     expectedHeader = ['', 'HADM_ID', 'SUBJECT_ID', 'ICD9_CODE', 'CHARTDATE', 'DESCRIPTION', 'TEXT']
     expectedHeader = ["","HADM_ID","SUBJECT_ID","ICD9_CODE","CHARTDATE","DESCRIPTION","TEXT","Level2ICD","TopLevelICD","V9"]
-    codeIdx = 7
-    textIdx = -1
+    codeIdx = 9
+    textIdx = 6
     ret = []
 
     current_toks, current_lbls = [], []

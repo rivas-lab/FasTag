@@ -29,7 +29,7 @@ END_TOKEN = "</s>"
 MAXNLABELS = 3
 ICDCODELIST = []
 ICDCODEDICT = {}# this allows us to map codes to integer values.
-MAXNOTESLENGTH = 1000
+MAXNOTESLENGTH = 500
 
 def casing(word):
     if len(word) == 0: return word
@@ -88,15 +88,18 @@ class ModelHelper(object):
         # ICDCODEDICT = 
         sentence_ = [[self.tok2id.get(normalize(word), self.tok2id[UNK]), self.tok2id[P_CASE + casing(word)]] for word in sentence[:self.max_length]]
         if labels:
-            # print('old labels')
-            # print(labels)
+            #print('old labels')
+            #print(labels)
             labels_ = np.zeros(self.n_labels)
             labels_[[ICDCODEDICT[l] for l in labels]] = 1#turning labels_ into binary vector where
-            # print('new labels')
-            # print(labels_)
-            # print('*************************')
-            # print('')
-            # print('*************************')
+            #print('new labels')
+            #print(labels_)
+            #print(np.sum(labels_))
+            #print(len(labels_))
+            #print('*************************')
+            #print('')
+            #print('*************************')
+            #1/0
             # 1 represents presence of disease wtih that value in ICDCODEDICT
             # if len(labels_) >= self.max_n_labels:
             #     labels_ = labels_[:self.max_n_labels]
