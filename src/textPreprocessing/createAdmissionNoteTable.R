@@ -157,8 +157,8 @@ for (i in 1:nrow(icd9NotesDataTable)){
     icd9ListTop = c(icd9ListTop, icd9Top)
     icd9ListLevel2 = c(icd9ListLevel2, icd9)
     }
-  icd9NotesDataTable[i,9] = paste(icd9ListLevel2, collapse = '-')
-  icd9NotesDataTable[i,10] = paste(icd9ListTop, collapse = '-')
+  icd9NotesDataTable[i,9] = paste(unique(icd9ListLevel2), collapse = '-')
+  icd9NotesDataTable[i,10] = paste(unique(icd9ListTop), collapse = '-')
   #break;
 }
 
