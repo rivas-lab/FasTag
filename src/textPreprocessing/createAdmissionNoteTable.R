@@ -74,6 +74,8 @@ icd9NotesDataTable = right_join(x = diagnoses, y = notes, by = 'HADM_ID')
 # 2. ICD-9 Top Level Categories: process all ICD-9 codes and convert them to their parent categories (19)
 # https://en.wikipedia.org/wiki/List_of_ICD-9_codes
 #####################################################################################
+icd9NotesDataTable$Level2ICD = NA
+icd9NotesDataTable$TopLevelICD = NA
 for (i in 1:nrow(icd9NotesDataTable)){
   #print(i)
   icd9row = str_split(icd9NotesDataTable$ICD9_CODE[i], '-')[[1]]
@@ -157,8 +159,8 @@ for (i in 1:nrow(icd9NotesDataTable)){
     icd9ListTop = c(icd9ListTop, icd9Top)
     icd9ListLevel2 = c(icd9ListLevel2, icd9)
     }
-  icd9NotesDataTable[i,9] = paste(unique(icd9ListLevel2), collapse = '-')
-  icd9NotesDataTable[i,10] = paste(unique(icd9ListTop), collapse = '-')
+  icd9NotesDataTable[i,8] = paste(unique(icd9ListLevel2), collapse = '-')
+  icd9NotesDataTable[i,9] = paste(unique(icd9ListTop), collapse = '-')
   #break;
 }
 
