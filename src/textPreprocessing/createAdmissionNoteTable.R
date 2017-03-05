@@ -75,7 +75,7 @@ icd9NotesDataTable = right_join(x = diagnoses, y = notes, by = 'HADM_ID')
 # https://en.wikipedia.org/wiki/List_of_ICD-9_codes
 #####################################################################################
 for (i in 1:nrow(icd9NotesDataTable)){
-  print(i)
+  #print(i)
   icd9row = str_split(icd9NotesDataTable$ICD9_CODE[i], '-')[[1]]
   #icd9List = (sapply(icd9row, function(x) substr(x,1, 3),USE.NAMES = F))
   #icd9NotesDataTable[i,9] = paste(icd9List, collapse = '-')
