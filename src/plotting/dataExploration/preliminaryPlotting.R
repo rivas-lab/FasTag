@@ -36,6 +36,27 @@ ggsave(filename = 'src/plotting/dataExploration/icd9LabelDist.png')
 icd9CodeCounts = arrange(icd9CodeCounts, desc(count.Freq))
 icd9CodeCounts = mutate(icd9CodeCounts, cumsum(count.Freq)/sum(count.Freq))
 
+
+
+
+
+##################################################################################
+# Distribution of top level icd9 code counts
+##################################################################################
+allICD9Codes = sapply(icd9NotesDataTable$V9, function(x) strsplit(x, '-'))
+allICD9Codes = unlist(allICD9Codes)
+allICD9Codes = gsub(pattern = "cat:", replacement = '', allICD9Codes)
+allICD9Codes = as.integer(allICD9Codes)
+allICD9Codes = tbl_df(data.frame(code = allICD9Codes))
+
+ggplot(allICD9Codes, aes(code)) + geom_bar(col="#e1b16a",
+                                           fill="#ce5a57") + 
+  labs(x = "Top Level ICD-9 Codes", y = 'Count', title = 'ICD-9 Label Distribution') + 
+  theme_bw() + theme(plot.title = element_text(hjust = 0.5, size = 18), axis.title=element_text(size=18), 
+                     legend.text = element_text(size = 15), legend.title = element_text(size = 15)) +
+  scale_x_continuous(breaks = seq(0, 19, by = 1), expand = c(.01, .01))
+ggsave(filename = 'src/plotting/dataExploration/topLevelIcd9LabelDist.png')
+
 ##################################################################################
 # Distribution of icd9 codes per admission
 ##################################################################################
@@ -63,6 +84,32 @@ print(meanLineName)
 print(medLineName)
 
 
+
+##################################################################################
+# Distribution of top level icd9 codes per admission
+##################################################################################
+admissionICD9Count = select(icd9NotesDataTable, HADM_ID, V9)
+colnames(admissionICD9Count) = c('HADM_ID', 'ICD9_CODE')
+admissionICD9Count = mutate(group_by(admissionICD9Count, HADM_ID), icd9Count = length(strsplit(ICD9_CODE, '-')[[1]])) 
+admissionICD9Count
+meanLineName = paste('Mean(', toString(round(mean(admissionICD9Count$icd9Count), digits = 2)),')', sep = '')
+medLineName = paste('Median(', toString(round(median(admissionICD9Count$icd9Count), digits = 2)),')', sep = '')
+ggplot(data=admissionICD9Count, aes(icd9Count)) + geom_histogram(binwidth = 2, col="#e1b16a",
+                                                                 fill="#ce5a57",
+                                                                 alpha = .8) +
+  geom_vline(aes(xintercept = mean(icd9Count), colour="mean", alpha = 'mean', linetype = 'mean'), show.legend = TRUE) +
+  geom_vline(aes(xintercept = median(icd9Count), colour="median", alpha = 'median', 'linetype' = 'median'), show.legend = TRUE) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(title = 'ICD-9 Counts Per Admission', y = 'Count', x = 'Number of ICD-9 Codes') + 
+  scale_colour_manual(name="Legend", values = c("mean" = "#78a5a3", "median" = "#444c5c")) +
+  scale_linetype_manual(name="Legend", values = c("mean" = "dashed", "median" = "dashed")) +
+  scale_alpha_manual(name="Legend", values = c('mean' = 1, 'median' = 0.6)) +
+  theme_bw() + theme(plot.title = element_text(hjust = 0.5, size = 18), axis.title=element_text(size=18), 
+                     legend.text = element_text(size = 15), legend.title = element_text(size = 15))
+ggsave(filename = 'src/plotting/dataExploration/TopLevelicd9CountHist.png')
+print(meanLineName)
+print(medLineName)
 
 
 ##################################################################################
