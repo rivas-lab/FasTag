@@ -4,243 +4,1497 @@ Running on epoch 0
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.708766 
-running iteration 25 with error 0.592134 
-running iteration 50 with error 0.498013 
-running iteration 75 with error 0.496222 
-running iteration 100 with error 0.477900 
-running iteration 125 with error 0.467245 
-running iteration 150 with error 0.462870 
-average Error 0.519059 
-Total run time was 43.486892 
+running iteration 0 with error 0.688637 
+running iteration 25 with error 0.585622 
+running iteration 50 with error 0.494879 
+running iteration 75 with error 0.492361 
+running iteration 100 with error 0.477663 
+running iteration 125 with error 0.470327 
+running iteration 150 with error 0.462083 
+average Error 0.514527 
+Total run time was 50.793255 
 ***************************
 ***************************
 Running on epoch 1
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.480418 
-running iteration 25 with error 0.470096 
-running iteration 50 with error 0.462857 
-running iteration 75 with error 0.476209 
-running iteration 100 with error 0.452238 
-running iteration 125 with error 0.445673 
-running iteration 150 with error 0.441331 
-average Error 0.462731 
-Total run time was 42.929341 
+running iteration 0 with error 0.479544 
+running iteration 25 with error 0.471772 
+running iteration 50 with error 0.461981 
+running iteration 75 with error 0.475509 
+running iteration 100 with error 0.447843 
+running iteration 125 with error 0.448165 
+running iteration 150 with error 0.433496 
+average Error 0.459953 
+Total run time was 52.241847 
 ***************************
 ***************************
 Running on epoch 2
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.462339 
-running iteration 25 with error 0.451672 
-running iteration 50 with error 0.442723 
-running iteration 75 with error 0.462313 
-running iteration 100 with error 0.431483 
-running iteration 125 with error 0.430391 
-running iteration 150 with error 0.417639 
-average Error 0.444206 
-Total run time was 43.088047 
+running iteration 0 with error 0.455579 
+running iteration 25 with error 0.440955 
+running iteration 50 with error 0.432521 
+running iteration 75 with error 0.449567 
+running iteration 100 with error 0.425292 
+running iteration 125 with error 0.423682 
+running iteration 150 with error 0.407664 
+average Error 0.434630 
+Total run time was 50.353830 
 ***************************
 ***************************
 Running on epoch 3
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.449482 
-running iteration 25 with error 0.425820 
-running iteration 50 with error 0.420086 
-running iteration 75 with error 0.440682 
-running iteration 100 with error 0.416567 
-running iteration 125 with error 0.425376 
-running iteration 150 with error 0.399175 
-average Error 0.425276 
-Total run time was 43.235064 
+running iteration 0 with error 0.434851 
+running iteration 25 with error 0.418275 
+running iteration 50 with error 0.413667 
+running iteration 75 with error 0.435371 
+running iteration 100 with error 0.411933 
+running iteration 125 with error 0.413687 
+running iteration 150 with error 0.396111 
+average Error 0.419362 
+Total run time was 50.962733 
 ***************************
 ***************************
 Running on epoch 4
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.430282 
-running iteration 25 with error 0.411252 
-running iteration 50 with error 0.407858 
-running iteration 75 with error 0.435015 
-running iteration 100 with error 0.405938 
-running iteration 125 with error 0.411355 
-running iteration 150 with error 0.399110 
-average Error 0.415272 
-Total run time was 43.480360 
+running iteration 0 with error 0.422758 
+running iteration 25 with error 0.408373 
+running iteration 50 with error 0.405134 
+running iteration 75 with error 0.428708 
+running iteration 100 with error 0.402959 
+running iteration 125 with error 0.408258 
+running iteration 150 with error 0.390847 
+average Error 0.412352 
+Total run time was 50.552050 
 ***************************
 ***************************
 Running on epoch 5
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.424935 
-running iteration 25 with error 0.404499 
-running iteration 50 with error 0.402250 
-running iteration 75 with error 0.439061 
-running iteration 100 with error 0.400917 
-running iteration 125 with error 0.407694 
-running iteration 150 with error 0.387232 
-average Error 0.410682 
-Total run time was 43.026712 
+running iteration 0 with error 0.417898 
+running iteration 25 with error 0.406024 
+running iteration 50 with error 0.403627 
+running iteration 75 with error 0.449391 
+running iteration 100 with error 0.411984 
+running iteration 125 with error 0.414618 
+running iteration 150 with error 0.389179 
+average Error 0.418347 
+Total run time was 51.305995 
 ***************************
 ***************************
 Running on epoch 6
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.417202 
-running iteration 25 with error 0.400562 
-running iteration 50 with error 0.399630 
-running iteration 75 with error 0.425884 
-running iteration 100 with error 0.396433 
-running iteration 125 with error 0.405508 
-running iteration 150 with error 0.384078 
-average Error 0.406227 
-Total run time was 43.367033 
+running iteration 0 with error 0.416353 
+running iteration 25 with error 0.402017 
+running iteration 50 with error 0.400410 
+running iteration 75 with error 0.434837 
+running iteration 100 with error 0.399476 
+running iteration 125 with error 0.403564 
+running iteration 150 with error 0.387818 
+average Error 0.410784 
+Total run time was 51.475185 
 ***************************
 ***************************
 Running on epoch 7
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.413847 
-running iteration 25 with error 0.397844 
-running iteration 50 with error 0.397622 
-running iteration 75 with error 0.424565 
-running iteration 100 with error 0.394480 
-running iteration 125 with error 0.403784 
-running iteration 150 with error 0.381851 
-average Error 0.403986 
-Total run time was 44.268730 
+running iteration 0 with error 0.414013 
+running iteration 25 with error 0.402541 
+running iteration 50 with error 0.397905 
+running iteration 75 with error 0.425699 
+running iteration 100 with error 0.395778 
+running iteration 125 with error 0.402282 
+running iteration 150 with error 0.385360 
+average Error 0.404984 
+Total run time was 50.438286 
 ***************************
 ***************************
 Running on epoch 8
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.411507 
-running iteration 25 with error 0.395813 
-running iteration 50 with error 0.395759 
-running iteration 75 with error 0.422742 
-running iteration 100 with error 0.392803 
-running iteration 125 with error 0.401862 
-running iteration 150 with error 0.379886 
-average Error 0.402101 
-Total run time was 43.164953 
+running iteration 0 with error 0.412239 
+running iteration 25 with error 0.400008 
+running iteration 50 with error 0.396387 
+running iteration 75 with error 0.424221 
+running iteration 100 with error 0.393347 
+running iteration 125 with error 0.400671 
+running iteration 150 with error 0.384538 
+average Error 0.403532 
+Total run time was 51.985425 
 ***************************
 ***************************
 Running on epoch 9
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.409525 
-running iteration 25 with error 0.394254 
-running iteration 50 with error 0.393826 
-running iteration 75 with error 0.421158 
-running iteration 100 with error 0.391577 
-running iteration 125 with error 0.399652 
-running iteration 150 with error 0.378262 
-average Error 0.400361 
-Total run time was 44.418831 
+running iteration 0 with error 0.411036 
+running iteration 25 with error 0.409212 
+running iteration 50 with error 0.404355 
+running iteration 75 with error 0.430392 
+running iteration 100 with error 0.395543 
+running iteration 125 with error 0.401464 
+running iteration 150 with error 0.384614 
+average Error 0.406941 
+Total run time was 50.021141 
 ***************************
 ***************************
 Running on epoch 10
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.407884 
-running iteration 25 with error 0.392783 
-running iteration 50 with error 0.391945 
-running iteration 75 with error 0.419578 
-running iteration 100 with error 0.390150 
-running iteration 125 with error 0.397734 
-running iteration 150 with error 0.376103 
-average Error 0.398634 
-Total run time was 43.713074 
+running iteration 0 with error 0.411068 
+running iteration 25 with error 0.398221 
+running iteration 50 with error 0.395879 
+running iteration 75 with error 0.429515 
+running iteration 100 with error 0.393269 
+running iteration 125 with error 0.401502 
+running iteration 150 with error 0.383563 
+average Error 0.404376 
+Total run time was 50.061324 
 ***************************
 ***************************
 Running on epoch 11
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.406134 
-running iteration 25 with error 0.391014 
-running iteration 50 with error 0.390217 
-running iteration 75 with error 0.417914 
-running iteration 100 with error 0.388685 
-running iteration 125 with error 0.395544 
-running iteration 150 with error 0.373885 
-average Error 0.396730 
-Total run time was 43.684417 
+running iteration 0 with error 0.410725 
+running iteration 25 with error 0.398635 
+running iteration 50 with error 0.395331 
+running iteration 75 with error 0.422591 
+running iteration 100 with error 0.390525 
+running iteration 125 with error 0.398592 
+running iteration 150 with error 0.381597 
+average Error 0.401283 
+Total run time was 51.710757 
 ***************************
 ***************************
 Running on epoch 12
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.403594 
-running iteration 25 with error 0.389226 
-running iteration 50 with error 0.387033 
-running iteration 75 with error 0.415470 
-running iteration 100 with error 0.385927 
-running iteration 125 with error 0.392609 
-running iteration 150 with error 0.370899 
-average Error 0.394395 
-Total run time was 43.525110 
+running iteration 0 with error 0.408369 
+running iteration 25 with error 0.396000 
+running iteration 50 with error 0.393725 
+running iteration 75 with error 0.421234 
+running iteration 100 with error 0.389249 
+running iteration 125 with error 0.397762 
+running iteration 150 with error 0.380528 
+average Error 0.399949 
+Total run time was 51.212893 
 ***************************
 ***************************
 Running on epoch 13
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.400027 
-running iteration 25 with error 0.386031 
-running iteration 50 with error 0.383992 
-running iteration 75 with error 0.412335 
-running iteration 100 with error 0.383076 
-running iteration 125 with error 0.389079 
-running iteration 150 with error 0.366189 
-average Error 0.391189 
-Total run time was 43.556571 
+running iteration 0 with error 0.406979 
+running iteration 25 with error 0.395016 
+running iteration 50 with error 0.391887 
+running iteration 75 with error 0.421740 
+running iteration 100 with error 0.391669 
+running iteration 125 with error 0.397159 
+running iteration 150 with error 0.378799 
+average Error 0.399388 
+Total run time was 51.316075 
 ***************************
 ***************************
 Running on epoch 14
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.395061 
-running iteration 25 with error 0.381650 
-running iteration 50 with error 0.381442 
-running iteration 75 with error 0.408921 
-running iteration 100 with error 0.380218 
-running iteration 125 with error 0.385376 
-running iteration 150 with error 0.362419 
-average Error 0.387554 
-Total run time was 43.546850 
+running iteration 0 with error 0.406369 
+running iteration 25 with error 0.393913 
+running iteration 50 with error 0.390787 
+running iteration 75 with error 0.419063 
+running iteration 100 with error 0.387865 
+running iteration 125 with error 0.396329 
+running iteration 150 with error 0.378980 
+average Error 0.398302 
+Total run time was 52.448697 
 ***************************
 ***************************
 Running on epoch 15
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.390925 
-running iteration 25 with error 0.378227 
-running iteration 50 with error 0.378879 
-running iteration 75 with error 0.404227 
-running iteration 100 with error 0.377589 
-running iteration 125 with error 0.382058 
-running iteration 150 with error 0.359579 
-average Error 0.384080 
-Total run time was 43.076493 
+running iteration 0 with error 0.405380 
+running iteration 25 with error 0.393316 
+running iteration 50 with error 0.391029 
+running iteration 75 with error 0.418880 
+running iteration 100 with error 0.397528 
+running iteration 125 with error 0.400177 
+running iteration 150 with error 0.380632 
+average Error 0.401245 
+Total run time was 53.828850 
 ***************************
 ***************************
 Running on epoch 16
 ***************************
 ***************************
 ***************************
+running iteration 0 with error 0.405804 
+running iteration 25 with error 0.392581 
+running iteration 50 with error 0.390435 
+running iteration 75 with error 0.419329 
+running iteration 100 with error 0.388096 
+running iteration 125 with error 0.395521 
+running iteration 150 with error 0.376989 
+average Error 0.397422 
+Total run time was 52.575485 
+***************************
+***************************
+Running on epoch 17
+***************************
+***************************
+***************************
+running iteration 0 with error 0.403842 
+running iteration 25 with error 0.390492 
+running iteration 50 with error 0.388555 
+running iteration 75 with error 0.417725 
+running iteration 100 with error 0.386416 
+running iteration 125 with error 0.394032 
+running iteration 150 with error 0.375299 
+average Error 0.395853 
+Total run time was 51.550436 
+***************************
+***************************
+Running on epoch 18
+***************************
+***************************
+***************************
+running iteration 0 with error 0.402853 
+running iteration 25 with error 0.388996 
+running iteration 50 with error 0.387212 
+running iteration 75 with error 0.416392 
+running iteration 100 with error 0.385053 
+running iteration 125 with error 0.392695 
+running iteration 150 with error 0.373877 
+average Error 0.394606 
+Total run time was 52.112081 
+***************************
+***************************
+Running on epoch 19
+***************************
+***************************
+***************************
+running iteration 0 with error 0.401677 
+running iteration 25 with error 0.387461 
+running iteration 50 with error 0.385977 
+running iteration 75 with error 0.414938 
+running iteration 100 with error 0.383695 
+running iteration 125 with error 0.391234 
+running iteration 150 with error 0.372389 
+average Error 0.393321 
+Total run time was 50.659795 
+***************************
+***************************
+Running on epoch 20
+***************************
+***************************
+***************************
+running iteration 0 with error 0.400327 
+running iteration 25 with error 0.385756 
+running iteration 50 with error 0.384715 
+running iteration 75 with error 0.413399 
+running iteration 100 with error 0.382270 
+running iteration 125 with error 0.389785 
+running iteration 150 with error 0.370871 
+average Error 0.391946 
+Total run time was 51.252407 
+***************************
+***************************
+Running on epoch 21
+***************************
+***************************
+***************************
+running iteration 0 with error 0.398796 
+running iteration 25 with error 0.383996 
+running iteration 50 with error 0.383289 
+running iteration 75 with error 0.411812 
+running iteration 100 with error 0.380677 
+running iteration 125 with error 0.388345 
+running iteration 150 with error 0.369165 
+average Error 0.390478 
+Total run time was 51.664204 
+***************************
+***************************
+Running on epoch 22
+***************************
+***************************
+***************************
+running iteration 0 with error 0.397015 
+running iteration 25 with error 0.381920 
+running iteration 50 with error 0.381594 
+running iteration 75 with error 0.410032 
+running iteration 100 with error 0.379012 
+running iteration 125 with error 0.386568 
+running iteration 150 with error 0.367403 
+average Error 0.388753 
+Total run time was 52.056081 
+***************************
+***************************
+Running on epoch 23
+***************************
+***************************
+***************************
+running iteration 0 with error 0.395087 
+running iteration 25 with error 0.379933 
+running iteration 50 with error 0.379316 
+running iteration 75 with error 0.407712 
+running iteration 100 with error 0.377220 
+running iteration 125 with error 0.384670 
+running iteration 150 with error 0.367597 
+average Error 0.387200 
+Total run time was 52.979156 
+***************************
+***************************
+Running on epoch 24
+***************************
+***************************
+***************************
+running iteration 0 with error 0.395647 
+running iteration 25 with error 0.380044 
+running iteration 50 with error 0.378405 
+running iteration 75 with error 0.406839 
+running iteration 100 with error 0.375017 
+running iteration 125 with error 0.383721 
+running iteration 150 with error 0.363735 
+average Error 0.386099 
+Total run time was 52.113256 
+***************************
+***************************
+Running on epoch 25
+***************************
+***************************
+***************************
+running iteration 0 with error 0.391190 
+running iteration 25 with error 0.375906 
+running iteration 50 with error 0.375182 
+running iteration 75 with error 0.403492 
+running iteration 100 with error 0.373052 
+running iteration 125 with error 0.380903 
+running iteration 150 with error 0.360520 
+average Error 0.383110 
+Total run time was 51.700557 
+***************************
+***************************
+Running on epoch 26
+***************************
+***************************
+***************************
+running iteration 0 with error 0.387457 
+running iteration 25 with error 0.372730 
+running iteration 50 with error 0.372680 
+running iteration 75 with error 0.400885 
+running iteration 100 with error 0.371143 
+running iteration 125 with error 0.378145 
+running iteration 150 with error 0.357180 
+average Error 0.380161 
+Total run time was 50.786031 
+***************************
+***************************
+Running on epoch 27
+***************************
+***************************
+***************************
+running iteration 0 with error 0.384393 
+running iteration 25 with error 0.368974 
+running iteration 50 with error 0.369474 
+running iteration 75 with error 0.396730 
+running iteration 100 with error 0.367988 
+running iteration 125 with error 0.374017 
+running iteration 150 with error 0.353638 
+average Error 0.377004 
+Total run time was 50.803752 
+***************************
+***************************
+Running on epoch 28
+***************************
+***************************
+***************************
+running iteration 0 with error 0.381319 
+running iteration 25 with error 0.366229 
+running iteration 50 with error 0.365473 
+running iteration 75 with error 0.394103 
+running iteration 100 with error 0.365593 
+running iteration 125 with error 0.371478 
+running iteration 150 with error 0.350522 
+average Error 0.374086 
+Total run time was 50.743237 
+***************************
+***************************
+Running on epoch 29
+***************************
+***************************
+***************************
+running iteration 0 with error 0.378161 
+running iteration 25 with error 0.363843 
+running iteration 50 with error 0.361278 
+running iteration 75 with error 0.392242 
+running iteration 100 with error 0.363585 
+running iteration 125 with error 0.369131 
+running iteration 150 with error 0.348358 
+average Error 0.371477 
+Total run time was 51.479605 
+***************************
+***************************
+Running on epoch 30
+***************************
+***************************
+***************************
+running iteration 0 with error 0.375998 
+running iteration 25 with error 0.360794 
+running iteration 50 with error 0.357952 
+running iteration 75 with error 0.389205 
+running iteration 100 with error 0.361031 
+running iteration 125 with error 0.366848 
+running iteration 150 with error 0.346949 
+average Error 0.369281 
+Total run time was 51.438668 
+***************************
+***************************
+Running on epoch 31
+***************************
+***************************
+***************************
+running iteration 0 with error 0.374706 
+running iteration 25 with error 0.358624 
+running iteration 50 with error 0.354653 
+running iteration 75 with error 0.387349 
+running iteration 100 with error 0.359473 
+running iteration 125 with error 0.364673 
+running iteration 150 with error 0.344833 
+average Error 0.367203 
+Total run time was 51.185288 
+***************************
+***************************
+Running on epoch 32
+***************************
+***************************
+***************************
+running iteration 0 with error 0.372628 
+running iteration 25 with error 0.356465 
+running iteration 50 with error 0.352407 
+running iteration 75 with error 0.386072 
+running iteration 100 with error 0.357936 
+running iteration 125 with error 0.362642 
+running iteration 150 with error 0.343401 
+average Error 0.365480 
+Total run time was 51.151515 
+***************************
+***************************
+Running on epoch 33
+***************************
+***************************
+***************************
+running iteration 0 with error 0.371195 
+running iteration 25 with error 0.354671 
+running iteration 50 with error 0.349033 
+running iteration 75 with error 0.383614 
+running iteration 100 with error 0.357340 
+running iteration 125 with error 0.360228 
+running iteration 150 with error 0.341961 
+average Error 0.364045 
+Total run time was 51.368440 
+***************************
+***************************
+Running on epoch 34
+***************************
+***************************
+***************************
+running iteration 0 with error 0.369454 
+running iteration 25 with error 0.352986 
+running iteration 50 with error 0.346799 
+running iteration 75 with error 0.381114 
+running iteration 100 with error 0.354557 
+running iteration 125 with error 0.358373 
+running iteration 150 with error 0.340433 
+average Error 0.361695 
+Total run time was 50.846529 
+***************************
+***************************
+Running on epoch 35
+***************************
+***************************
+***************************
+running iteration 0 with error 0.367928 
+running iteration 25 with error 0.350995 
+running iteration 50 with error 0.344517 
+running iteration 75 with error 0.378931 
+running iteration 100 with error 0.352379 
+running iteration 125 with error 0.356312 
+running iteration 150 with error 0.338978 
+average Error 0.359752 
+Total run time was 51.191806 
+***************************
+***************************
+Running on epoch 36
+***************************
+***************************
+***************************
+running iteration 0 with error 0.366691 
+running iteration 25 with error 0.348945 
+running iteration 50 with error 0.342110 
+running iteration 75 with error 0.376336 
+running iteration 100 with error 0.351406 
+running iteration 125 with error 0.354469 
+running iteration 150 with error 0.337417 
+average Error 0.358069 
+Total run time was 51.658875 
+***************************
+***************************
+Running on epoch 37
+***************************
+***************************
+***************************
+running iteration 0 with error 0.365157 
+running iteration 25 with error 0.347521 
+running iteration 50 with error 0.339990 
+running iteration 75 with error 0.373986 
+running iteration 100 with error 0.349079 
+running iteration 125 with error 0.352460 
+running iteration 150 with error 0.335642 
+average Error 0.356457 
+Total run time was 50.394638 
+***************************
+***************************
+Running on epoch 38
+***************************
+***************************
+***************************
+running iteration 0 with error 0.363936 
+running iteration 25 with error 0.345835 
+running iteration 50 with error 0.338505 
+running iteration 75 with error 0.372070 
+running iteration 100 with error 0.347416 
+running iteration 125 with error 0.351109 
+running iteration 150 with error 0.334104 
+average Error 0.354733 
+Total run time was 52.063812 
+***************************
+***************************
+Running on epoch 39
+***************************
+***************************
+***************************
+running iteration 0 with error 0.362309 
+running iteration 25 with error 0.344475 
+running iteration 50 with error 0.336711 
+running iteration 75 with error 0.369373 
+running iteration 100 with error 0.345790 
+running iteration 125 with error 0.349039 
+running iteration 150 with error 0.332512 
+average Error 0.352839 
+Total run time was 51.506253 
+***************************
+***************************
+Running on epoch 40
+***************************
+***************************
+***************************
+running iteration 0 with error 0.360626 
+running iteration 25 with error 0.342674 
+running iteration 50 with error 0.335609 
+running iteration 75 with error 0.367200 
+running iteration 100 with error 0.343598 
+running iteration 125 with error 0.346997 
+running iteration 150 with error 0.332807 
+average Error 0.351787 
+Total run time was 50.433473 
+***************************
+***************************
+Running on epoch 41
+***************************
+***************************
+***************************
+running iteration 0 with error 0.359957 
+running iteration 25 with error 0.341029 
+running iteration 50 with error 0.333856 
+running iteration 75 with error 0.366704 
+running iteration 100 with error 0.341961 
+running iteration 125 with error 0.345777 
+running iteration 150 with error 0.329447 
+average Error 0.349965 
+Total run time was 51.000653 
+***************************
+***************************
+Running on epoch 42
+***************************
+***************************
+***************************
+running iteration 0 with error 0.357344 
+running iteration 25 with error 0.338728 
+running iteration 50 with error 0.332473 
+running iteration 75 with error 0.364123 
+running iteration 100 with error 0.340677 
+running iteration 125 with error 0.344800 
+running iteration 150 with error 0.328084 
+average Error 0.348029 
+Total run time was 50.468622 
+***************************
+***************************
+Running on epoch 43
+***************************
+***************************
+***************************
+running iteration 0 with error 0.355917 
+running iteration 25 with error 0.337512 
+running iteration 50 with error 0.329854 
+running iteration 75 with error 0.362426 
+running iteration 100 with error 0.339066 
+running iteration 125 with error 0.343217 
+running iteration 150 with error 0.326854 
+average Error 0.346349 
+Total run time was 50.204165 
+***************************
+***************************
+Running on epoch 44
+***************************
+***************************
+***************************
+running iteration 0 with error 0.354051 
+running iteration 25 with error 0.335372 
+running iteration 50 with error 0.328622 
+running iteration 75 with error 0.360487 
+running iteration 100 with error 0.337362 
+running iteration 125 with error 0.341680 
+running iteration 150 with error 0.343839 
+average Error 0.347203 
+Total run time was 50.349208 
+***************************
+***************************
+Running on epoch 45
+***************************
+***************************
+***************************
+running iteration 0 with error 0.361106 
+running iteration 25 with error 0.336006 
+running iteration 50 with error 0.329235 
+running iteration 75 with error 0.361018 
+running iteration 100 with error 0.336873 
+running iteration 125 with error 0.341080 
+running iteration 150 with error 0.326040 
+average Error 0.346151 
+Total run time was 50.274221 
+***************************
+***************************
+Running on epoch 46
+***************************
+***************************
+***************************
+running iteration 0 with error 0.351548 
+running iteration 25 with error 0.333604 
+running iteration 50 with error 0.325638 
+running iteration 75 with error 0.358625 
+running iteration 100 with error 0.334445 
+running iteration 125 with error 0.338748 
+running iteration 150 with error 0.324437 
+average Error 0.342152 
+Total run time was 49.361676 
+***************************
+***************************
+Running on epoch 47
+***************************
+***************************
+***************************
+running iteration 0 with error 0.350385 
+running iteration 25 with error 0.331320 
+running iteration 50 with error 0.324268 
+running iteration 75 with error 0.356825 
+running iteration 100 with error 0.333370 
+running iteration 125 with error 0.337237 
+running iteration 150 with error 0.322584 
+average Error 0.340294 
+Total run time was 51.836790 
+***************************
+***************************
+Running on epoch 48
+***************************
+***************************
+***************************
+running iteration 0 with error 0.349263 
+running iteration 25 with error 0.329238 
+running iteration 50 with error 0.322145 
+running iteration 75 with error 0.353735 
+running iteration 100 with error 0.331636 
+running iteration 125 with error 0.335667 
+running iteration 150 with error 0.320767 
+average Error 0.338534 
+Total run time was 48.934336 
+***************************
+***************************
+Running on epoch 49
+***************************
+***************************
+***************************
+running iteration 0 with error 0.347692 
+running iteration 25 with error 0.328023 
+running iteration 50 with error 0.320694 
+running iteration 75 with error 0.350976 
+running iteration 100 with error 0.330253 
+running iteration 125 with error 0.334247 
+running iteration 150 with error 0.319624 
+average Error 0.336892 
+Total run time was 49.442879 
+***************************
+***************************
+Running on epoch 50
+***************************
+***************************
+***************************
+running iteration 0 with error 0.345889 
+running iteration 25 with error 0.326286 
+running iteration 50 with error 0.319817 
+running iteration 75 with error 0.349183 
+running iteration 100 with error 0.329202 
+running iteration 125 with error 0.332798 
+running iteration 150 with error 0.318135 
+average Error 0.335508 
+Total run time was 49.035530 
+***************************
+***************************
+Running on epoch 51
+***************************
+***************************
+***************************
+running iteration 0 with error 0.344142 
+running iteration 25 with error 0.325185 
+running iteration 50 with error 0.318732 
+running iteration 75 with error 0.346699 
+running iteration 100 with error 0.328507 
+running iteration 125 with error 0.332482 
+running iteration 150 with error 0.318323 
+average Error 0.334298 
+Total run time was 49.795135 
+***************************
+***************************
+Running on epoch 52
+***************************
+***************************
+***************************
+running iteration 0 with error 0.343576 
+running iteration 25 with error 0.323852 
+running iteration 50 with error 0.316424 
+running iteration 75 with error 0.345199 
+running iteration 100 with error 0.325446 
+running iteration 125 with error 0.331816 
+running iteration 150 with error 0.324658 
+average Error 0.333271 
+Total run time was 49.425425 
+***************************
+***************************
+Running on epoch 53
+***************************
+***************************
+***************************
+running iteration 0 with error 0.347248 
+running iteration 25 with error 0.326631 
+running iteration 50 with error 0.315593 
+running iteration 75 with error 0.345087 
+running iteration 100 with error 0.324532 
+running iteration 125 with error 0.328370 
+running iteration 150 with error 0.316289 
+average Error 0.332842 
+Total run time was 49.300818 
+***************************
+***************************
+Running on epoch 54
+***************************
+***************************
+***************************
+running iteration 0 with error 0.339640 
+running iteration 25 with error 0.322492 
+running iteration 50 with error 0.313973 
+running iteration 75 with error 0.341450 
+running iteration 100 with error 0.327116 
+running iteration 125 with error 0.328094 
+running iteration 150 with error 0.313976 
+average Error 0.331154 
+Total run time was 49.010338 
+***************************
+***************************
+Running on epoch 55
+***************************
+***************************
+***************************
+running iteration 0 with error 0.339176 
+running iteration 25 with error 0.325529 
+running iteration 50 with error 0.315112 
+running iteration 75 with error 0.340686 
+running iteration 100 with error 0.321578 
+running iteration 125 with error 0.325524 
+running iteration 150 with error 0.314209 
+average Error 0.330168 
+Total run time was 48.905131 
+***************************
+***************************
+Running on epoch 56
+***************************
+***************************
+***************************
+running iteration 0 with error 0.335851 
+running iteration 25 with error 0.322432 
+running iteration 50 with error 0.311888 
+running iteration 75 with error 0.338770 
+running iteration 100 with error 0.324715 
+running iteration 125 with error 0.332703 
+running iteration 150 with error 0.314085 
+average Error 0.330660 
+Total run time was 49.263323 
+***************************
+***************************
+Running on epoch 57
+***************************
+***************************
+***************************
+running iteration 0 with error 0.335712 
+running iteration 25 with error 0.317686 
+running iteration 50 with error 0.311764 
+running iteration 75 with error 0.336711 
+running iteration 100 with error 0.323246 
+running iteration 125 with error 0.325859 
+running iteration 150 with error 0.309537 
+average Error 0.327171 
+Total run time was 48.715946 
+***************************
+***************************
+Running on epoch 58
+***************************
+***************************
+***************************
+running iteration 0 with error 0.332796 
+running iteration 25 with error 0.316414 
+running iteration 50 with error 0.309164 
+running iteration 75 with error 0.334748 
+running iteration 100 with error 0.321232 
+running iteration 125 with error 0.324144 
+running iteration 150 with error 0.308077 
+average Error 0.324797 
+Total run time was 49.403267 
+***************************
+***************************
+Running on epoch 59
+***************************
+***************************
+***************************
+running iteration 0 with error 0.331155 
+running iteration 25 with error 0.313776 
+running iteration 50 with error 0.307336 
+running iteration 75 with error 0.332821 
+running iteration 100 with error 0.320107 
+running iteration 125 with error 0.321683 
+running iteration 150 with error 0.307250 
+average Error 0.323025 
+Total run time was 48.948246 
+***************************
+***************************
+Running on epoch 60
+***************************
+***************************
+***************************
+running iteration 0 with error 0.329171 
+running iteration 25 with error 0.312639 
+running iteration 50 with error 0.306092 
+running iteration 75 with error 0.331211 
+running iteration 100 with error 0.317578 
+running iteration 125 with error 0.319121 
+running iteration 150 with error 0.305936 
+average Error 0.321356 
+Total run time was 49.009246 
+***************************
+***************************
+Running on epoch 61
+***************************
+***************************
+***************************
+running iteration 0 with error 0.327602 
+running iteration 25 with error 0.312090 
+running iteration 50 with error 0.304033 
+running iteration 75 with error 0.335425 
+running iteration 100 with error 0.317574 
+running iteration 125 with error 0.317637 
+running iteration 150 with error 0.305062 
+average Error 0.321063 
+Total run time was 49.312109 
+***************************
+***************************
+Running on epoch 62
+***************************
+***************************
+***************************
+running iteration 0 with error 0.325923 
+running iteration 25 with error 0.310869 
+running iteration 50 with error 0.302339 
+running iteration 75 with error 0.328698 
+running iteration 100 with error 0.315338 
+running iteration 125 with error 0.316209 
+running iteration 150 with error 0.303102 
+average Error 0.318678 
+Total run time was 48.562261 
+***************************
+***************************
+Running on epoch 63
+***************************
+***************************
+***************************
+running iteration 0 with error 0.324679 
+running iteration 25 with error 0.308681 
+running iteration 50 with error 0.301391 
+running iteration 75 with error 0.326469 
+running iteration 100 with error 0.313201 
+running iteration 125 with error 0.315472 
+running iteration 150 with error 0.301826 
+average Error 0.317093 
+Total run time was 49.370554 
+***************************
+***************************
+Running on epoch 64
+***************************
+***************************
+***************************
+running iteration 0 with error 0.323741 
+running iteration 25 with error 0.307660 
+running iteration 50 with error 0.316602 
+running iteration 75 with error 0.329692 
+running iteration 100 with error 0.314883 
+running iteration 125 with error 0.315370 
+running iteration 150 with error 0.301642 
+average Error 0.322313 
+Total run time was 49.568292 
+***************************
+***************************
+Running on epoch 65
+***************************
+***************************
+***************************
+running iteration 0 with error 0.325078 
+running iteration 25 with error 0.306592 
+running iteration 50 with error 0.300682 
+running iteration 75 with error 0.326625 
+running iteration 100 with error 0.310747 
+running iteration 125 with error 0.312929 
+running iteration 150 with error 0.299382 
+average Error 0.315684 
+Total run time was 49.646904 
+***************************
+***************************
+Running on epoch 66
+***************************
+***************************
+***************************
+running iteration 0 with error 0.322580 
+running iteration 25 with error 0.304678 
+running iteration 50 with error 0.297854 
+running iteration 75 with error 0.324282 
+running iteration 100 with error 0.309098 
+running iteration 125 with error 0.311093 
+running iteration 150 with error 0.298563 
+average Error 0.313628 
+Total run time was 49.470671 
+***************************
+***************************
+Running on epoch 67
+***************************
+***************************
+***************************
+running iteration 0 with error 0.319852 
+running iteration 25 with error 0.304172 
+running iteration 50 with error 0.296944 
+running iteration 75 with error 0.323354 
+running iteration 100 with error 0.308055 
+running iteration 125 with error 0.310488 
+running iteration 150 with error 0.298699 
+average Error 0.312389 
+Total run time was 52.665415 
+***************************
+***************************
+Running on epoch 68
+***************************
+***************************
+***************************
+running iteration 0 with error 0.318028 
+running iteration 25 with error 0.303061 
+running iteration 50 with error 0.296340 
+running iteration 75 with error 0.321118 
+running iteration 100 with error 0.306929 
+running iteration 125 with error 0.310307 
+running iteration 150 with error 0.297071 
+average Error 0.311624 
+Total run time was 51.658698 
+***************************
+***************************
+Running on epoch 69
+***************************
+***************************
+***************************
+running iteration 0 with error 0.316566 
+running iteration 25 with error 0.301647 
+running iteration 50 with error 0.295384 
+running iteration 75 with error 0.322224 
+running iteration 100 with error 0.307781 
+running iteration 125 with error 0.307696 
+running iteration 150 with error 0.295314 
+average Error 0.310883 
+Total run time was 51.079772 
+***************************
+***************************
+Running on epoch 70
+***************************
+***************************
+***************************
+running iteration 0 with error 0.317571 
+running iteration 25 with error 0.301570 
+running iteration 50 with error 0.296879 
+running iteration 75 with error 0.319329 
+running iteration 100 with error 0.306394 
+running iteration 125 with error 0.307175 
+running iteration 150 with error 0.294515 
+average Error 0.310000 
+Total run time was 51.435229 
+***************************
+***************************
+Running on epoch 71
+***************************
+***************************
+***************************
+running iteration 0 with error 0.316562 
+running iteration 25 with error 0.301656 
+running iteration 50 with error 0.294077 
+running iteration 75 with error 0.317990 
+running iteration 100 with error 0.303353 
+running iteration 125 with error 0.307363 
+running iteration 150 with error 0.292609 
+average Error 0.309258 
+Total run time was 51.725919 
+***************************
+***************************
+Running on epoch 72
+***************************
+***************************
+***************************
+running iteration 0 with error 0.312602 
+running iteration 25 with error 0.297106 
+running iteration 50 with error 0.294830 
+running iteration 75 with error 0.316254 
+running iteration 100 with error 0.304941 
+running iteration 125 with error 0.304125 
+running iteration 150 with error 0.291642 
+average Error 0.307893 
+Total run time was 51.295321 
+***************************
+***************************
+Running on epoch 73
+***************************
+***************************
+***************************
+running iteration 0 with error 0.310897 
+running iteration 25 with error 0.295314 
+running iteration 50 with error 0.293534 
+running iteration 75 with error 0.316669 
+running iteration 100 with error 0.303300 
+running iteration 125 with error 0.302351 
+running iteration 150 with error 0.291980 
+average Error 0.306031 
+Total run time was 49.916507 
+***************************
+***************************
+Running on epoch 74
+***************************
+***************************
+***************************
+running iteration 0 with error 0.310140 
+running iteration 25 with error 0.295460 
+running iteration 50 with error 0.290414 
+running iteration 75 with error 0.313547 
+running iteration 100 with error 0.302993 
+running iteration 125 with error 0.301923 
+running iteration 150 with error 0.290164 
+average Error 0.304536 
+Total run time was 51.188648 
+***************************
+***************************
+Running on epoch 75
+***************************
+***************************
+***************************
+running iteration 0 with error 0.309879 
+running iteration 25 with error 0.293593 
+running iteration 50 with error 0.289077 
+running iteration 75 with error 0.311853 
+running iteration 100 with error 0.300328 
+running iteration 125 with error 0.298930 
+running iteration 150 with error 0.288373 
+average Error 0.303274 
+Total run time was 51.800580 
+***************************
+***************************
+Running on epoch 76
+***************************
+***************************
+***************************
+running iteration 0 with error 0.319116 
+running iteration 25 with error 0.294306 
+running iteration 50 with error 0.288298 
+running iteration 75 with error 0.310324 
+running iteration 100 with error 0.298521 
+running iteration 125 with error 0.299677 
+running iteration 150 with error 0.288523 
+average Error 0.302915 
+Total run time was 51.064206 
+***************************
+***************************
+Running on epoch 77
+***************************
+***************************
+***************************
+running iteration 0 with error 0.307629 
+running iteration 25 with error 0.290927 
+running iteration 50 with error 0.286316 
+running iteration 75 with error 0.307691 
+running iteration 100 with error 0.296199 
+running iteration 125 with error 0.298960 
+running iteration 150 with error 0.285244 
+average Error 0.300494 
+Total run time was 50.243613 
+***************************
+***************************
+Running on epoch 78
+***************************
+***************************
+***************************
+running iteration 0 with error 0.304822 
+running iteration 25 with error 0.290967 
+running iteration 50 with error 0.286046 
+running iteration 75 with error 0.307412 
+running iteration 100 with error 0.294541 
+running iteration 125 with error 0.297391 
+running iteration 150 with error 0.293942 
+average Error 0.299514 
+Total run time was 49.583925 
+***************************
+***************************
+Running on epoch 79
+***************************
+***************************
+***************************
+running iteration 0 with error 0.309919 
+running iteration 25 with error 0.292740 
+running iteration 50 with error 0.286216 
+running iteration 75 with error 0.308160 
+running iteration 100 with error 0.292567 
+running iteration 125 with error 0.295114 
+running iteration 150 with error 0.283733 
+average Error 0.299405 
+Total run time was 50.482512 
+***************************
+***************************
+Running on epoch 80
+***************************
+***************************
+***************************
+running iteration 0 with error 0.305274 
+running iteration 25 with error 0.287478 
+running iteration 50 with error 0.284662 
+running iteration 75 with error 0.304898 
+running iteration 100 with error 0.291614 
+running iteration 125 with error 0.294782 
+running iteration 150 with error 0.284307 
+average Error 0.297551 
+Total run time was 49.026453 
+***************************
+***************************
+Running on epoch 81
+***************************
+***************************
+***************************
+running iteration 0 with error 0.302779 
+running iteration 25 with error 0.286974 
+running iteration 50 with error 0.283653 
+running iteration 75 with error 0.304583 
+running iteration 100 with error 0.291114 
+running iteration 125 with error 0.294401 
+running iteration 150 with error 0.286281 
+average Error 0.297481 
+Total run time was 49.324023 
+***************************
+***************************
+Running on epoch 82
+***************************
+***************************
+***************************
+running iteration 0 with error 0.303167 
+running iteration 25 with error 0.286262 
+running iteration 50 with error 0.283551 
+running iteration 75 with error 0.307070 
+running iteration 100 with error 0.293960 
+running iteration 125 with error 0.297089 
+running iteration 150 with error 0.283813 
+average Error 0.297708 
+Total run time was 48.634330 
+***************************
+***************************
+Running on epoch 83
+***************************
+***************************
+***************************
+running iteration 0 with error 0.307566 
+running iteration 25 with error 0.287100 
+running iteration 50 with error 0.280705 
+running iteration 75 with error 0.305186 
+running iteration 100 with error 0.289921 
+running iteration 125 with error 0.295399 
+running iteration 150 with error 0.281183 
+average Error 0.296270 
+Total run time was 49.287674 
+***************************
+***************************
+Running on epoch 84
+***************************
+***************************
+***************************
+running iteration 0 with error 0.305709 
+running iteration 25 with error 0.285584 
+running iteration 50 with error 0.281224 
+running iteration 75 with error 0.301362 
+running iteration 100 with error 0.287741 
+running iteration 125 with error 0.294846 
+running iteration 150 with error 0.279384 
+average Error 0.294620 
+Total run time was 49.323835 
+***************************
+***************************
+Running on epoch 85
+***************************
+***************************
+***************************
+running iteration 0 with error 0.301601 
+running iteration 25 with error 0.285462 
+running iteration 50 with error 0.280166 
+running iteration 75 with error 0.302149 
+running iteration 100 with error 0.286116 
+running iteration 125 with error 0.293289 
+running iteration 150 with error 0.279332 
+average Error 0.292947 
+Total run time was 49.358356 
+***************************
+***************************
+Running on epoch 86
+***************************
+***************************
+***************************
+running iteration 0 with error 0.298734 
+running iteration 25 with error 0.292573 
+running iteration 50 with error 0.278286 
+running iteration 75 with error 0.300945 
+running iteration 100 with error 0.284602 
+running iteration 125 with error 0.292233 
+running iteration 150 with error 0.278801 
+average Error 0.293765 
+Total run time was 48.976246 
+***************************
+***************************
+Running on epoch 87
+***************************
+***************************
+***************************
+running iteration 0 with error 0.300343 
+running iteration 25 with error 0.284964 
+running iteration 50 with error 0.279128 
+running iteration 75 with error 0.299151 
+running iteration 100 with error 0.284399 
+running iteration 125 with error 0.292268 
+running iteration 150 with error 0.278825 
+average Error 0.292120 
+Total run time was 48.959562 
+***************************
+***************************
+Running on epoch 88
+***************************
+***************************
+***************************
+running iteration 0 with error 0.295210 
+running iteration 25 with error 0.282703 
+running iteration 50 with error 0.279288 
+running iteration 75 with error 0.297211 
+running iteration 100 with error 0.283163 
+running iteration 125 with error 0.319910 
+running iteration 150 with error 0.294057 
+average Error 0.296639 
+Total run time was 48.973042 
+***************************
+***************************
+Running on epoch 89
+***************************
+***************************
+***************************
+running iteration 0 with error 0.310723 
+running iteration 25 with error 0.290393 
+running iteration 50 with error 0.285640 
+running iteration 75 with error 0.308855 
+running iteration 100 with error 0.291932 
+running iteration 125 with error 0.295296 
+running iteration 150 with error 0.281166 
+average Error 0.297872 
+Total run time was 49.316671 
+***************************
+***************************
+Running on epoch 90
+***************************
+***************************
+***************************
+running iteration 0 with error 0.296371 
+running iteration 25 with error 0.284744 
+running iteration 50 with error 0.278854 
+running iteration 75 with error 0.301828 
+running iteration 100 with error 0.286993 
+running iteration 125 with error 0.292500 
+running iteration 150 with error 0.280120 
+average Error 0.292148 
+Total run time was 48.845648 
+***************************
+***************************
+Running on epoch 91
+***************************
+***************************
+***************************
+running iteration 0 with error 0.294860 
+running iteration 25 with error 0.281809 
+running iteration 50 with error 0.275637 
+running iteration 75 with error 0.301701 
+running iteration 100 with error 0.284891 
+running iteration 125 with error 0.291449 
+running iteration 150 with error 0.277687 
+average Error 0.289910 
+Total run time was 48.516194 
+***************************
+***************************
+Running on epoch 92
+***************************
+***************************
+***************************
+running iteration 0 with error 0.294488 
+running iteration 25 with error 0.279251 
+running iteration 50 with error 0.273373 
+running iteration 75 with error 0.297734 
+running iteration 100 with error 0.282913 
+running iteration 125 with error 0.288518 
+running iteration 150 with error 0.277143 
+average Error 0.288182 
+Total run time was 48.868134 
+***************************
+***************************
+Running on epoch 93
+***************************
+***************************
+***************************
+running iteration 0 with error 0.292825 
+running iteration 25 with error 0.277269 
+running iteration 50 with error 0.272039 
+running iteration 75 with error 0.295571 
+running iteration 100 with error 0.283411 
+running iteration 125 with error 0.285242 
+running iteration 150 with error 0.277026 
+average Error 0.287115 
+Total run time was 50.124506 
+***************************
+***************************
+Running on epoch 94
+***************************
+***************************
+***************************
+running iteration 0 with error 0.292296 
+running iteration 25 with error 0.277867 
+running iteration 50 with error 0.270646 
+running iteration 75 with error 0.292920 
+running iteration 100 with error 0.283553 
+running iteration 125 with error 0.284534 
+running iteration 150 with error 0.272985 
+average Error 0.286421 
+Total run time was 48.482589 
+***************************
+***************************
+Running on epoch 95
+***************************
+***************************
+***************************
+running iteration 0 with error 0.292214 
+running iteration 25 with error 0.276736 
+running iteration 50 with error 0.274348 
+running iteration 75 with error 0.291468 
+running iteration 100 with error 0.280763 
+running iteration 125 with error 0.284980 
+running iteration 150 with error 0.272320 
+average Error 0.285609 
+Total run time was 49.010037 
+***************************
+***************************
+Running on epoch 96
+***************************
+***************************
+***************************
+running iteration 0 with error 0.288384 
+running iteration 25 with error 0.277432 
+running iteration 50 with error 0.278374 
+running iteration 75 with error 0.296002 
+running iteration 100 with error 0.277220 
+running iteration 125 with error 0.282176 
+running iteration 150 with error 0.271684 
+average Error 0.285413 
+Total run time was 47.776460 
+***************************
+***************************
+Running on epoch 97
+***************************
+***************************
+***************************
+running iteration 0 with error 0.286203 
+running iteration 25 with error 0.272533 
+running iteration 50 with error 0.271876 
+running iteration 75 with error 0.295050 
+running iteration 100 with error 0.278301 
+running iteration 125 with error 0.280527 
+running iteration 150 with error 0.269249 
+average Error 0.283502 
+Total run time was 48.962182 
+***************************
+***************************
+Running on epoch 98
+***************************
+***************************
+***************************
+running iteration 0 with error 0.284345 
+running iteration 25 with error 0.271192 
+running iteration 50 with error 0.268139 
+running iteration 75 with error 0.290793 
+running iteration 100 with error 0.277777 
+running iteration 125 with error 0.279440 
+running iteration 150 with error 0.268944 
+average Error 0.280887 
+Total run time was 48.774753 
+***************************
+***************************
+Running on epoch 99
+***************************
+***************************
+***************************
+running iteration 0 with error 0.285918 
+running iteration 25 with error 0.269200 
+running iteration 50 with error 0.266259 
+running iteration 75 with error 0.288520 
+running iteration 100 with error 0.275929 
+running iteration 125 with error 0.278731 
+running iteration 150 with error 0.267538 
+average Error 0.279503 
+Total run time was 48.438232 
