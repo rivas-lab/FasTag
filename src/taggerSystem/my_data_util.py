@@ -29,7 +29,7 @@ END_TOKEN = "</s>"
 MAXNLABELS = 3
 ICDCODELIST = []
 ICDCODEDICT = {}# this allows us to map codes to integer values.
-MAXNOTESLENGTH = 500
+MAXNOTESLENGTH = 1500
 
 def casing(word):
     if len(word) == 0: return word
