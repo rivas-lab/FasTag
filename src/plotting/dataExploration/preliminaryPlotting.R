@@ -36,6 +36,24 @@ ggsave(filename = 'src/plotting/dataExploration/icd9LabelDist.png')
 icd9CodeCounts = arrange(icd9CodeCounts, desc(count.Freq))
 icd9CodeCounts = mutate(icd9CodeCounts, cumsum(count.Freq)/sum(count.Freq))
 
+
+##################################################################################
+# Distribution of top level icd9 code counts
+##################################################################################
+allICD9Codes = sapply(icd9NotesDataTable$V9, function(x) strsplit(x, '-'))
+allICD9Codes = unlist(allICD9Codes)
+allICD9Codes = gsub(pattern = "cat:", replacement = '', allICD9Codes)
+allICD9Codes = as.integer(allICD9Codes)
+allICD9Codes = tbl_df(data.frame(code = allICD9Codes))
+
+ggplot(allICD9Codes, aes(code)) + geom_bar(col="#e1b16a",
+                                           fill="#ce5a57") + 
+  labs(x = "Top Level ICD-9 Codes", y = 'Count', title = 'ICD-9 Label Distribution') + 
+  theme_bw() + theme(plot.title = element_text(hjust = 0.5, size = 18), axis.title=element_text(size=18), 
+                     legend.text = element_text(size = 15), legend.title = element_text(size = 15)) +
+  scale_x_continuous(breaks = seq(0, 19, by = 1), expand = c(.01, .01))
+ggsave(filename = 'src/plotting/dataExploration/topLevelIcd9LabelDist.png')
+
 ##################################################################################
 # Distribution of icd9 codes per admission
 ##################################################################################
