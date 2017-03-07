@@ -230,6 +230,7 @@ def load_and_preprocess_data(data_train, data_valid):
     # 1/0
     # 1/0
     helper.icdDict = ICDCODEDICT
+    # print(ICDCODEDICT)
     return helper, train_data, dev_data, train, dev, xTrain, yTrain, xDev, yDev
 
 # embeddings are read in from wordvecter.txt where each line correpsonds to the word embedding

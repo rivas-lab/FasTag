@@ -69,7 +69,7 @@ def read_clinicalNote(path, icdCodeList = []):
     Reads a input stream @fstream (e.g. output of `open(fname, 'r')`).
     @returns a list of examples [(tokens), (labels)]. @tokens and @labels are lists of string.
     """
-    expectedHeader = ['', 'HADM_ID', 'SUBJECT_ID', 'ICD9_CODE', 'CHARTDATE', 'DESCRIPTION', 'TEXT']
+    expectedHeader = ['', 'HADM_ID', 'SUBJECT_ID', 'ICD9_CODE', 'CHARTDATE', 'DESCRIPTION', 'TEXT'] # old version.
     expectedHeader = ["","HADM_ID","SUBJECT_ID","ICD9_CODE","CHARTDATE","DESCRIPTION","TEXT","Level2ICD","TopLevelICD","V9"]
     codeIdx = 9
     textIdx = 6
@@ -77,9 +77,10 @@ def read_clinicalNote(path, icdCodeList = []):
 
     current_toks, current_lbls = [], []
     with open(path, 'r') as csvfile:
-        csvReader = csv.reader(csvfile, delimiter=',', quotechar='\"')
+        csvReader = csv.reader(csvfile, delimiter=',', quotechar='\"', skipinitialspace=True)
         assert next(csvReader) == expectedHeader #checking that the header matches what we expect. 
         for row in csvReader:
+            # print(row[codeIdx].split('-'))
             ret.append((row[textIdx].split(), row[codeIdx].split('-')))
             icdCodeList.extend(row[codeIdx].split('-'))
     return(ret, list(set(icdCodeList)))
