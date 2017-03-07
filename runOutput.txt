@@ -4,1497 +4,1597 @@ Running on epoch 0
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.688637 
-running iteration 25 with error 0.585622 
-running iteration 50 with error 0.494879 
-running iteration 75 with error 0.492361 
-running iteration 100 with error 0.477663 
-running iteration 125 with error 0.470327 
-running iteration 150 with error 0.462083 
-average Error 0.514527 
-Total run time was 50.793255 
+running iteration 0 with loss 0.696267 
+running iteration 25 with loss 0.607959 
+running iteration 50 with loss 0.501610 
+running iteration 75 with loss 0.493468 
+running iteration 100 with loss 0.471040 
+running iteration 125 with loss 0.460985 
+running iteration 150 with loss 0.477573 
+average loss 0.518536 
+test loss 0.478814 
+Total run time was 137.751312 
 ***************************
 ***************************
 Running on epoch 1
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.479544 
-running iteration 25 with error 0.471772 
-running iteration 50 with error 0.461981 
-running iteration 75 with error 0.475509 
-running iteration 100 with error 0.447843 
-running iteration 125 with error 0.448165 
-running iteration 150 with error 0.433496 
-average Error 0.459953 
-Total run time was 52.241847 
+running iteration 0 with loss 0.483146 
+running iteration 25 with loss 0.466070 
+running iteration 50 with loss 0.456713 
+running iteration 75 with loss 0.478262 
+running iteration 100 with loss 0.451200 
+running iteration 125 with loss 0.449805 
+running iteration 150 with loss 0.448074 
+average loss 0.462765 
+test loss 0.473275 
+Total run time was 136.885485 
 ***************************
 ***************************
 Running on epoch 2
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.455579 
-running iteration 25 with error 0.440955 
-running iteration 50 with error 0.432521 
-running iteration 75 with error 0.449567 
-running iteration 100 with error 0.425292 
-running iteration 125 with error 0.423682 
-running iteration 150 with error 0.407664 
-average Error 0.434630 
-Total run time was 50.353830 
+running iteration 0 with loss 0.468540 
+running iteration 25 with loss 0.460156 
+running iteration 50 with loss 0.454077 
+running iteration 75 with loss 0.476487 
+running iteration 100 with loss 0.448798 
+running iteration 125 with loss 0.448183 
+running iteration 150 with loss 0.444263 
+average loss 0.458005 
+test loss 0.471232 
+Total run time was 137.178242 
 ***************************
 ***************************
 Running on epoch 3
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.434851 
-running iteration 25 with error 0.418275 
-running iteration 50 with error 0.413667 
-running iteration 75 with error 0.435371 
-running iteration 100 with error 0.411933 
-running iteration 125 with error 0.413687 
-running iteration 150 with error 0.396111 
-average Error 0.419362 
-Total run time was 50.962733 
+running iteration 0 with loss 0.467583 
+running iteration 25 with loss 0.460011 
+running iteration 50 with loss 0.453136 
+running iteration 75 with loss 0.475222 
+running iteration 100 with loss 0.447681 
+running iteration 125 with loss 0.447607 
+running iteration 150 with loss 0.442350 
+average loss 0.456438 
+test loss 0.470191 
+Total run time was 137.586574 
 ***************************
 ***************************
 Running on epoch 4
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.422758 
-running iteration 25 with error 0.408373 
-running iteration 50 with error 0.405134 
-running iteration 75 with error 0.428708 
-running iteration 100 with error 0.402959 
-running iteration 125 with error 0.408258 
-running iteration 150 with error 0.390847 
-average Error 0.412352 
-Total run time was 50.552050 
+running iteration 0 with loss 0.465908 
+running iteration 25 with loss 0.458119 
+running iteration 50 with loss 0.451448 
+running iteration 75 with loss 0.476385 
+running iteration 100 with loss 0.446802 
+running iteration 125 with loss 0.444570 
+running iteration 150 with loss 0.444275 
+average loss 0.455886 
+test loss 0.470086 
+Total run time was 138.685065 
 ***************************
 ***************************
 Running on epoch 5
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.417898 
-running iteration 25 with error 0.406024 
-running iteration 50 with error 0.403627 
-running iteration 75 with error 0.449391 
-running iteration 100 with error 0.411984 
-running iteration 125 with error 0.414618 
-running iteration 150 with error 0.389179 
-average Error 0.418347 
-Total run time was 51.305995 
+running iteration 0 with loss 0.464551 
+running iteration 25 with loss 0.455082 
+running iteration 50 with loss 0.448375 
+running iteration 75 with loss 0.474026 
+running iteration 100 with loss 0.446831 
+running iteration 125 with loss 0.444362 
+running iteration 150 with loss 0.439868 
+average loss 0.454410 
+test loss 0.468610 
+Total run time was 136.459097 
 ***************************
 ***************************
 Running on epoch 6
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.416353 
-running iteration 25 with error 0.402017 
-running iteration 50 with error 0.400410 
-running iteration 75 with error 0.434837 
-running iteration 100 with error 0.399476 
-running iteration 125 with error 0.403564 
-running iteration 150 with error 0.387818 
-average Error 0.410784 
-Total run time was 51.475185 
+running iteration 0 with loss 0.464024 
+running iteration 25 with loss 0.456214 
+running iteration 50 with loss 0.449907 
+running iteration 75 with loss 0.472838 
+running iteration 100 with loss 0.443710 
+running iteration 125 with loss 0.440986 
+running iteration 150 with loss 0.437570 
+average loss 0.452746 
+test loss 0.467012 
+Total run time was 138.239579 
 ***************************
 ***************************
 Running on epoch 7
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.414013 
-running iteration 25 with error 0.402541 
-running iteration 50 with error 0.397905 
-running iteration 75 with error 0.425699 
-running iteration 100 with error 0.395778 
-running iteration 125 with error 0.402282 
-running iteration 150 with error 0.385360 
-average Error 0.404984 
-Total run time was 50.438286 
+running iteration 0 with loss 0.462463 
+running iteration 25 with loss 0.450181 
+running iteration 50 with loss 0.462499 
+running iteration 75 with loss 0.473449 
+running iteration 100 with loss 0.451863 
+running iteration 125 with loss 0.450160 
+running iteration 150 with loss 0.432797 
+average loss 0.457467 
+test loss 0.473507 
+Total run time was 136.263655 
 ***************************
 ***************************
 Running on epoch 8
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.412239 
-running iteration 25 with error 0.400008 
-running iteration 50 with error 0.396387 
-running iteration 75 with error 0.424221 
-running iteration 100 with error 0.393347 
-running iteration 125 with error 0.400671 
-running iteration 150 with error 0.384538 
-average Error 0.403532 
-Total run time was 51.985425 
+running iteration 0 with loss 0.452313 
+running iteration 25 with loss 0.442555 
+running iteration 50 with loss 0.436078 
+running iteration 75 with loss 0.468040 
+running iteration 100 with loss 0.428334 
+running iteration 125 with loss 0.424903 
+running iteration 150 with loss 0.418536 
+average loss 0.440874 
+test loss 0.466084 
+Total run time was 138.490093 
 ***************************
 ***************************
 Running on epoch 9
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.411036 
-running iteration 25 with error 0.409212 
-running iteration 50 with error 0.404355 
-running iteration 75 with error 0.430392 
-running iteration 100 with error 0.395543 
-running iteration 125 with error 0.401464 
-running iteration 150 with error 0.384614 
-average Error 0.406941 
-Total run time was 50.021141 
+running iteration 0 with loss 0.445209 
+running iteration 25 with loss 0.439690 
+running iteration 50 with loss 0.426822 
+running iteration 75 with loss 0.455764 
+running iteration 100 with loss 0.424235 
+running iteration 125 with loss 0.424446 
+running iteration 150 with loss 0.430132 
+average loss 0.434179 
+test loss 0.465002 
+Total run time was 138.252230 
 ***************************
 ***************************
 Running on epoch 10
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.411068 
-running iteration 25 with error 0.398221 
-running iteration 50 with error 0.395879 
-running iteration 75 with error 0.429515 
-running iteration 100 with error 0.393269 
-running iteration 125 with error 0.401502 
-running iteration 150 with error 0.383563 
-average Error 0.404376 
-Total run time was 50.061324 
+running iteration 0 with loss 0.440079 
+running iteration 25 with loss 0.436345 
+running iteration 50 with loss 0.423515 
+running iteration 75 with loss 0.456210 
+running iteration 100 with loss 0.421721 
+running iteration 125 with loss 0.421308 
+running iteration 150 with loss 0.408498 
+average loss 0.429250 
+test loss 0.456477 
+Total run time was 135.018869 
 ***************************
 ***************************
 Running on epoch 11
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.410725 
-running iteration 25 with error 0.398635 
-running iteration 50 with error 0.395331 
-running iteration 75 with error 0.422591 
-running iteration 100 with error 0.390525 
-running iteration 125 with error 0.398592 
-running iteration 150 with error 0.381597 
-average Error 0.401283 
-Total run time was 51.710757 
+running iteration 0 with loss 0.437249 
+running iteration 25 with loss 0.429824 
+running iteration 50 with loss 0.422561 
+running iteration 75 with loss 0.454838 
+running iteration 100 with loss 0.425260 
+running iteration 125 with loss 0.422155 
+running iteration 150 with loss 0.404683 
+average loss 0.431673 
+test loss 0.459699 
+Total run time was 132.287223 
 ***************************
 ***************************
 Running on epoch 12
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.408369 
-running iteration 25 with error 0.396000 
-running iteration 50 with error 0.393725 
-running iteration 75 with error 0.421234 
-running iteration 100 with error 0.389249 
-running iteration 125 with error 0.397762 
-running iteration 150 with error 0.380528 
-average Error 0.399949 
-Total run time was 51.212893 
+running iteration 0 with loss 0.430925 
+running iteration 25 with loss 0.424697 
+running iteration 50 with loss 0.424163 
+running iteration 75 with loss 0.455082 
+running iteration 100 with loss 0.432922 
+running iteration 125 with loss 0.429763 
+running iteration 150 with loss 0.420810 
+average loss 0.435218 
+test loss 0.467762 
+Total run time was 130.327534 
 ***************************
 ***************************
 Running on epoch 13
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.406979 
-running iteration 25 with error 0.395016 
-running iteration 50 with error 0.391887 
-running iteration 75 with error 0.421740 
-running iteration 100 with error 0.391669 
-running iteration 125 with error 0.397159 
-running iteration 150 with error 0.378799 
-average Error 0.399388 
-Total run time was 51.316075 
+running iteration 0 with loss 0.445023 
+running iteration 25 with loss 0.433507 
+running iteration 50 with loss 0.430799 
+running iteration 75 with loss 0.454058 
+running iteration 100 with loss 0.426378 
+running iteration 125 with loss 0.420657 
+running iteration 150 with loss 0.408979 
+average loss 0.432824 
+test loss 0.454806 
+Total run time was 130.406031 
 ***************************
 ***************************
 Running on epoch 14
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.406369 
-running iteration 25 with error 0.393913 
-running iteration 50 with error 0.390787 
-running iteration 75 with error 0.419063 
-running iteration 100 with error 0.387865 
-running iteration 125 with error 0.396329 
-running iteration 150 with error 0.378980 
-average Error 0.398302 
-Total run time was 52.448697 
+running iteration 0 with loss 0.432748 
+running iteration 25 with loss 0.424200 
+running iteration 50 with loss 0.428165 
+running iteration 75 with loss 0.455501 
+running iteration 100 with loss 0.421903 
+running iteration 125 with loss 0.420208 
+running iteration 150 with loss 0.411586 
+average loss 0.428644 
+test loss 0.455220 
+Total run time was 129.371490 
 ***************************
 ***************************
 Running on epoch 15
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.405380 
-running iteration 25 with error 0.393316 
-running iteration 50 with error 0.391029 
-running iteration 75 with error 0.418880 
-running iteration 100 with error 0.397528 
-running iteration 125 with error 0.400177 
-running iteration 150 with error 0.380632 
-average Error 0.401245 
-Total run time was 53.828850 
+running iteration 0 with loss 0.429857 
+running iteration 25 with loss 0.422318 
+running iteration 50 with loss 0.416982 
+running iteration 75 with loss 0.444929 
+running iteration 100 with loss 0.413053 
+running iteration 125 with loss 0.412665 
+running iteration 150 with loss 0.395062 
+average loss 0.420487 
+test loss 0.454481 
+Total run time was 129.969007 
 ***************************
 ***************************
 Running on epoch 16
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.405804 
-running iteration 25 with error 0.392581 
-running iteration 50 with error 0.390435 
-running iteration 75 with error 0.419329 
-running iteration 100 with error 0.388096 
-running iteration 125 with error 0.395521 
-running iteration 150 with error 0.376989 
-average Error 0.397422 
-Total run time was 52.575485 
+running iteration 0 with loss 0.421288 
+running iteration 25 with loss 0.415324 
+running iteration 50 with loss 0.415280 
+running iteration 75 with loss 0.440514 
+running iteration 100 with loss 0.415083 
+running iteration 125 with loss 0.409711 
+running iteration 150 with loss 0.405550 
+average loss 0.418182 
+test loss 0.461637 
+Total run time was 129.071340 
 ***************************
 ***************************
 Running on epoch 17
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.403842 
-running iteration 25 with error 0.390492 
-running iteration 50 with error 0.388555 
-running iteration 75 with error 0.417725 
-running iteration 100 with error 0.386416 
-running iteration 125 with error 0.394032 
-running iteration 150 with error 0.375299 
-average Error 0.395853 
-Total run time was 51.550436 
+running iteration 0 with loss 0.433207 
+running iteration 25 with loss 0.426210 
+running iteration 50 with loss 0.415369 
+running iteration 75 with loss 0.451177 
+running iteration 100 with loss 0.410280 
+running iteration 125 with loss 0.412138 
+running iteration 150 with loss 0.393749 
+average loss 0.420372 
+test loss 0.456398 
+Total run time was 129.265099 
 ***************************
 ***************************
 Running on epoch 18
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.402853 
-running iteration 25 with error 0.388996 
-running iteration 50 with error 0.387212 
-running iteration 75 with error 0.416392 
-running iteration 100 with error 0.385053 
-running iteration 125 with error 0.392695 
-running iteration 150 with error 0.373877 
-average Error 0.394606 
-Total run time was 52.112081 
+running iteration 0 with loss 0.424345 
+running iteration 25 with loss 0.413393 
+running iteration 50 with loss 0.408120 
+running iteration 75 with loss 0.439942 
+running iteration 100 with loss 0.401151 
+running iteration 125 with loss 0.401722 
+running iteration 150 with loss 0.386354 
+average loss 0.410873 
+test loss 0.449545 
+Total run time was 129.400439 
 ***************************
 ***************************
 Running on epoch 19
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.401677 
-running iteration 25 with error 0.387461 
-running iteration 50 with error 0.385977 
-running iteration 75 with error 0.414938 
-running iteration 100 with error 0.383695 
-running iteration 125 with error 0.391234 
-running iteration 150 with error 0.372389 
-average Error 0.393321 
-Total run time was 50.659795 
+running iteration 0 with loss 0.414091 
+running iteration 25 with loss 0.404874 
+running iteration 50 with loss 0.402353 
+running iteration 75 with loss 0.433856 
+running iteration 100 with loss 0.393674 
+running iteration 125 with loss 0.397740 
+running iteration 150 with loss 0.383181 
+average loss 0.405217 
+test loss 0.447443 
+Total run time was 129.816288 
 ***************************
 ***************************
 Running on epoch 20
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.400327 
-running iteration 25 with error 0.385756 
-running iteration 50 with error 0.384715 
-running iteration 75 with error 0.413399 
-running iteration 100 with error 0.382270 
-running iteration 125 with error 0.389785 
-running iteration 150 with error 0.370871 
-average Error 0.391946 
-Total run time was 51.252407 
+running iteration 0 with loss 0.409075 
+running iteration 25 with loss 0.402133 
+running iteration 50 with loss 0.399371 
+running iteration 75 with loss 0.431450 
+running iteration 100 with loss 0.393874 
+running iteration 125 with loss 0.396352 
+running iteration 150 with loss 0.381869 
+average loss 0.402714 
+test loss 0.446026 
+Total run time was 129.125523 
 ***************************
 ***************************
 Running on epoch 21
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.398796 
-running iteration 25 with error 0.383996 
-running iteration 50 with error 0.383289 
-running iteration 75 with error 0.411812 
-running iteration 100 with error 0.380677 
-running iteration 125 with error 0.388345 
-running iteration 150 with error 0.369165 
-average Error 0.390478 
-Total run time was 51.664204 
+running iteration 0 with loss 0.406262 
+running iteration 25 with loss 0.398010 
+running iteration 50 with loss 0.396323 
+running iteration 75 with loss 0.428056 
+running iteration 100 with loss 0.389498 
+running iteration 125 with loss 0.394637 
+running iteration 150 with loss 0.377767 
+average loss 0.399990 
+test loss 0.444602 
+Total run time was 128.509399 
 ***************************
 ***************************
 Running on epoch 22
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.397015 
-running iteration 25 with error 0.381920 
-running iteration 50 with error 0.381594 
-running iteration 75 with error 0.410032 
-running iteration 100 with error 0.379012 
-running iteration 125 with error 0.386568 
-running iteration 150 with error 0.367403 
-average Error 0.388753 
-Total run time was 52.056081 
+running iteration 0 with loss 0.403891 
+running iteration 25 with loss 0.394862 
+running iteration 50 with loss 0.393578 
+running iteration 75 with loss 0.424239 
+running iteration 100 with loss 0.387260 
+running iteration 125 with loss 0.392063 
+running iteration 150 with loss 0.375545 
+average loss 0.397911 
+test loss 0.444365 
+Total run time was 128.967876 
 ***************************
 ***************************
 Running on epoch 23
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.395087 
-running iteration 25 with error 0.379933 
-running iteration 50 with error 0.379316 
-running iteration 75 with error 0.407712 
-running iteration 100 with error 0.377220 
-running iteration 125 with error 0.384670 
-running iteration 150 with error 0.367597 
-average Error 0.387200 
-Total run time was 52.979156 
+running iteration 0 with loss 0.401193 
+running iteration 25 with loss 0.391016 
+running iteration 50 with loss 0.393325 
+running iteration 75 with loss 0.424523 
+running iteration 100 with loss 0.387969 
+running iteration 125 with loss 0.391828 
+running iteration 150 with loss 0.374862 
+average loss 0.397265 
+test loss 0.444226 
+Total run time was 129.227450 
 ***************************
 ***************************
 Running on epoch 24
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.395647 
-running iteration 25 with error 0.380044 
-running iteration 50 with error 0.378405 
-running iteration 75 with error 0.406839 
-running iteration 100 with error 0.375017 
-running iteration 125 with error 0.383721 
-running iteration 150 with error 0.363735 
-average Error 0.386099 
-Total run time was 52.113256 
+running iteration 0 with loss 0.400220 
+running iteration 25 with loss 0.391227 
+running iteration 50 with loss 0.387471 
+running iteration 75 with loss 0.419491 
+running iteration 100 with loss 0.386047 
+running iteration 125 with loss 0.391845 
+running iteration 150 with loss 0.373692 
+average loss 0.395334 
+test loss 0.444606 
+Total run time was 129.705413 
 ***************************
 ***************************
 Running on epoch 25
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.391190 
-running iteration 25 with error 0.375906 
-running iteration 50 with error 0.375182 
-running iteration 75 with error 0.403492 
-running iteration 100 with error 0.373052 
-running iteration 125 with error 0.380903 
-running iteration 150 with error 0.360520 
-average Error 0.383110 
-Total run time was 51.700557 
+running iteration 0 with loss 0.400418 
+running iteration 25 with loss 0.389926 
+running iteration 50 with loss 0.386206 
+running iteration 75 with loss 0.417687 
+running iteration 100 with loss 0.384641 
+running iteration 125 with loss 0.389576 
+running iteration 150 with loss 0.372922 
+average loss 0.393430 
+test loss 0.444401 
+Total run time was 129.940166 
 ***************************
 ***************************
 Running on epoch 26
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.387457 
-running iteration 25 with error 0.372730 
-running iteration 50 with error 0.372680 
-running iteration 75 with error 0.400885 
-running iteration 100 with error 0.371143 
-running iteration 125 with error 0.378145 
-running iteration 150 with error 0.357180 
-average Error 0.380161 
-Total run time was 50.786031 
+running iteration 0 with loss 0.396604 
+running iteration 25 with loss 0.388406 
+running iteration 50 with loss 0.385198 
+running iteration 75 with loss 0.417242 
+running iteration 100 with loss 0.394109 
+running iteration 125 with loss 0.397629 
+running iteration 150 with loss 0.372002 
+average loss 0.395034 
+test loss 0.444379 
+Total run time was 128.866333 
 ***************************
 ***************************
 Running on epoch 27
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.384393 
-running iteration 25 with error 0.368974 
-running iteration 50 with error 0.369474 
-running iteration 75 with error 0.396730 
-running iteration 100 with error 0.367988 
-running iteration 125 with error 0.374017 
-running iteration 150 with error 0.353638 
-average Error 0.377004 
-Total run time was 50.803752 
+running iteration 0 with loss 0.397842 
+running iteration 25 with loss 0.387099 
+running iteration 50 with loss 0.383680 
+running iteration 75 with loss 0.412700 
+running iteration 100 with loss 0.383630 
+running iteration 125 with loss 0.389890 
+running iteration 150 with loss 0.369809 
+average loss 0.391272 
+test loss 0.444432 
+Total run time was 128.850497 
 ***************************
 ***************************
 Running on epoch 28
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.381319 
-running iteration 25 with error 0.366229 
-running iteration 50 with error 0.365473 
-running iteration 75 with error 0.394103 
-running iteration 100 with error 0.365593 
-running iteration 125 with error 0.371478 
-running iteration 150 with error 0.350522 
-average Error 0.374086 
-Total run time was 50.743237 
+running iteration 0 with loss 0.394556 
+running iteration 25 with loss 0.388607 
+running iteration 50 with loss 0.381472 
+running iteration 75 with loss 0.409557 
+running iteration 100 with loss 0.382271 
+running iteration 125 with loss 0.384502 
+running iteration 150 with loss 0.367808 
+average loss 0.389643 
+test loss 0.445667 
+Total run time was 131.101474 
 ***************************
 ***************************
 Running on epoch 29
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.378161 
-running iteration 25 with error 0.363843 
-running iteration 50 with error 0.361278 
-running iteration 75 with error 0.392242 
-running iteration 100 with error 0.363585 
-running iteration 125 with error 0.369131 
-running iteration 150 with error 0.348358 
-average Error 0.371477 
-Total run time was 51.479605 
+running iteration 0 with loss 0.393920 
+running iteration 25 with loss 0.383842 
+running iteration 50 with loss 0.379416 
+running iteration 75 with loss 0.407684 
+running iteration 100 with loss 0.379007 
+running iteration 125 with loss 0.383058 
+running iteration 150 with loss 0.366988 
+average loss 0.387740 
+test loss 0.444807 
+Total run time was 129.946176 
 ***************************
 ***************************
 Running on epoch 30
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.375998 
-running iteration 25 with error 0.360794 
-running iteration 50 with error 0.357952 
-running iteration 75 with error 0.389205 
-running iteration 100 with error 0.361031 
-running iteration 125 with error 0.366848 
-running iteration 150 with error 0.346949 
-average Error 0.369281 
-Total run time was 51.438668 
+running iteration 0 with loss 0.392131 
+running iteration 25 with loss 0.382994 
+running iteration 50 with loss 0.378603 
+running iteration 75 with loss 0.408893 
+running iteration 100 with loss 0.380139 
+running iteration 125 with loss 0.383845 
+running iteration 150 with loss 0.368168 
+average loss 0.386908 
+test loss 0.444928 
+Total run time was 131.045225 
 ***************************
 ***************************
 Running on epoch 31
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.374706 
-running iteration 25 with error 0.358624 
-running iteration 50 with error 0.354653 
-running iteration 75 with error 0.387349 
-running iteration 100 with error 0.359473 
-running iteration 125 with error 0.364673 
-running iteration 150 with error 0.344833 
-average Error 0.367203 
-Total run time was 51.185288 
+running iteration 0 with loss 0.391843 
+running iteration 25 with loss 0.382873 
+running iteration 50 with loss 0.376705 
+running iteration 75 with loss 0.408278 
+running iteration 100 with loss 0.376825 
+running iteration 125 with loss 0.380896 
+running iteration 150 with loss 0.364058 
+average loss 0.385241 
+test loss 0.445837 
+Total run time was 129.485746 
 ***************************
 ***************************
 Running on epoch 32
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.372628 
-running iteration 25 with error 0.356465 
-running iteration 50 with error 0.352407 
-running iteration 75 with error 0.386072 
-running iteration 100 with error 0.357936 
-running iteration 125 with error 0.362642 
-running iteration 150 with error 0.343401 
-average Error 0.365480 
-Total run time was 51.151515 
+running iteration 0 with loss 0.389638 
+running iteration 25 with loss 0.381185 
+running iteration 50 with loss 0.374904 
+running iteration 75 with loss 0.404698 
+running iteration 100 with loss 0.375116 
+running iteration 125 with loss 0.379754 
+running iteration 150 with loss 0.377306 
+average loss 0.384631 
+test loss 0.448545 
+Total run time was 130.635506 
 ***************************
 ***************************
 Running on epoch 33
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.371195 
-running iteration 25 with error 0.354671 
-running iteration 50 with error 0.349033 
-running iteration 75 with error 0.383614 
-running iteration 100 with error 0.357340 
-running iteration 125 with error 0.360228 
-running iteration 150 with error 0.341961 
-average Error 0.364045 
-Total run time was 51.368440 
+running iteration 0 with loss 0.393683 
+running iteration 25 with loss 0.379867 
+running iteration 50 with loss 0.377454 
+running iteration 75 with loss 0.402333 
+running iteration 100 with loss 0.373919 
+running iteration 125 with loss 0.378613 
+running iteration 150 with loss 0.364586 
+average loss 0.382881 
+test loss 0.448339 
+Total run time was 132.299885 
 ***************************
 ***************************
 Running on epoch 34
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.369454 
-running iteration 25 with error 0.352986 
-running iteration 50 with error 0.346799 
-running iteration 75 with error 0.381114 
-running iteration 100 with error 0.354557 
-running iteration 125 with error 0.358373 
-running iteration 150 with error 0.340433 
-average Error 0.361695 
-Total run time was 50.846529 
+running iteration 0 with loss 0.387718 
+running iteration 25 with loss 0.380236 
+running iteration 50 with loss 0.377156 
+running iteration 75 with loss 0.406448 
+running iteration 100 with loss 0.372711 
+running iteration 125 with loss 0.377630 
+running iteration 150 with loss 0.362066 
+average loss 0.382661 
+test loss 0.448615 
+Total run time was 130.026338 
 ***************************
 ***************************
 Running on epoch 35
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.367928 
-running iteration 25 with error 0.350995 
-running iteration 50 with error 0.344517 
-running iteration 75 with error 0.378931 
-running iteration 100 with error 0.352379 
-running iteration 125 with error 0.356312 
-running iteration 150 with error 0.338978 
-average Error 0.359752 
-Total run time was 51.191806 
+running iteration 0 with loss 0.385556 
+running iteration 25 with loss 0.377978 
+running iteration 50 with loss 0.370340 
+running iteration 75 with loss 0.399864 
+running iteration 100 with loss 0.372635 
+running iteration 125 with loss 0.376754 
+running iteration 150 with loss 0.360349 
+average loss 0.379726 
+test loss 0.449585 
+Total run time was 130.238400 
 ***************************
 ***************************
 Running on epoch 36
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.366691 
-running iteration 25 with error 0.348945 
-running iteration 50 with error 0.342110 
-running iteration 75 with error 0.376336 
-running iteration 100 with error 0.351406 
-running iteration 125 with error 0.354469 
-running iteration 150 with error 0.337417 
-average Error 0.358069 
-Total run time was 51.658875 
+running iteration 0 with loss 0.384207 
+running iteration 25 with loss 0.377544 
+running iteration 50 with loss 0.368570 
+running iteration 75 with loss 0.400067 
+running iteration 100 with loss 0.371232 
+running iteration 125 with loss 0.375918 
+running iteration 150 with loss 0.360112 
+average loss 0.378614 
+test loss 0.451733 
+Total run time was 130.551517 
 ***************************
 ***************************
 Running on epoch 37
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.365157 
-running iteration 25 with error 0.347521 
-running iteration 50 with error 0.339990 
-running iteration 75 with error 0.373986 
-running iteration 100 with error 0.349079 
-running iteration 125 with error 0.352460 
-running iteration 150 with error 0.335642 
-average Error 0.356457 
-Total run time was 50.394638 
+running iteration 0 with loss 0.382804 
+running iteration 25 with loss 0.376332 
+running iteration 50 with loss 0.370300 
+running iteration 75 with loss 0.395756 
+running iteration 100 with loss 0.373706 
+running iteration 125 with loss 0.378057 
+running iteration 150 with loss 0.359899 
+average loss 0.379873 
+test loss 0.453867 
+Total run time was 129.513458 
 ***************************
 ***************************
 Running on epoch 38
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.363936 
-running iteration 25 with error 0.345835 
-running iteration 50 with error 0.338505 
-running iteration 75 with error 0.372070 
-running iteration 100 with error 0.347416 
-running iteration 125 with error 0.351109 
-running iteration 150 with error 0.334104 
-average Error 0.354733 
-Total run time was 52.063812 
+running iteration 0 with loss 0.385235 
+running iteration 25 with loss 0.376130 
+running iteration 50 with loss 0.370963 
+running iteration 75 with loss 0.394014 
+running iteration 100 with loss 0.370312 
+running iteration 125 with loss 0.374254 
+running iteration 150 with loss 0.357221 
+average loss 0.376617 
+test loss 0.453614 
+Total run time was 129.475436 
 ***************************
 ***************************
 Running on epoch 39
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.362309 
-running iteration 25 with error 0.344475 
-running iteration 50 with error 0.336711 
-running iteration 75 with error 0.369373 
-running iteration 100 with error 0.345790 
-running iteration 125 with error 0.349039 
-running iteration 150 with error 0.332512 
-average Error 0.352839 
-Total run time was 51.506253 
+running iteration 0 with loss 0.380242 
+running iteration 25 with loss 0.373173 
+running iteration 50 with loss 0.363948 
+running iteration 75 with loss 0.390035 
+running iteration 100 with loss 0.382787 
+running iteration 125 with loss 0.380171 
+running iteration 150 with loss 0.357787 
+average loss 0.377728 
+test loss 0.451721 
+Total run time was 131.449339 
 ***************************
 ***************************
 Running on epoch 40
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.360626 
-running iteration 25 with error 0.342674 
-running iteration 50 with error 0.335609 
-running iteration 75 with error 0.367200 
-running iteration 100 with error 0.343598 
-running iteration 125 with error 0.346997 
-running iteration 150 with error 0.332807 
-average Error 0.351787 
-Total run time was 50.433473 
+running iteration 0 with loss 0.382580 
+running iteration 25 with loss 0.374182 
+running iteration 50 with loss 0.367402 
+running iteration 75 with loss 0.397108 
+running iteration 100 with loss 0.369771 
+running iteration 125 with loss 0.373463 
+running iteration 150 with loss 0.355530 
+average loss 0.376010 
+test loss 0.453587 
+Total run time was 129.272883 
 ***************************
 ***************************
 Running on epoch 41
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.359957 
-running iteration 25 with error 0.341029 
-running iteration 50 with error 0.333856 
-running iteration 75 with error 0.366704 
-running iteration 100 with error 0.341961 
-running iteration 125 with error 0.345777 
-running iteration 150 with error 0.329447 
-average Error 0.349965 
-Total run time was 51.000653 
+running iteration 0 with loss 0.378655 
+running iteration 25 with loss 0.373784 
+running iteration 50 with loss 0.361933 
+running iteration 75 with loss 0.392670 
+running iteration 100 with loss 0.368496 
+running iteration 125 with loss 0.372161 
+running iteration 150 with loss 0.354608 
+average loss 0.373943 
+test loss 0.454313 
+Total run time was 132.992468 
 ***************************
 ***************************
 Running on epoch 42
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.357344 
-running iteration 25 with error 0.338728 
-running iteration 50 with error 0.332473 
-running iteration 75 with error 0.364123 
-running iteration 100 with error 0.340677 
-running iteration 125 with error 0.344800 
-running iteration 150 with error 0.328084 
-average Error 0.348029 
-Total run time was 50.468622 
+running iteration 0 with loss 0.379020 
+running iteration 25 with loss 0.372512 
+running iteration 50 with loss 0.360447 
+running iteration 75 with loss 0.389613 
+running iteration 100 with loss 0.366294 
+running iteration 125 with loss 0.371010 
+running iteration 150 with loss 0.354188 
+average loss 0.372698 
+test loss 0.453802 
+Total run time was 130.473022 
 ***************************
 ***************************
 Running on epoch 43
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.355917 
-running iteration 25 with error 0.337512 
-running iteration 50 with error 0.329854 
-running iteration 75 with error 0.362426 
-running iteration 100 with error 0.339066 
-running iteration 125 with error 0.343217 
-running iteration 150 with error 0.326854 
-average Error 0.346349 
-Total run time was 50.204165 
+running iteration 0 with loss 0.375782 
+running iteration 25 with loss 0.371539 
+running iteration 50 with loss 0.360256 
+running iteration 75 with loss 0.388529 
+running iteration 100 with loss 0.367545 
+running iteration 125 with loss 0.370047 
+running iteration 150 with loss 0.353308 
+average loss 0.371671 
+test loss 0.454864 
+Total run time was 128.942034 
 ***************************
 ***************************
 Running on epoch 44
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.354051 
-running iteration 25 with error 0.335372 
-running iteration 50 with error 0.328622 
-running iteration 75 with error 0.360487 
-running iteration 100 with error 0.337362 
-running iteration 125 with error 0.341680 
-running iteration 150 with error 0.343839 
-average Error 0.347203 
-Total run time was 50.349208 
+running iteration 0 with loss 0.375038 
+running iteration 25 with loss 0.372436 
+running iteration 50 with loss 0.367333 
+running iteration 75 with loss 0.385466 
+running iteration 100 with loss 0.364107 
+running iteration 125 with loss 0.368542 
+running iteration 150 with loss 0.352172 
+average loss 0.371365 
+test loss 0.455996 
+Total run time was 130.958898 
 ***************************
 ***************************
 Running on epoch 45
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.361106 
-running iteration 25 with error 0.336006 
-running iteration 50 with error 0.329235 
-running iteration 75 with error 0.361018 
-running iteration 100 with error 0.336873 
-running iteration 125 with error 0.341080 
-running iteration 150 with error 0.326040 
-average Error 0.346151 
-Total run time was 50.274221 
+running iteration 0 with loss 0.373231 
+running iteration 25 with loss 0.369201 
+running iteration 50 with loss 0.358090 
+running iteration 75 with loss 0.383661 
+running iteration 100 with loss 0.362603 
+running iteration 125 with loss 0.367885 
+running iteration 150 with loss 0.352963 
+average loss 0.370095 
+test loss 0.458381 
+Total run time was 130.402315 
 ***************************
 ***************************
 Running on epoch 46
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.351548 
-running iteration 25 with error 0.333604 
-running iteration 50 with error 0.325638 
-running iteration 75 with error 0.358625 
-running iteration 100 with error 0.334445 
-running iteration 125 with error 0.338748 
-running iteration 150 with error 0.324437 
-average Error 0.342152 
-Total run time was 49.361676 
+running iteration 0 with loss 0.372011 
+running iteration 25 with loss 0.371193 
+running iteration 50 with loss 0.360406 
+running iteration 75 with loss 0.382984 
+running iteration 100 with loss 0.360799 
+running iteration 125 with loss 0.366257 
+running iteration 150 with loss 0.349515 
+average loss 0.368262 
+test loss 0.460087 
+Total run time was 129.637830 
 ***************************
 ***************************
 Running on epoch 47
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.350385 
-running iteration 25 with error 0.331320 
-running iteration 50 with error 0.324268 
-running iteration 75 with error 0.356825 
-running iteration 100 with error 0.333370 
-running iteration 125 with error 0.337237 
-running iteration 150 with error 0.322584 
-average Error 0.340294 
-Total run time was 51.836790 
+running iteration 0 with loss 0.370839 
+running iteration 25 with loss 0.366013 
+running iteration 50 with loss 0.353752 
+running iteration 75 with loss 0.384256 
+running iteration 100 with loss 0.361347 
+running iteration 125 with loss 0.364856 
+running iteration 150 with loss 0.349475 
+average loss 0.367320 
+test loss 0.461848 
+Total run time was 130.293848 
 ***************************
 ***************************
 Running on epoch 48
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.349263 
-running iteration 25 with error 0.329238 
-running iteration 50 with error 0.322145 
-running iteration 75 with error 0.353735 
-running iteration 100 with error 0.331636 
-running iteration 125 with error 0.335667 
-running iteration 150 with error 0.320767 
-average Error 0.338534 
-Total run time was 48.934336 
+running iteration 0 with loss 0.372036 
+running iteration 25 with loss 0.367531 
+running iteration 50 with loss 0.353746 
+running iteration 75 with loss 0.380777 
+running iteration 100 with loss 0.359029 
+running iteration 125 with loss 0.363448 
+running iteration 150 with loss 0.347897 
+average loss 0.365448 
+test loss 0.462622 
+Total run time was 130.332831 
 ***************************
 ***************************
 Running on epoch 49
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.347692 
-running iteration 25 with error 0.328023 
-running iteration 50 with error 0.320694 
-running iteration 75 with error 0.350976 
-running iteration 100 with error 0.330253 
-running iteration 125 with error 0.334247 
-running iteration 150 with error 0.319624 
-average Error 0.336892 
-Total run time was 49.442879 
+running iteration 0 with loss 0.368893 
+running iteration 25 with loss 0.365405 
+running iteration 50 with loss 0.355197 
+running iteration 75 with loss 0.381862 
+running iteration 100 with loss 0.357374 
+running iteration 125 with loss 0.373646 
+running iteration 150 with loss 0.359579 
+average loss 0.368279 
+test loss 0.464485 
+Total run time was 129.792760 
 ***************************
 ***************************
 Running on epoch 50
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.345889 
-running iteration 25 with error 0.326286 
-running iteration 50 with error 0.319817 
-running iteration 75 with error 0.349183 
-running iteration 100 with error 0.329202 
-running iteration 125 with error 0.332798 
-running iteration 150 with error 0.318135 
-average Error 0.335508 
-Total run time was 49.035530 
+running iteration 0 with loss 0.372831 
+running iteration 25 with loss 0.369273 
+running iteration 50 with loss 0.356606 
+running iteration 75 with loss 0.382639 
+running iteration 100 with loss 0.357421 
+running iteration 125 with loss 0.366580 
+running iteration 150 with loss 0.349787 
+average loss 0.367136 
+test loss 0.465074 
+Total run time was 130.444825 
 ***************************
 ***************************
 Running on epoch 51
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.344142 
-running iteration 25 with error 0.325185 
-running iteration 50 with error 0.318732 
-running iteration 75 with error 0.346699 
-running iteration 100 with error 0.328507 
-running iteration 125 with error 0.332482 
-running iteration 150 with error 0.318323 
-average Error 0.334298 
-Total run time was 49.795135 
+running iteration 0 with loss 0.367076 
+running iteration 25 with loss 0.365595 
+running iteration 50 with loss 0.354444 
+running iteration 75 with loss 0.378369 
+running iteration 100 with loss 0.357477 
+running iteration 125 with loss 0.363753 
+running iteration 150 with loss 0.346867 
+average loss 0.363484 
+test loss 0.464841 
+Total run time was 129.782048 
 ***************************
 ***************************
 Running on epoch 52
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.343576 
-running iteration 25 with error 0.323852 
-running iteration 50 with error 0.316424 
-running iteration 75 with error 0.345199 
-running iteration 100 with error 0.325446 
-running iteration 125 with error 0.331816 
-running iteration 150 with error 0.324658 
-average Error 0.333271 
-Total run time was 49.425425 
+running iteration 0 with loss 0.364892 
+running iteration 25 with loss 0.361351 
+running iteration 50 with loss 0.348512 
+running iteration 75 with loss 0.381669 
+running iteration 100 with loss 0.356240 
+running iteration 125 with loss 0.361622 
+running iteration 150 with loss 0.344054 
+average loss 0.361737 
+test loss 0.466336 
+Total run time was 130.659728 
 ***************************
 ***************************
 Running on epoch 53
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.347248 
-running iteration 25 with error 0.326631 
-running iteration 50 with error 0.315593 
-running iteration 75 with error 0.345087 
-running iteration 100 with error 0.324532 
-running iteration 125 with error 0.328370 
-running iteration 150 with error 0.316289 
-average Error 0.332842 
-Total run time was 49.300818 
+running iteration 0 with loss 0.363646 
+running iteration 25 with loss 0.359329 
+running iteration 50 with loss 0.348775 
+running iteration 75 with loss 0.375562 
+running iteration 100 with loss 0.353385 
+running iteration 125 with loss 0.360229 
+running iteration 150 with loss 0.344260 
+average loss 0.360577 
+test loss 0.468245 
+Total run time was 130.633803 
 ***************************
 ***************************
 Running on epoch 54
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.339640 
-running iteration 25 with error 0.322492 
-running iteration 50 with error 0.313973 
-running iteration 75 with error 0.341450 
-running iteration 100 with error 0.327116 
-running iteration 125 with error 0.328094 
-running iteration 150 with error 0.313976 
-average Error 0.331154 
-Total run time was 49.010338 
+running iteration 0 with loss 0.362592 
+running iteration 25 with loss 0.358138 
+running iteration 50 with loss 0.348959 
+running iteration 75 with loss 0.373564 
+running iteration 100 with loss 0.352322 
+running iteration 125 with loss 0.359249 
+running iteration 150 with loss 0.341921 
+average loss 0.358964 
+test loss 0.471269 
+Total run time was 130.150732 
 ***************************
 ***************************
 Running on epoch 55
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.339176 
-running iteration 25 with error 0.325529 
-running iteration 50 with error 0.315112 
-running iteration 75 with error 0.340686 
-running iteration 100 with error 0.321578 
-running iteration 125 with error 0.325524 
-running iteration 150 with error 0.314209 
-average Error 0.330168 
-Total run time was 48.905131 
+running iteration 0 with loss 0.362311 
+running iteration 25 with loss 0.357484 
+running iteration 50 with loss 0.345694 
+running iteration 75 with loss 0.372914 
+running iteration 100 with loss 0.351495 
+running iteration 125 with loss 0.358669 
+running iteration 150 with loss 0.342298 
+average loss 0.358057 
+test loss 0.472399 
+Total run time was 130.454047 
 ***************************
 ***************************
 Running on epoch 56
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.335851 
-running iteration 25 with error 0.322432 
-running iteration 50 with error 0.311888 
-running iteration 75 with error 0.338770 
-running iteration 100 with error 0.324715 
-running iteration 125 with error 0.332703 
-running iteration 150 with error 0.314085 
-average Error 0.330660 
-Total run time was 49.263323 
+running iteration 0 with loss 0.360342 
+running iteration 25 with loss 0.356884 
+running iteration 50 with loss 0.344567 
+running iteration 75 with loss 0.374590 
+running iteration 100 with loss 0.350762 
+running iteration 125 with loss 0.357891 
+running iteration 150 with loss 0.342522 
+average loss 0.356943 
+test loss 0.473921 
+Total run time was 129.173377 
 ***************************
 ***************************
 Running on epoch 57
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.335712 
-running iteration 25 with error 0.317686 
-running iteration 50 with error 0.311764 
-running iteration 75 with error 0.336711 
-running iteration 100 with error 0.323246 
-running iteration 125 with error 0.325859 
-running iteration 150 with error 0.309537 
-average Error 0.327171 
-Total run time was 48.715946 
+running iteration 0 with loss 0.360292 
+running iteration 25 with loss 0.354337 
+running iteration 50 with loss 0.344970 
+running iteration 75 with loss 0.375647 
+running iteration 100 with loss 0.352239 
+running iteration 125 with loss 0.356932 
+running iteration 150 with loss 0.351620 
+average loss 0.357289 
+test loss 0.472774 
+Total run time was 129.878205 
 ***************************
 ***************************
 Running on epoch 58
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.332796 
-running iteration 25 with error 0.316414 
-running iteration 50 with error 0.309164 
-running iteration 75 with error 0.334748 
-running iteration 100 with error 0.321232 
-running iteration 125 with error 0.324144 
-running iteration 150 with error 0.308077 
-average Error 0.324797 
-Total run time was 49.403267 
+running iteration 0 with loss 0.362694 
+running iteration 25 with loss 0.360140 
+running iteration 50 with loss 0.361217 
+running iteration 75 with loss 0.386333 
+running iteration 100 with loss 0.360398 
+running iteration 125 with loss 0.358012 
+running iteration 150 with loss 0.343037 
+average loss 0.363867 
+test loss 0.475289 
+Total run time was 130.544360 
 ***************************
 ***************************
 Running on epoch 59
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.331155 
-running iteration 25 with error 0.313776 
-running iteration 50 with error 0.307336 
-running iteration 75 with error 0.332821 
-running iteration 100 with error 0.320107 
-running iteration 125 with error 0.321683 
-running iteration 150 with error 0.307250 
-average Error 0.323025 
-Total run time was 48.948246 
+running iteration 0 with loss 0.360408 
+running iteration 25 with loss 0.352775 
+running iteration 50 with loss 0.342183 
+running iteration 75 with loss 0.378243 
+running iteration 100 with loss 0.350109 
+running iteration 125 with loss 0.354063 
+running iteration 150 with loss 0.340370 
+average loss 0.353744 
+test loss 0.477595 
+Total run time was 130.141963 
 ***************************
 ***************************
 Running on epoch 60
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.329171 
-running iteration 25 with error 0.312639 
-running iteration 50 with error 0.306092 
-running iteration 75 with error 0.331211 
-running iteration 100 with error 0.317578 
-running iteration 125 with error 0.319121 
-running iteration 150 with error 0.305936 
-average Error 0.321356 
-Total run time was 49.009246 
+running iteration 0 with loss 0.356042 
+running iteration 25 with loss 0.350186 
+running iteration 50 with loss 0.340323 
+running iteration 75 with loss 0.373096 
+running iteration 100 with loss 0.348055 
+running iteration 125 with loss 0.356845 
+running iteration 150 with loss 0.339961 
+average loss 0.352999 
+test loss 0.480856 
+Total run time was 130.282593 
 ***************************
 ***************************
 Running on epoch 61
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.327602 
-running iteration 25 with error 0.312090 
-running iteration 50 with error 0.304033 
-running iteration 75 with error 0.335425 
-running iteration 100 with error 0.317574 
-running iteration 125 with error 0.317637 
-running iteration 150 with error 0.305062 
-average Error 0.321063 
-Total run time was 49.312109 
+running iteration 0 with loss 0.358235 
+running iteration 25 with loss 0.367183 
+running iteration 50 with loss 0.345197 
+running iteration 75 with loss 0.379953 
+running iteration 100 with loss 0.350390 
+running iteration 125 with loss 0.354042 
+running iteration 150 with loss 0.341506 
+average loss 0.355734 
+test loss 0.478500 
+Total run time was 130.266094 
 ***************************
 ***************************
 Running on epoch 62
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.325923 
-running iteration 25 with error 0.310869 
-running iteration 50 with error 0.302339 
-running iteration 75 with error 0.328698 
-running iteration 100 with error 0.315338 
-running iteration 125 with error 0.316209 
-running iteration 150 with error 0.303102 
-average Error 0.318678 
-Total run time was 48.562261 
+running iteration 0 with loss 0.358627 
+running iteration 25 with loss 0.352274 
+running iteration 50 with loss 0.336559 
+running iteration 75 with loss 0.372966 
+running iteration 100 with loss 0.348242 
+running iteration 125 with loss 0.352697 
+running iteration 150 with loss 0.340522 
+average loss 0.351915 
+test loss 0.478655 
+Total run time was 128.943808 
 ***************************
 ***************************
 Running on epoch 63
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.324679 
-running iteration 25 with error 0.308681 
-running iteration 50 with error 0.301391 
-running iteration 75 with error 0.326469 
-running iteration 100 with error 0.313201 
-running iteration 125 with error 0.315472 
-running iteration 150 with error 0.301826 
-average Error 0.317093 
-Total run time was 49.370554 
+running iteration 0 with loss 0.355455 
+running iteration 25 with loss 0.351626 
+running iteration 50 with loss 0.335176 
+running iteration 75 with loss 0.368841 
+running iteration 100 with loss 0.346063 
+running iteration 125 with loss 0.351964 
+running iteration 150 with loss 0.341535 
+average loss 0.350415 
+test loss 0.477870 
+Total run time was 129.011135 
 ***************************
 ***************************
 Running on epoch 64
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.323741 
-running iteration 25 with error 0.307660 
-running iteration 50 with error 0.316602 
-running iteration 75 with error 0.329692 
-running iteration 100 with error 0.314883 
-running iteration 125 with error 0.315370 
-running iteration 150 with error 0.301642 
-average Error 0.322313 
-Total run time was 49.568292 
+running iteration 0 with loss 0.357328 
+running iteration 25 with loss 0.353860 
+running iteration 50 with loss 0.339642 
+running iteration 75 with loss 0.361784 
+running iteration 100 with loss 0.347890 
+running iteration 125 with loss 0.351057 
+running iteration 150 with loss 0.338522 
+average loss 0.350888 
+test loss 0.476706 
+Total run time was 129.497762 
 ***************************
 ***************************
 Running on epoch 65
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.325078 
-running iteration 25 with error 0.306592 
-running iteration 50 with error 0.300682 
-running iteration 75 with error 0.326625 
-running iteration 100 with error 0.310747 
-running iteration 125 with error 0.312929 
-running iteration 150 with error 0.299382 
-average Error 0.315684 
-Total run time was 49.646904 
+running iteration 0 with loss 0.359743 
+running iteration 25 with loss 0.350567 
+running iteration 50 with loss 0.334145 
+running iteration 75 with loss 0.363232 
+running iteration 100 with loss 0.344935 
+running iteration 125 with loss 0.352042 
+running iteration 150 with loss 0.341068 
+average loss 0.349835 
+test loss 0.479158 
+Total run time was 130.221802 
 ***************************
 ***************************
 Running on epoch 66
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.322580 
-running iteration 25 with error 0.304678 
-running iteration 50 with error 0.297854 
-running iteration 75 with error 0.324282 
-running iteration 100 with error 0.309098 
-running iteration 125 with error 0.311093 
-running iteration 150 with error 0.298563 
-average Error 0.313628 
-Total run time was 49.470671 
+running iteration 0 with loss 0.354544 
+running iteration 25 with loss 0.348916 
+running iteration 50 with loss 0.334363 
+running iteration 75 with loss 0.362356 
+running iteration 100 with loss 0.344853 
+running iteration 125 with loss 0.349267 
+running iteration 150 with loss 0.342613 
+average loss 0.348902 
+test loss 0.481763 
+Total run time was 128.363455 
 ***************************
 ***************************
 Running on epoch 67
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.319852 
-running iteration 25 with error 0.304172 
-running iteration 50 with error 0.296944 
-running iteration 75 with error 0.323354 
-running iteration 100 with error 0.308055 
-running iteration 125 with error 0.310488 
-running iteration 150 with error 0.298699 
-average Error 0.312389 
-Total run time was 52.665415 
+running iteration 0 with loss 0.353370 
+running iteration 25 with loss 0.348937 
+running iteration 50 with loss 0.333350 
+running iteration 75 with loss 0.365949 
+running iteration 100 with loss 0.342052 
+running iteration 125 with loss 0.346575 
+running iteration 150 with loss 0.338155 
+average loss 0.347561 
+test loss 0.487010 
+Total run time was 129.607912 
 ***************************
 ***************************
 Running on epoch 68
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.318028 
-running iteration 25 with error 0.303061 
-running iteration 50 with error 0.296340 
-running iteration 75 with error 0.321118 
-running iteration 100 with error 0.306929 
-running iteration 125 with error 0.310307 
-running iteration 150 with error 0.297071 
-average Error 0.311624 
-Total run time was 51.658698 
+running iteration 0 with loss 0.354124 
+running iteration 25 with loss 0.348925 
+running iteration 50 with loss 0.331255 
+running iteration 75 with loss 0.360982 
+running iteration 100 with loss 0.342317 
+running iteration 125 with loss 0.345367 
+running iteration 150 with loss 0.334241 
+average loss 0.346349 
+test loss 0.489340 
+Total run time was 130.503714 
 ***************************
 ***************************
 Running on epoch 69
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.316566 
-running iteration 25 with error 0.301647 
-running iteration 50 with error 0.295384 
-running iteration 75 with error 0.322224 
-running iteration 100 with error 0.307781 
-running iteration 125 with error 0.307696 
-running iteration 150 with error 0.295314 
-average Error 0.310883 
-Total run time was 51.079772 
+running iteration 0 with loss 0.350594 
+running iteration 25 with loss 0.351586 
+running iteration 50 with loss 0.331488 
+running iteration 75 with loss 0.359143 
+running iteration 100 with loss 0.342263 
+running iteration 125 with loss 0.344909 
+running iteration 150 with loss 0.333617 
+average loss 0.346325 
+test loss 0.491216 
+Total run time was 129.987365 
 ***************************
 ***************************
 Running on epoch 70
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.317571 
-running iteration 25 with error 0.301570 
-running iteration 50 with error 0.296879 
-running iteration 75 with error 0.319329 
-running iteration 100 with error 0.306394 
-running iteration 125 with error 0.307175 
-running iteration 150 with error 0.294515 
-average Error 0.310000 
-Total run time was 51.435229 
+running iteration 0 with loss 0.348432 
+running iteration 25 with loss 0.346913 
+running iteration 50 with loss 0.330812 
+running iteration 75 with loss 0.359609 
+running iteration 100 with loss 0.348956 
+running iteration 125 with loss 0.346760 
+running iteration 150 with loss 0.335151 
+average loss 0.346293 
+test loss 0.491108 
+Total run time was 128.319873 
 ***************************
 ***************************
 Running on epoch 71
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.316562 
-running iteration 25 with error 0.301656 
-running iteration 50 with error 0.294077 
-running iteration 75 with error 0.317990 
-running iteration 100 with error 0.303353 
-running iteration 125 with error 0.307363 
-running iteration 150 with error 0.292609 
-average Error 0.309258 
-Total run time was 51.725919 
+running iteration 0 with loss 0.347747 
+running iteration 25 with loss 0.351484 
+running iteration 50 with loss 0.343207 
+running iteration 75 with loss 0.440238 
+running iteration 100 with loss 0.426390 
+running iteration 125 with loss 0.407301 
+running iteration 150 with loss 0.397111 
+average loss 0.394601 
+test loss 0.496483 
+Total run time was 129.648920 
 ***************************
 ***************************
 Running on epoch 72
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.312602 
-running iteration 25 with error 0.297106 
-running iteration 50 with error 0.294830 
-running iteration 75 with error 0.316254 
-running iteration 100 with error 0.304941 
-running iteration 125 with error 0.304125 
-running iteration 150 with error 0.291642 
-average Error 0.307893 
-Total run time was 51.295321 
+running iteration 0 with loss 0.416807 
+running iteration 25 with loss 0.396578 
+running iteration 50 with loss 0.382400 
+running iteration 75 with loss 0.401944 
+running iteration 100 with loss 0.384119 
+running iteration 125 with loss 0.379273 
+running iteration 150 with loss 0.371689 
+average loss 0.392280 
+test loss 0.485677 
+Total run time was 129.686311 
 ***************************
 ***************************
 Running on epoch 73
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.310897 
-running iteration 25 with error 0.295314 
-running iteration 50 with error 0.293534 
-running iteration 75 with error 0.316669 
-running iteration 100 with error 0.303300 
-running iteration 125 with error 0.302351 
-running iteration 150 with error 0.291980 
-average Error 0.306031 
-Total run time was 49.916507 
+running iteration 0 with loss 0.388050 
+running iteration 25 with loss 0.375568 
+running iteration 50 with loss 0.364685 
+running iteration 75 with loss 0.381074 
+running iteration 100 with loss 0.368507 
+running iteration 125 with loss 0.362599 
+running iteration 150 with loss 0.361692 
+average loss 0.373988 
+test loss 0.484482 
+Total run time was 129.726222 
 ***************************
 ***************************
 Running on epoch 74
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.310140 
-running iteration 25 with error 0.295460 
-running iteration 50 with error 0.290414 
-running iteration 75 with error 0.313547 
-running iteration 100 with error 0.302993 
-running iteration 125 with error 0.301923 
-running iteration 150 with error 0.290164 
-average Error 0.304536 
-Total run time was 51.188648 
+running iteration 0 with loss 0.372887 
+running iteration 25 with loss 0.365628 
+running iteration 50 with loss 0.355672 
+running iteration 75 with loss 0.372461 
+running iteration 100 with loss 0.362260 
+running iteration 125 with loss 0.356775 
+running iteration 150 with loss 0.355933 
+average loss 0.365590 
+test loss 0.484484 
+Total run time was 130.218940 
 ***************************
 ***************************
 Running on epoch 75
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.309879 
-running iteration 25 with error 0.293593 
-running iteration 50 with error 0.289077 
-running iteration 75 with error 0.311853 
-running iteration 100 with error 0.300328 
-running iteration 125 with error 0.298930 
-running iteration 150 with error 0.288373 
-average Error 0.303274 
-Total run time was 51.800580 
+running iteration 0 with loss 0.367446 
+running iteration 25 with loss 0.359126 
+running iteration 50 with loss 0.349228 
+running iteration 75 with loss 0.367221 
+running iteration 100 with loss 0.358274 
+running iteration 125 with loss 0.354730 
+running iteration 150 with loss 0.352668 
+average loss 0.360518 
+test loss 0.486909 
+Total run time was 130.082212 
 ***************************
 ***************************
 Running on epoch 76
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.319116 
-running iteration 25 with error 0.294306 
-running iteration 50 with error 0.288298 
-running iteration 75 with error 0.310324 
-running iteration 100 with error 0.298521 
-running iteration 125 with error 0.299677 
-running iteration 150 with error 0.288523 
-average Error 0.302915 
-Total run time was 51.064206 
+running iteration 0 with loss 0.364749 
+running iteration 25 with loss 0.356552 
+running iteration 50 with loss 0.346864 
+running iteration 75 with loss 0.362566 
+running iteration 100 with loss 0.354829 
+running iteration 125 with loss 0.352942 
+running iteration 150 with loss 0.350238 
+average loss 0.358226 
+test loss 0.486093 
+Total run time was 131.475789 
 ***************************
 ***************************
 Running on epoch 77
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.307629 
-running iteration 25 with error 0.290927 
-running iteration 50 with error 0.286316 
-running iteration 75 with error 0.307691 
-running iteration 100 with error 0.296199 
-running iteration 125 with error 0.298960 
-running iteration 150 with error 0.285244 
-average Error 0.300494 
-Total run time was 50.243613 
+running iteration 0 with loss 0.361463 
+running iteration 25 with loss 0.353740 
+running iteration 50 with loss 0.350088 
+running iteration 75 with loss 0.364135 
+running iteration 100 with loss 0.353810 
+running iteration 125 with loss 0.351234 
+running iteration 150 with loss 0.347796 
+average loss 0.356418 
+test loss 0.488295 
+Total run time was 129.459301 
 ***************************
 ***************************
 Running on epoch 78
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.304822 
-running iteration 25 with error 0.290967 
-running iteration 50 with error 0.286046 
-running iteration 75 with error 0.307412 
-running iteration 100 with error 0.294541 
-running iteration 125 with error 0.297391 
-running iteration 150 with error 0.293942 
-average Error 0.299514 
-Total run time was 49.583925 
+running iteration 0 with loss 0.357861 
+running iteration 25 with loss 0.350212 
+running iteration 50 with loss 0.340802 
+running iteration 75 with loss 0.359042 
+running iteration 100 with loss 0.351335 
+running iteration 125 with loss 0.349285 
+running iteration 150 with loss 0.345149 
+average loss 0.353251 
+test loss 0.490272 
+Total run time was 130.653619 
 ***************************
 ***************************
 Running on epoch 79
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.309919 
-running iteration 25 with error 0.292740 
-running iteration 50 with error 0.286216 
-running iteration 75 with error 0.308160 
-running iteration 100 with error 0.292567 
-running iteration 125 with error 0.295114 
-running iteration 150 with error 0.283733 
-average Error 0.299405 
-Total run time was 50.482512 
+running iteration 0 with loss 0.355765 
+running iteration 25 with loss 0.347444 
+running iteration 50 with loss 0.339842 
+running iteration 75 with loss 0.358890 
+running iteration 100 with loss 0.350950 
+running iteration 125 with loss 0.349198 
+running iteration 150 with loss 0.344466 
+average loss 0.351649 
+test loss 0.491281 
+Total run time was 129.312075 
 ***************************
 ***************************
 Running on epoch 80
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.305274 
-running iteration 25 with error 0.287478 
-running iteration 50 with error 0.284662 
-running iteration 75 with error 0.304898 
-running iteration 100 with error 0.291614 
-running iteration 125 with error 0.294782 
-running iteration 150 with error 0.284307 
-average Error 0.297551 
-Total run time was 49.026453 
+running iteration 0 with loss 0.354380 
+running iteration 25 with loss 0.345142 
+running iteration 50 with loss 0.349896 
+running iteration 75 with loss 0.364413 
+running iteration 100 with loss 0.351435 
+running iteration 125 with loss 0.352510 
+running iteration 150 with loss 0.349022 
+average loss 0.354824 
+test loss 0.492188 
+Total run time was 129.567772 
 ***************************
 ***************************
 Running on epoch 81
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.302779 
-running iteration 25 with error 0.286974 
-running iteration 50 with error 0.283653 
-running iteration 75 with error 0.304583 
-running iteration 100 with error 0.291114 
-running iteration 125 with error 0.294401 
-running iteration 150 with error 0.286281 
-average Error 0.297481 
-Total run time was 49.324023 
+running iteration 0 with loss 0.357358 
+running iteration 25 with loss 0.348522 
+running iteration 50 with loss 0.339941 
+running iteration 75 with loss 0.357434 
+running iteration 100 with loss 0.347617 
+running iteration 125 with loss 0.347930 
+running iteration 150 with loss 0.343691 
+average loss 0.351698 
+test loss 0.492312 
+Total run time was 131.242069 
 ***************************
 ***************************
 Running on epoch 82
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.303167 
-running iteration 25 with error 0.286262 
-running iteration 50 with error 0.283551 
-running iteration 75 with error 0.307070 
-running iteration 100 with error 0.293960 
-running iteration 125 with error 0.297089 
-running iteration 150 with error 0.283813 
-average Error 0.297708 
-Total run time was 48.634330 
+running iteration 0 with loss 0.353147 
+running iteration 25 with loss 0.343846 
+running iteration 50 with loss 0.337262 
+running iteration 75 with loss 0.356503 
+running iteration 100 with loss 0.347259 
+running iteration 125 with loss 0.346394 
+running iteration 150 with loss 0.340943 
+average loss 0.349017 
+test loss 0.493769 
+Total run time was 130.143766 
 ***************************
 ***************************
 Running on epoch 83
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.307566 
-running iteration 25 with error 0.287100 
-running iteration 50 with error 0.280705 
-running iteration 75 with error 0.305186 
-running iteration 100 with error 0.289921 
-running iteration 125 with error 0.295399 
-running iteration 150 with error 0.281183 
-average Error 0.296270 
-Total run time was 49.287674 
+running iteration 0 with loss 0.352177 
+running iteration 25 with loss 0.343185 
+running iteration 50 with loss 0.334992 
+running iteration 75 with loss 0.354713 
+running iteration 100 with loss 0.347133 
+running iteration 125 with loss 0.345441 
+running iteration 150 with loss 0.339605 
+average loss 0.347443 
+test loss 0.495477 
+Total run time was 128.835924 
 ***************************
 ***************************
 Running on epoch 84
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.305709 
-running iteration 25 with error 0.285584 
-running iteration 50 with error 0.281224 
-running iteration 75 with error 0.301362 
-running iteration 100 with error 0.287741 
-running iteration 125 with error 0.294846 
-running iteration 150 with error 0.279384 
-average Error 0.294620 
-Total run time was 49.323835 
+running iteration 0 with loss 0.350076 
+running iteration 25 with loss 0.342375 
+running iteration 50 with loss 0.333389 
+running iteration 75 with loss 0.353612 
+running iteration 100 with loss 0.346470 
+running iteration 125 with loss 0.345275 
+running iteration 150 with loss 0.338560 
+average loss 0.346139 
+test loss 0.496950 
+Total run time was 128.596778 
 ***************************
 ***************************
 Running on epoch 85
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.301601 
-running iteration 25 with error 0.285462 
-running iteration 50 with error 0.280166 
-running iteration 75 with error 0.302149 
-running iteration 100 with error 0.286116 
-running iteration 125 with error 0.293289 
-running iteration 150 with error 0.279332 
-average Error 0.292947 
-Total run time was 49.358356 
+running iteration 0 with loss 0.350254 
+running iteration 25 with loss 0.340948 
+running iteration 50 with loss 0.332535 
+running iteration 75 with loss 0.352400 
+running iteration 100 with loss 0.345975 
+running iteration 125 with loss 0.343024 
+running iteration 150 with loss 0.337064 
+average loss 0.344918 
+test loss 0.497033 
+Total run time was 128.523778 
 ***************************
 ***************************
 Running on epoch 86
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.298734 
-running iteration 25 with error 0.292573 
-running iteration 50 with error 0.278286 
-running iteration 75 with error 0.300945 
-running iteration 100 with error 0.284602 
-running iteration 125 with error 0.292233 
-running iteration 150 with error 0.278801 
-average Error 0.293765 
-Total run time was 48.976246 
+running iteration 0 with loss 0.349625 
+running iteration 25 with loss 0.340747 
+running iteration 50 with loss 0.331789 
+running iteration 75 with loss 0.352297 
+running iteration 100 with loss 0.344567 
+running iteration 125 with loss 0.343631 
+running iteration 150 with loss 0.336084 
+average loss 0.344266 
+test loss 0.499994 
+Total run time was 129.788998 
 ***************************
 ***************************
 Running on epoch 87
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.300343 
-running iteration 25 with error 0.284964 
-running iteration 50 with error 0.279128 
-running iteration 75 with error 0.299151 
-running iteration 100 with error 0.284399 
-running iteration 125 with error 0.292268 
-running iteration 150 with error 0.278825 
-average Error 0.292120 
-Total run time was 48.959562 
+running iteration 0 with loss 0.348763 
+running iteration 25 with loss 0.339450 
+running iteration 50 with loss 0.331848 
+running iteration 75 with loss 0.351026 
+running iteration 100 with loss 0.343310 
+running iteration 125 with loss 0.341933 
+running iteration 150 with loss 0.335505 
+average loss 0.343390 
+test loss 0.500497 
+Total run time was 128.112591 
 ***************************
 ***************************
 Running on epoch 88
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.295210 
-running iteration 25 with error 0.282703 
-running iteration 50 with error 0.279288 
-running iteration 75 with error 0.297211 
-running iteration 100 with error 0.283163 
-running iteration 125 with error 0.319910 
-running iteration 150 with error 0.294057 
-average Error 0.296639 
-Total run time was 48.973042 
+running iteration 0 with loss 0.348174 
+running iteration 25 with loss 0.339196 
+running iteration 50 with loss 0.330663 
+running iteration 75 with loss 0.349911 
+running iteration 100 with loss 0.345336 
+running iteration 125 with loss 0.341885 
+running iteration 150 with loss 0.335171 
+average loss 0.342719 
+test loss 0.502857 
+Total run time was 128.923658 
 ***************************
 ***************************
 Running on epoch 89
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.310723 
-running iteration 25 with error 0.290393 
-running iteration 50 with error 0.285640 
-running iteration 75 with error 0.308855 
-running iteration 100 with error 0.291932 
-running iteration 125 with error 0.295296 
-running iteration 150 with error 0.281166 
-average Error 0.297872 
-Total run time was 49.316671 
+running iteration 0 with loss 0.346473 
+running iteration 25 with loss 0.337860 
+running iteration 50 with loss 0.328689 
+running iteration 75 with loss 0.348811 
+running iteration 100 with loss 0.341320 
+running iteration 125 with loss 0.341689 
+running iteration 150 with loss 0.333333 
+average loss 0.341207 
+test loss 0.504563 
+Total run time was 129.413119 
 ***************************
 ***************************
 Running on epoch 90
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.296371 
-running iteration 25 with error 0.284744 
-running iteration 50 with error 0.278854 
-running iteration 75 with error 0.301828 
-running iteration 100 with error 0.286993 
-running iteration 125 with error 0.292500 
-running iteration 150 with error 0.280120 
-average Error 0.292148 
-Total run time was 48.845648 
+running iteration 0 with loss 0.345725 
+running iteration 25 with loss 0.337139 
+running iteration 50 with loss 0.327752 
+running iteration 75 with loss 0.348297 
+running iteration 100 with loss 0.340006 
+running iteration 125 with loss 0.342198 
+running iteration 150 with loss 0.335438 
+average loss 0.341221 
+test loss 0.505301 
+Total run time was 128.351158 
 ***************************
 ***************************
 Running on epoch 91
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.294860 
-running iteration 25 with error 0.281809 
-running iteration 50 with error 0.275637 
-running iteration 75 with error 0.301701 
-running iteration 100 with error 0.284891 
-running iteration 125 with error 0.291449 
-running iteration 150 with error 0.277687 
-average Error 0.289910 
-Total run time was 48.516194 
+running iteration 0 with loss 0.347947 
+running iteration 25 with loss 0.337986 
+running iteration 50 with loss 0.328562 
+running iteration 75 with loss 0.348885 
+running iteration 100 with loss 0.339132 
+running iteration 125 with loss 0.339592 
+running iteration 150 with loss 0.331742 
+average loss 0.340702 
+test loss 0.506164 
+Total run time was 128.621105 
 ***************************
 ***************************
 Running on epoch 92
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.294488 
-running iteration 25 with error 0.279251 
-running iteration 50 with error 0.273373 
-running iteration 75 with error 0.297734 
-running iteration 100 with error 0.282913 
-running iteration 125 with error 0.288518 
-running iteration 150 with error 0.277143 
-average Error 0.288182 
-Total run time was 48.868134 
+running iteration 0 with loss 0.343500 
+running iteration 25 with loss 0.335844 
+running iteration 50 with loss 0.326031 
+running iteration 75 with loss 0.347095 
+running iteration 100 with loss 0.338909 
+running iteration 125 with loss 0.338377 
+running iteration 150 with loss 0.330805 
+average loss 0.339027 
+test loss 0.508677 
+Total run time was 128.682746 
 ***************************
 ***************************
 Running on epoch 93
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.292825 
-running iteration 25 with error 0.277269 
-running iteration 50 with error 0.272039 
-running iteration 75 with error 0.295571 
-running iteration 100 with error 0.283411 
-running iteration 125 with error 0.285242 
-running iteration 150 with error 0.277026 
-average Error 0.287115 
-Total run time was 50.124506 
+running iteration 0 with loss 0.343685 
+running iteration 25 with loss 0.335686 
+running iteration 50 with loss 0.325199 
+running iteration 75 with loss 0.345745 
+running iteration 100 with loss 0.338837 
+running iteration 125 with loss 0.337472 
+running iteration 150 with loss 0.330216 
+average loss 0.338201 
+test loss 0.509588 
+Total run time was 130.161218 
 ***************************
 ***************************
 Running on epoch 94
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.292296 
-running iteration 25 with error 0.277867 
-running iteration 50 with error 0.270646 
-running iteration 75 with error 0.292920 
-running iteration 100 with error 0.283553 
-running iteration 125 with error 0.284534 
-running iteration 150 with error 0.272985 
-average Error 0.286421 
-Total run time was 48.482589 
+running iteration 0 with loss 0.342285 
+running iteration 25 with loss 0.333773 
+running iteration 50 with loss 0.323723 
+running iteration 75 with loss 0.344715 
+running iteration 100 with loss 0.337794 
+running iteration 125 with loss 0.337214 
+running iteration 150 with loss 0.333337 
+average loss 0.337654 
+test loss 0.508714 
+Total run time was 130.076355 
 ***************************
 ***************************
 Running on epoch 95
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.292214 
-running iteration 25 with error 0.276736 
-running iteration 50 with error 0.274348 
-running iteration 75 with error 0.291468 
-running iteration 100 with error 0.280763 
-running iteration 125 with error 0.284980 
-running iteration 150 with error 0.272320 
-average Error 0.285609 
-Total run time was 49.010037 
+running iteration 0 with loss 0.343985 
+running iteration 25 with loss 0.333484 
+running iteration 50 with loss 0.332117 
+running iteration 75 with loss 0.348249 
+running iteration 100 with loss 0.338411 
+running iteration 125 with loss 0.339360 
+running iteration 150 with loss 0.331976 
+average loss 0.339506 
+test loss 0.511181 
+Total run time was 129.819411 
 ***************************
 ***************************
 Running on epoch 96
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.288384 
-running iteration 25 with error 0.277432 
-running iteration 50 with error 0.278374 
-running iteration 75 with error 0.296002 
-running iteration 100 with error 0.277220 
-running iteration 125 with error 0.282176 
-running iteration 150 with error 0.271684 
-average Error 0.285413 
-Total run time was 47.776460 
+running iteration 0 with loss 0.345126 
+running iteration 25 with loss 0.332356 
+running iteration 50 with loss 0.323683 
+running iteration 75 with loss 0.349293 
+running iteration 100 with loss 0.336553 
+running iteration 125 with loss 0.343513 
+running iteration 150 with loss 0.334650 
+average loss 0.339829 
+test loss 0.509497 
+Total run time was 129.051171 
 ***************************
 ***************************
 Running on epoch 97
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.286203 
-running iteration 25 with error 0.272533 
-running iteration 50 with error 0.271876 
-running iteration 75 with error 0.295050 
-running iteration 100 with error 0.278301 
-running iteration 125 with error 0.280527 
-running iteration 150 with error 0.269249 
-average Error 0.283502 
-Total run time was 48.962182 
+running iteration 0 with loss 0.344182 
+running iteration 25 with loss 0.335497 
+running iteration 50 with loss 0.324175 
+running iteration 75 with loss 0.345904 
+running iteration 100 with loss 0.336001 
+running iteration 125 with loss 0.335327 
+running iteration 150 with loss 0.328860 
+average loss 0.337797 
+test loss 0.513317 
+Total run time was 129.832430 
 ***************************
 ***************************
 Running on epoch 98
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.284345 
-running iteration 25 with error 0.271192 
-running iteration 50 with error 0.268139 
-running iteration 75 with error 0.290793 
-running iteration 100 with error 0.277777 
-running iteration 125 with error 0.279440 
-running iteration 150 with error 0.268944 
-average Error 0.280887 
-Total run time was 48.774753 
+running iteration 0 with loss 0.340413 
+running iteration 25 with loss 0.332359 
+running iteration 50 with loss 0.322914 
+running iteration 75 with loss 0.343185 
+running iteration 100 with loss 0.334692 
+running iteration 125 with loss 0.337261 
+running iteration 150 with loss 0.328036 
+average loss 0.335952 
+test loss 0.513806 
+Total run time was 128.668660 
 ***************************
 ***************************
 Running on epoch 99
 ***************************
 ***************************
 ***************************
-running iteration 0 with error 0.285918 
-running iteration 25 with error 0.269200 
-running iteration 50 with error 0.266259 
-running iteration 75 with error 0.288520 
-running iteration 100 with error 0.275929 
-running iteration 125 with error 0.278731 
-running iteration 150 with error 0.267538 
-average Error 0.279503 
-Total run time was 48.438232 
+running iteration 0 with loss 0.342116 
+running iteration 25 with loss 0.330899 
+running iteration 50 with loss 0.321267 
+running iteration 75 with loss 0.341440 
+running iteration 100 with loss 0.333378 
+running iteration 125 with loss 0.334568 
+running iteration 150 with loss 0.326561 
+average loss 0.334574 
+test loss 0.515658 
+Total run time was 129.529010 
