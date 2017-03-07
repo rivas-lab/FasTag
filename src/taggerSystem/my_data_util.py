@@ -29,7 +29,7 @@ END_TOKEN = "</s>"
 MAXNLABELS = 3
 ICDCODELIST = []
 ICDCODEDICT = {}# this allows us to map codes to integer values.
-MAXNOTESLENGTH = 1500
+# MAXNOTESLENGTH = 1500 # this is deprecated
 
 def casing(word):
     if len(word) == 0: return word
@@ -102,7 +102,7 @@ class ModelHelper(object):
     # data should be returned from read_conll. 
     # returns a token 2 id number mapping (numbers seem to be arb), and the max length of an input
     @classmethod
-    def build(cls, data):
+    def build(cls, data, maxAllowedNoteLength):
         # Preprocess data to construct an embedding
         # Reserve 0 for the special NIL token.
         tok2id = build_dict((normalize(word) for sentence, _ in data for word in sentence), offset=1, max_words=10000)
@@ -111,7 +111,7 @@ class ModelHelper(object):
         assert sorted(tok2id.items(), key=lambda t: t[1])[0][1] == 1
         logger.info("Built dictionary for %d features.", len(tok2id))
 
-        max_length = min(max(len(sentence) for sentence, _ in data), MAXNOTESLENGTH)
+        max_length = min(max(len(sentence) for sentence, _ in data), maxAllowedNoteLength)
         n_labels = len(ICDCODEDICT.values())
         icdDict = None
         return cls(tok2id, max_length, n_labels)
@@ -163,7 +163,7 @@ class ModelHelper(object):
             yData[rowIdx] = row[1]
         return xData, yData
 
-def load_and_preprocess_data(data_train, data_valid):
+def load_and_preprocess_data(data_train, data_valid, maxAllowedNoteLength):
     global ICDCODELIST
     global ICDCODEDICT
     start = time.time()
@@ -176,7 +176,7 @@ def load_and_preprocess_data(data_train, data_valid):
     logger.info("Total read time %f", time.time() - start)
     ICDCODEDICT = {code: i for i, (code, _) in enumerate(Counter(ICDCODELIST).most_common())}
     assert len(ICDCODEDICT.values()) == len(set(ICDCODELIST))#just making sure all values are unique
-    helper = ModelHelper.build(train)
+    helper = ModelHelper.build(train, maxAllowedNoteLength)
     logger.info("There are a total of %d ICD codes", len(ICDCODEDICT.values()))
     train_data = helper.vectorize(train)
     # print(train_data)
