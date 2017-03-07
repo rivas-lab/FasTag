@@ -29,6 +29,7 @@ def read_conll(fstream):
     Reads a input stream @fstream (e.g. output of `open(fname, 'r')`) in CoNLL file format.
     @returns a list of examples [(tokens), (labels)]. @tokens and @labels are lists of string.
     """
+    1/0
     ret = []
 
     current_toks, current_lbls = [], []
@@ -87,6 +88,7 @@ def read_clinicalNote(path, icdCodeList = []):
 
 
 def test_read_conll():
+    1/0
     input_ = [
         "EU	ORG",
         "rejects	O",
@@ -114,6 +116,7 @@ def write_conll(fstream, data):
     Writes to an output stream @fstream (e.g. output of `open(fname, 'r')`) in CoNLL file format.
     @data a list of examples [(tokens), (labels), (predictions)]. @tokens, @labels, @predictions are lists of string.
     """
+    1/0
     for cols in data:
         for row in zip(*cols):
             fstream.write("\t".join(row))
@@ -121,6 +124,7 @@ def write_conll(fstream, data):
         fstream.write("\n")
 
 def test_write_conll():
+    1/0
     input = [
         ("EU rejects German call to boycott British lamb .".split(), "ORG O MISC O O O MISC O O".split()),
         ("Peter Blackburn".split(), "PER PER".split())
@@ -160,7 +164,10 @@ def load_word_vector_mapping(vocab_fstream, vector_fstream):
     # 1/0
     return ret
 
+
+# Probably want to keep around so we can test out mappings
 def test_load_word_vector_mapping():
+    1/0
     vocab = """UUUNKKK
 the
 ,
@@ -187,6 +194,7 @@ def window_iterator(seq, n=1, beg="<s>", end="</s>"):
     """
     Iterates through seq by returning windows of length 2n+1
     """
+    1/0
     for i in range(len(seq)):
         l = max(0, i-n)
         r = min(len(seq), i+n+1)
@@ -197,46 +205,53 @@ def window_iterator(seq, n=1, beg="<s>", end="</s>"):
             ret = ret + [end,] * (i+n+1 - len(seq))
         yield ret
 
-def test_window_iterator():
-    assert list(window_iterator(list("abcd"), n=0)) == [["a",], ["b",], ["c",], ["d"]]
-    assert list(window_iterator(list("abcd"), n=1)) == [["<s>","a","b"], ["a","b","c",], ["b","c","d",], ["c", "d", "</s>",]]
+# def test_window_iterator():
+#     1/0
+#     assert list(window_iterator(list("abcd"), n=0)) == [["a",], ["b",], ["c",], ["d"]]
+#     assert list(window_iterator(list("abcd"), n=1)) == [["<s>","a","b"], ["a","b","c",], ["b","c","d",], ["c", "d", "</s>",]]
 
-def one_hot(n, y):
-    """
-    Create a one-hot @n-dimensional vector with a 1 in position @i
-    """
-    if isinstance(y, int):
-        ret = zeros(n)
-        ret[y] = 1.0
-        return ret
-    elif isinstance(y, list):
-        ret = zeros((len(y), n))
-        ret[np.arange(len(y)),y] = 1.0
-        return ret
-    else:
-        raise ValueError("Expected an int or list got: " + y)
+# def one_hot(n, y):
+#     """
+#     Create a one-hot @n-dimensional vector with a 1 in position @i
+#     """
+#     1/0
+#     if isinstance(y, int):
+#         ret = zeros(n)
+#         ret[y] = 1.0
+#         return ret
+#     elif isinstance(y, list):
+#         ret = zeros((len(y), n))
+#         ret[np.arange(len(y)),y] = 1.0
+#         return ret
+#     else:
+#         raise ValueError("Expected an int or list got: " + y)
 
 
-def to_table(data, row_labels, column_labels, precision=2, digits=4):
-    """Pretty print tables.
-    Assumes @data is a 2D array and uses @row_labels and @column_labels
-    to display table.
-    """
-    # Convert data to strings
-    data = [["%04.2f"%v for v in row] for row in data]
-    cell_width = max(
-        max(map(len, row_labels)),
-        max(map(len, column_labels)),
-        max(max(map(len, row)) for row in data))
-    def c(s):
-        """adjust cell output"""
-        return s + " " * (cell_width - len(s))
-    ret = ""
-    ret += "\t".join(map(c, column_labels)) + "\n"
-    for l, row in zip(row_labels, data):
-        ret += "\t".join(map(c, [l] + row)) + "\n"
-    return ret
+# def to_table(data, row_labels, column_labels, precision=2, digits=4):
+#     """Pretty print tables.
+#     Assumes @data is a 2D array and uses @row_labels and @column_labels
+#     to display table.
+#     """
+#     # Convert data to strings
+#     1/0
+#     data = [["%04.2f"%v for v in row] for row in data]
+#     cell_width = max(
+#         max(map(len, row_labels)),
+#         max(map(len, column_labels)),
+#         max(max(map(len, row)) for row in data))
+#     def c(s):
+#         """adjust cell output"""
+#         return s + " " * (cell_width - len(s))
+#     ret = ""
+#     ret += "\t".join(map(c, column_labels)) + "\n"
+#     for l, row in zip(row_labels, data):
+#         ret += "\t".join(map(c, [l] + row)) + "\n"
+#     return ret
 
+
+
+
+# Probably keep this around so we can use it
 class ConfusionMatrix(object):
     """
     A confusion matrix stores counts of (true, guessed) labels, used to
@@ -410,69 +425,69 @@ class Progbar(object):
         self.update(self.seen_so_far+n, values)
 
 
-def get_minibatches(data, minibatch_size, shuffle=True):
-    """
-    Iterates through the provided data one minibatch at at time. You can use this function to
-    iterate through data in minibatches as follows:
+# def get_minibatches(data, minibatch_size, shuffle=True):
+#     """
+#     Iterates through the provided data one minibatch at at time. You can use this function to
+#     iterate through data in minibatches as follows:
 
-        for inputs_minibatch in get_minibatches(inputs, minibatch_size):
-            ...
+#         for inputs_minibatch in get_minibatches(inputs, minibatch_size):
+#             ...
 
-    Or with multiple data sources:
+#     Or with multiple data sources:
 
-        for inputs_minibatch, labels_minibatch in get_minibatches([inputs, labels], minibatch_size):
-            ...
+#         for inputs_minibatch, labels_minibatch in get_minibatches([inputs, labels], minibatch_size):
+#             ...
 
-    Args:
-        data: there are two possible values:
-            - a list or numpy array
-            - a list where each element is either a list or numpy array
-        minibatch_size: the maximum number of items in a minibatch
-        shuffle: whether to randomize the order of returned data
-    Returns:
-        minibatches: the return value depends on data:
-            - If data is a list/array it yields the next minibatch of data.
-            - If data a list of lists/arrays it returns the next minibatch of each element in the
-              list. This can be used to iterate through multiple data sources
-              (e.g., features and labels) at the same time.
+#     Args:
+#         data: there are two possible values:
+#             - a list or numpy array
+#             - a list where each element is either a list or numpy array
+#         minibatch_size: the maximum number of items in a minibatch
+#         shuffle: whether to randomize the order of returned data
+#     Returns:
+#         minibatches: the return value depends on data:
+#             - If data is a list/array it yields the next minibatch of data.
+#             - If data a list of lists/arrays it returns the next minibatch of each element in the
+#               list. This can be used to iterate through multiple data sources
+#               (e.g., features and labels) at the same time.
 
-    """
-    list_data = type(data) is list and (type(data[0]) is list or type(data[0]) is np.ndarray)
-    data_size = len(data[0]) if list_data else len(data)
-    indices = np.arange(data_size)
-    if shuffle:
-        np.random.shuffle(indices)
-    for minibatch_start in np.arange(0, data_size, minibatch_size):
-        minibatch_indices = indices[minibatch_start:minibatch_start + minibatch_size]
-        yield [minibatch(d, minibatch_indices) for d in data] if list_data \
-            else minibatch(data, minibatch_indices)
+#     """
+#     list_data = type(data) is list and (type(data[0]) is list or type(data[0]) is np.ndarray)
+#     data_size = len(data[0]) if list_data else len(data)
+#     indices = np.arange(data_size)
+#     if shuffle:
+#         np.random.shuffle(indices)
+#     for minibatch_start in np.arange(0, data_size, minibatch_size):
+#         minibatch_indices = indices[minibatch_start:minibatch_start + minibatch_size]
+#         yield [minibatch(d, minibatch_indices) for d in data] if list_data \
+#             else minibatch(data, minibatch_indices)
 
 
-def minibatch(data, minibatch_idx):
-    return data[minibatch_idx] if type(data) is np.ndarray else [data[i] for i in minibatch_idx]
+# def minibatch(data, minibatch_idx):
+#     return data[minibatch_idx] if type(data) is np.ndarray else [data[i] for i in minibatch_idx]
 
-def minibatches(data, batch_size, shuffle=True):
-    batches = [np.array(col) for col in zip(*data)]
-    return get_minibatches(batches, batch_size, shuffle)
+# def minibatches(data, batch_size, shuffle=True):
+#     batches = [np.array(col) for col in zip(*data)]
+#     return get_minibatches(batches, batch_size, shuffle)
 
-def print_sentence(output, sentence, labels, predictions):
+# def print_sentence(output, sentence, labels, predictions):
 
-    spacings = [max(len(sentence[i]), len(labels[i]), len(predictions[i])) for i in range(len(sentence))]
-    # Compute the word spacing
-    output.write("x : ")
-    for token, spacing in zip(sentence, spacings):
-        output.write(token)
-        output.write(" " * (spacing - len(token) + 1))
-    output.write("\n")
+#     spacings = [max(len(sentence[i]), len(labels[i]), len(predictions[i])) for i in range(len(sentence))]
+#     # Compute the word spacing
+#     output.write("x : ")
+#     for token, spacing in zip(sentence, spacings):
+#         output.write(token)
+#         output.write(" " * (spacing - len(token) + 1))
+#     output.write("\n")
 
-    output.write("y*: ")
-    for token, spacing in zip(labels, spacings):
-        output.write(token)
-        output.write(" " * (spacing - len(token) + 1))
-    output.write("\n")
+#     output.write("y*: ")
+#     for token, spacing in zip(labels, spacings):
+#         output.write(token)
+#         output.write(" " * (spacing - len(token) + 1))
+#     output.write("\n")
 
-    output.write("y': ")
-    for token, spacing in zip(predictions, spacings):
-        output.write(token)
-        output.write(" " * (spacing - len(token) + 1))
-    output.write("\n")
+#     output.write("y': ")
+#     for token, spacing in zip(predictions, spacings):
+#         output.write(token)
+#         output.write(" " * (spacing - len(token) + 1))
+#     output.write("\n")
