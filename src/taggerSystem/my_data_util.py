@@ -87,6 +87,7 @@ class ModelHelper(object):
     # converts a sentence over to it's word ID and converts the case (aa (all lower). AA (all upper), aA, or Aa)
     # over to integers. Then each word becomes two features. It's word ID and the ID of the case.
     # classes are also converted into numbers.
+    # only takes the first max_length words in the sentence
     def vectorize_example(self, sentence, labels=None):
         sentence_ = [[self.tok2id.get(normalize(word), self.tok2id[UNK]), self.tok2id[P_CASE + casing(word)]] for word in sentence[:self.max_length]]
         if labels:
@@ -168,23 +169,23 @@ def load_and_preprocess_data(data_train, data_valid, maxAllowedNoteLength):
     global ICDCODEDICT
     start = time.time()
     logger.info("Loading training data...")
-    train, ICDCODELIST = read_clinicalNote(data_train, icdCodeList = ICDCODELIST)
-    logger.info("Done. Read %d notes", len(train))
+    trainRaw, ICDCODELIST = read_clinicalNote(data_train, icdCodeList = ICDCODELIST)
+    logger.info("Done. Read %d notes", len(trainRaw))
     logger.info("Loading dev data...")
-    dev, ICDCODELIST = read_clinicalNote(data_valid, ICDCODELIST)
-    logger.info("Done. Read %d notes", len(dev))
+    devRaw, ICDCODELIST = read_clinicalNote(data_valid, ICDCODELIST)
+    logger.info("Done. Read %d notes", len(devRaw))
     logger.info("Total read time %f", time.time() - start)
     ICDCODEDICT = {code: i for i, (code, _) in enumerate(Counter(ICDCODELIST).most_common())}
     assert len(ICDCODEDICT.values()) == len(set(ICDCODELIST))#just making sure all values are unique
-    helper = ModelHelper.build(train, maxAllowedNoteLength)
+    helper = ModelHelper.build(trainRaw, maxAllowedNoteLength)
     logger.info("There are a total of %d ICD codes", len(ICDCODEDICT.values()))
-    train_data = helper.vectorize(train)
+    train_data = helper.vectorize(trainRaw)
     # print(train_data)
-    dev_data = helper.vectorize(dev)
+    dev_data = helper.vectorize(devRaw)
     xTrain, yTrain = helper.matrixify(train_data)
     xDev, yDev = helper.matrixify(dev_data)
     helper.icdDict = ICDCODEDICT
-    return helper, train_data, dev_data, train, dev, xTrain, yTrain, xDev, yDev
+    return helper, train_data, dev_data, trainRaw, devRaw, xTrain, yTrain, xDev, yDev
 
 # embeddings are read in from wordvecter.txt where each line correpsonds to the word embedding
 # of the word on the same line in vocab.txt.
@@ -218,3 +219,23 @@ def build_dict(words, max_words=None, offset=0):
         words = cnt.most_common()
     return {word: offset+i for i, (word, _) in enumerate(words)}
 
+##################################Input##################################
+# dataList: Object returned by vectorize. List of tuples where first elem
+#   in tuple is a lit of lists [wordIdx, other features....] and the
+#   second element is a binary np.array of indicating which diseases this
+#   this admission was diagnosed with 
+##################################Output#################################
+# lastTrueWordIdxsVec: vector which has the last true word index of each
+#   sentence from dataList
+##################################Definition#############################
+# Simply iterates through the sentences and returns the length of the
+#   sentence list which corresponds to the index of the last word.
+def lastTrueWordIdxs(dataList):
+    sentence = []
+    lastWordIdxList = np.zeros(shape = (len(dataList), 1))
+    for idx, noteList in enumerate(dataList):
+        sentence = noteList[0]
+        # print(sentence)
+        lastWordIdxList[idx] = len(sentence)-1
+    # print(lastWordIdxList)
+    return(lastWordIdxList)
