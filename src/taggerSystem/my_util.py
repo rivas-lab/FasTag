@@ -65,15 +65,15 @@ def read_conll(fstream):
 #############################Description#######################
 # Expects a csv file and iterates through each row extracting
 #   the text and the icd codes associated with the note
-def read_clinicalNote(path, icdCodeList = []):
+def read_clinicalNote(path, codeIdx, textIdx, icdCodeList = []):
     """
     Reads a input stream @fstream (e.g. output of `open(fname, 'r')`).
     @returns a list of examples [(tokens), (labels)]. @tokens and @labels are lists of string.
     """
     expectedHeader = ['', 'HADM_ID', 'SUBJECT_ID', 'ICD9_CODE', 'CHARTDATE', 'DESCRIPTION', 'TEXT'] # old version.
     expectedHeader = ["","HADM_ID","SUBJECT_ID","ICD9_CODE","CHARTDATE","DESCRIPTION","TEXT","Level2ICD","TopLevelICD","V9"]
-    codeIdx = 9
-    textIdx = 6
+    # codeIdx = 9
+    # textIdx = 6
     ret = []
 
     current_toks, current_lbls = [], []

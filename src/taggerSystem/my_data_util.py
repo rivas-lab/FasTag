@@ -164,15 +164,15 @@ class ModelHelper(object):
             yData[rowIdx] = row[1]
         return xData, yData
 
-def load_and_preprocess_data(data_train, data_valid, maxAllowedNoteLength):
+def load_and_preprocess_data(data_train, data_valid, maxAllowedNoteLength, codeIdx, textIdx):
     global ICDCODELIST
     global ICDCODEDICT
     start = time.time()
     logger.info("Loading training data...")
-    trainRaw, ICDCODELIST = read_clinicalNote(data_train, icdCodeList = ICDCODELIST)
+    trainRaw, ICDCODELIST = read_clinicalNote(data_train, codeIdx, textIdx, icdCodeList = ICDCODELIST)
     logger.info("Done. Read %d notes", len(trainRaw))
     logger.info("Loading dev data...")
-    devRaw, ICDCODELIST = read_clinicalNote(data_valid, ICDCODELIST)
+    devRaw, ICDCODELIST = read_clinicalNote(data_valid, codeIdx, textIdx, icdCodeList = ICDCODELIST)
     logger.info("Done. Read %d notes", len(devRaw))
     logger.info("Total read time %f", time.time() - start)
     ICDCODEDICT = {code: i for i, (code, _) in enumerate(Counter(ICDCODELIST).most_common())}
