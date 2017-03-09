@@ -8,10 +8,11 @@
 
 
 
-
+library(stringr)
 library(data.table)
 library(dplyr)
 library(lubridate)
+library(caret)
 Sys.setenv(TZ='UTC')
 
 
@@ -64,6 +65,7 @@ icd9NotesDataTable = right_join(x = diagnoses, y = notes, by = 'HADM_ID')
 ##################################################################################
 # Extra filtering
 ##################################################################################
+icd9NotesDataTable = filter(icd9NotesDataTable, ICD9_CODE != '')
 
 # filter out any words not needed
 # filter out and icd9 codes not needed
@@ -171,6 +173,7 @@ for (i in 1:nrow(icd9NotesDataTable)){
 # any admissions in train and test
 ##################################################################################
 trainingFrac = 0.75
+
 trainingIdxs = sample.int(n = floor(nrow(icd9NotesDataTable)*trainingFrac), replace = FALSE)
 icd9NotesDataTable_train = icd9NotesDataTable[trainingIdxs,]
 icd9NotesDataTable_valid = icd9NotesDataTable[-trainingIdxs,]
