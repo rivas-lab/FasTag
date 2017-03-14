@@ -13,7 +13,7 @@ import numpy as np
 import sys
 sys.path.append('src/taggerSystem/')
 from my_util import read_clinicalNote, ConfusionMatrix, load_word_vector_mapping
-from defs import LBLS, NONE, LMAP, NUM, UNK, EMBED_SIZE
+from defs import LBLS, NONE, LMAP, NUM, UNK
 import time
 
 logger = logging.getLogger(__name__)
@@ -192,10 +192,11 @@ def load_and_preprocess_data(data_train, data_valid, maxAllowedNoteLength, codeI
 # embeddings in the end is a list of lsits where each inner list is the word embedding of a word.
 # these can be accessed by tok2id[word] which returns the index into embeddings where the
 # corresponding word vecter exists.
-def load_embeddings(vocabPath, wordVecPath, helper):
+def load_embeddings(vocabPath, wordVecPath, helper, embeddingSize):
     vocabStream = open(vocabPath, 'r')
     wordVecStream = open(wordVecPath, 'r')
-    embeddings = np.array(np.random.randn(len(helper.tok2id) + 1, EMBED_SIZE), dtype=np.float32)
+    # embeddings = np.array(np.random.randn(len(helper.tok2id) + 1, EMBED_SIZE), dtype=np.float32)
+    embeddings = np.array(np.random.randn(len(helper.tok2id) + 1, embeddingSize), dtype=np.float32)
 
     embeddings[0] = 0.
     for word, vec in load_word_vector_mapping(vocabStream, wordVecStream).items():
