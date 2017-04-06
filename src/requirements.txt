@@ -1,5 +1,5 @@
-tensorflow-gpu
-matplotlib
-scipy
-numpy
-sklearn
+tensorflow-gpu==0.10.0rc0
+matplotlib==1.5.3
+scipy==0.18.1
+numpy==1.11.2
+sklearn==0.0
