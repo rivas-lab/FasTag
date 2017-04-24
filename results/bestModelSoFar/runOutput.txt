@@ -1,0 +1,79 @@
+***************************
+                ***************************
+                Running on epoch 0
+                ***************************
+                ***************************
+                ***************************
+average training loss 0.500325test loss 0.491018Total run time was 71.625576New best model found. Saving***************************
+                ***************************
+                Running on epoch 1
+                ***************************
+                ***************************
+                ***************************
+average training loss 0.451924test loss 0.483639Total run time was 70.101967New best model found. Saving***************************
+                ***************************
+                Running on epoch 2
+                ***************************
+                ***************************
+                ***************************
+average training loss 0.440678test loss 0.478434Total run time was 70.616586New best model found. Saving***************************
+                ***************************
+                Running on epoch 3
+                ***************************
+                ***************************
+                ***************************
+average training loss 0.432251test loss 0.476400Total run time was 71.076064New best model found. Saving***************************
+                ***************************
+                Running on epoch 4
+                ***************************
+                ***************************
+                ***************************
+average training loss 0.423319test loss 0.463686Total run time was 71.727070New best model found. Saving***************************
+                ***************************
+                Running on epoch 5
+                ***************************
+                ***************************
+                ***************************
+average training loss 0.416945test loss 0.457411Total run time was 70.892951New best model found. Saving***************************
+                ***************************
+                Running on epoch 6
+                ***************************
+                ***************************
+                ***************************
+average training loss 0.400513test loss 0.451164Total run time was 70.077210New best model found. Saving***************************
+                ***************************
+                Running on epoch 7
+                ***************************
+                ***************************
+                ***************************
+average training loss 0.388382test loss 0.442431Total run time was 69.385797New best model found. Saving***************************
+                ***************************
+                Running on epoch 8
+                ***************************
+                ***************************
+                ***************************
+average training loss 0.375034test loss 0.436145Total run time was 69.231137New best model found. Saving***************************
+                ***************************
+                Running on epoch 9
+                ***************************
+                ***************************
+                ***************************
+average training loss 0.363272test loss 0.430467Total run time was 70.228770New best model found. Saving***************************
+                ***************************
+                Running on epoch 10
+                ***************************
+                ***************************
+                ***************************
+average training loss 0.351400test loss 0.430589Total run time was 69.542973***************************
+                ***************************
+                Running on epoch 11
+                ***************************
+                ***************************
+                ***************************
+average training loss 0.340811test loss 0.433463Total run time was 70.704638***************************
+                ***************************
+                Running on epoch 12
+                ***************************
+                ***************************
+                ***************************
+average training loss 0.331193test loss 0.437741Total run time was 69.215216Stopping early because of increasing validation loss
