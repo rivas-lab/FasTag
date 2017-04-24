@@ -4,43 +4,50 @@ from tensorflow.examples.tutorials.mnist import input_data
 
 
 
-def LSTM(x, weight, bias, trueWordIdxs, outputKeepProb, inputKeepProb, n_hidden, num_layers, batch_size, max_length):
+def LSTM(x, weight, bias, trueWordIdxs, outputKeepProb, inputKeepProb, n_hidden, num_layers, batch_size, max_length, chatty = False):
     cell = tf.contrib.rnn.BasicLSTMCell(n_hidden,state_is_tuple = True)
     cell = tf.contrib.rnn.DropoutWrapper(cell=cell, output_keep_prob = outputKeepProb, 
                                          input_keep_prob = inputKeepProb)
     cell = tf.contrib.rnn.MultiRNNCell(cells=[cell] * num_layers, state_is_tuple=True)
 #     If we ever wanna get fancy we can try the above.
-    print(type(cell))
-    print(cell)
-    print(type(x))
-    print(x.get_shape())
-    print('cell output size')
-    print(cell.output_size)
-    print('cell state size')
-    print(cell.state_size)
+    if chatty:
+        print(type(cell))
+        print(cell)
+        print(type(x))
+        print(x.get_shape())
+        print('cell output size')
+        print(cell.output_size)
+        print('cell state size')
+        print(cell.state_size)
 
     output, state = tf.nn.dynamic_rnn(cell = cell, inputs = x, dtype = tf.float32)
-    print('output shape')
-    print(output.get_shape())
+    if chatty:
+        print('output shape')
+        print(output.get_shape())
     # new code
     offset = tf.expand_dims(tf.range(0, batch_size, dtype = tf.int32)*max_length, 1)
     offset = tf.expand_dims(tf.range(0, tf.shape(x)[0], dtype = tf.int32)*max_length, 1)
-    print('offset shape')
-    print(offset.get_shape())
+    if chatty:
+        print('offset shape')
+        print(offset.get_shape())
     output = tf.reshape(output,[-1, n_hidden]) # collapses the 3d matrix into a 2d
     # matrix where all matrices are stacked on top of eachother
-    print('output shape new shape')
-    print(output.get_shape())
+    if chatty:
+        print('output shape new shape')
+        print(output.get_shape())
     flattened_indices = trueWordIdxs + offset
-    print('flattened indices shape')
-    print(flattened_indices.get_shape())
+    if chatty:
+        print('flattened indices shape')
+        print(flattened_indices.get_shape())
     output_flattened = tf.gather(output, flattened_indices)
     output_flattened = tf.reshape(output_flattened, [-1, n_hidden])
-    print('output flattened shape')
-    print(output_flattened.get_shape())
+    if chatty:
+        print('output flattened shape')
+        print(output_flattened.get_shape())
     output_logits = tf.add(tf.matmul(output_flattened,weight),bias)
-    print('output wx + b')
-    print(output_logits.get_shape())
+    if chatty:
+        print('output wx + b')
+        print(output_logits.get_shape())
     return output_logits
 
 
@@ -87,7 +94,7 @@ def define_scope(function, scope=None, *args, **kwargs):
 class Model:
 
     # def __init__(self, xPlaceHolder, yPlaceHolder, embeddings, hyperParamDict):
-    def __init__(self, nColsInput, nLabels, embeddings, hyperParamDict):
+    def __init__(self, nColsInput, nLabels, embeddings, hyperParamDict, chatty = False):
         """
         This is a doc string
         """
@@ -95,6 +102,7 @@ class Model:
         # yTruth = tf.placeholder(tf.int32, shape = (None, helper.n_labels))
         # y_steps = tf.placeholder(tf.int32, shape = (None, helper.n_labels))# not sure what this is
         # trueWordIdxs = tf.placeholder(tf.int32, shape = (None,1))# vector which holds true word
+        self.chatty = chatty
         self.outputKeepProb = tf.placeholder(tf.float32, shape=(), name = 'outputKeepProb')
         self.inputKeepProb = tf.placeholder(tf.float32, shape=(), name = 'inputKeepProb')
         self.maxLength = nColsInput
@@ -124,17 +132,20 @@ class Model:
                                initializer = tf.constant_initializer(0))
 #         pretrainedEmbeddings = tf.Variable(self.embeddings)
         wordEmbeddings = tf.nn.embedding_lookup(params = self.pretrainedEmbeddings, ids = x)
-        print(wordEmbeddings.get_shape())
-        print('shape of embeddings')
-        print(wordEmbeddings.get_shape())
-        print('U shape')
-        print(U.get_shape())
-        print('bias shape')
-        print(bias.get_shape())
+        if self.chatty:
+            # print(self.chatty)
+            print(wordEmbeddings.get_shape())
+            print('shape of embeddings')
+            print(wordEmbeddings.get_shape())
+            print('U shape')
+            print(U.get_shape())
+            print('bias shape')
+            print(bias.get_shape())
         y_last = LSTM(wordEmbeddings,U,bias, self.trueWordIdxs, self.outputKeepProb, self.inputKeepProb, 
             n_hidden = self.hyperParamDict['n_hidden'], num_layers = self.hyperParamDict['numLayers'],
-            batch_size = self.hyperParamDict['batchSize'], max_length = self.maxLength)# TODO is y_last the correct thing to return?
-        print(y_last.get_shape())
+            batch_size = self.hyperParamDict['batchSize'], max_length = self.maxLength, chatty = self.chatty)# TODO is y_last the correct thing to return?
+        if self.chatty:
+            print(y_last.get_shape())
         # print('como estas bitches')
         return(y_last)
 
