@@ -77,7 +77,8 @@ def trainModel(helperObj, embeddings, hyperParamDict, xDev, xTrain, yDev, yTrain
                     totalBatchError += batchError
                     if(batchNum%25 == 0):
                         # f.write('running iteration %d with loss %3f \n'% (b, c))
-                        print('running iteration %d with loss %3f'% (batchNum, batchError))
+                        # print('Total run time was %3f'% (time.time() - start))
+                        print('running iteration %d with loss %3f at time %3f'% (batchNum, batchError, (time.time() - start)))
                 avgBatchError = totalBatchError/total_batches
     #             batchSizeDev = 3295
     #             totalBatchesDev = (xDev.shape[0]//batchSizeDev)
