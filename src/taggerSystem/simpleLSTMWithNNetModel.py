@@ -60,7 +60,7 @@ def feedForwardNNet(sizeList, lstmHiddenState, chatty = False):
             print(bias.get_shape())
         output_logits = tf.nn.relu(tf.matmul(lstmHiddenState, W_1) + b_1)
         output_logits = tf.nn.relu(tf.matmul(output_logits, W_2) + b_2)
-        output_logits = tf.nn.relu(tf.matmul(output_logits, U) + bias)
+        output_logits = tf.matmul(output_logits, U) + bias
     
     return(output_logits)
 
