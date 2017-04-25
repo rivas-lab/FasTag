@@ -30,13 +30,13 @@ def feedForwardNNet(sizeList, lstmHiddenState, chatty = False):
         W_1 = tf.get_variable(name = 'W_1', 
                             shape = (sizeList[0], sizeList[1]), 
                         initializer = tf.contrib.layers.xavier_initializer())
-        b_1 = bias = tf.get_variable(name = 'b_1', shape = [sizeList[1]], 
+        b_1 = tf.get_variable(name = 'b_1', shape = [sizeList[1]], 
                                initializer = tf.constant_initializer(0))
 
         W_2 = tf.get_variable(name = 'W_2', 
                             shape = (sizeList[1], sizeList[2]), 
                         initializer = tf.contrib.layers.xavier_initializer())
-        b_2 = bias = tf.get_variable(name = 'b_2', shape = [sizeList[2]], 
+        b_2 = tf.get_variable(name = 'b_2', shape = [sizeList[2]], 
                                initializer = tf.constant_initializer(0))
 
         U = tf.get_variable(name = 'U', 
@@ -52,7 +52,7 @@ def feedForwardNNet(sizeList, lstmHiddenState, chatty = False):
             print(W_2.get_shape())
             print('W_2 shape')
             print(b_2.get_shape())
-            print('b_2 shape')
+            print('bias shape')
             print(bias.get_shape())
             print('U shape')
             print(U.get_shape())
