@@ -10,6 +10,31 @@ from tensorflow.examples.tutorials.mnist import input_data
 #Note: sizeList must have the n_hidden as the first size and n_classes
 # as the last size and then anything else in between is gravy
 def feedForwardNNet(sizeList, lstmHiddenState, chatty = False):
+    """
+        Hard coded different feed forward nnets to add to the end of the LSTM.
+        Not sure if this can be done automatically, but this way it's pretty easy
+        to create different length nnets to tack on.
+        Example: 
+
+        Attributes:
+
+        Args:
+            sizeList (list): Gives the size of the weight and bias matrices
+                that the fully connected nnets should use. The first element
+                should be the size of the last hiddent state from the LSTM
+                (or whatever the LSTM outputs) and the last element should be
+                the number of classes.
+                [200, 150, 75, 19] for example
+            lstmHiddenState (tensor): Should be the vector output by the LSTM cell.
+            chatty (bool): I forgot the word verbose, so this tells the function 
+                whether or not it should be printing
+
+        Returns:
+            output_logits: These are the final vector of the FCNNET and still need
+                to be processed to get actual predictions from them
+        TODO:
+            1) Would be nice to have some non-linearity.
+    """
     assert len(sizeList) in [2, 4], "This size list has not been coded up yet"
     if len(sizeList) == 2:
         U = tf.get_variable(name = 'U', 
@@ -27,6 +52,8 @@ def feedForwardNNet(sizeList, lstmHiddenState, chatty = False):
     if len(sizeList) == 4:
         # 1/0
         # 1/0
+        # tf.nn.dropout(h_fc1, keep_prob)
+        # add dropout with above code
         W_1 = tf.get_variable(name = 'W_1', 
                             shape = (sizeList[0], sizeList[1]), 
                         initializer = tf.contrib.layers.xavier_initializer())
@@ -68,7 +95,46 @@ def feedForwardNNet(sizeList, lstmHiddenState, chatty = False):
 
 
 
-def LSTM(x, sizeList, trueWordIdxs, outputKeepProb, inputKeepProb, n_hidden, num_layers, batch_size, max_length, chatty = False):
+def LSTM(x, sizeList, trueWordIdxs, outputKeepProb, inputKeepProb, n_hidden, 
+    num_layers, batch_size, max_length, chatty = False):
+    """
+        This is the entire implementation for the LSTM and the fully connected nnet 
+        attached the the last hidden state of the LSTM. Predictions are not output 
+        here so there's a bit more work that needs to be done when you get them.
+        They're basically logits still. 
+        Example: 
+
+        Attributes:
+
+        Args:
+            x (tf placeholder): Input for the LSTM. Shape = (None, nObs, maxWordLength)
+            sizeList (list): Gives the size of the weight and bias matrices
+                that the fully connected nnets should use. The first element
+                should be the size of the last hiddent state from the LSTM
+                (or whatever the LSTM outputs) and the last element should be
+                the number of classes.
+                [200, 150, 75, 19] for example
+            trueWordIdxs (tf placeholder): Each index tells the model which word is the
+                last true word since we had to make all notes the same length for batch
+                processing there is some padding going on.
+            outputKeepProb (tf placeholder): Essentially a float between 0 and 1 which is 
+                the keep probability for the hidden state of each LSTM cell
+            inputKeepProb (tf placeholder): Similar to above except it is for the input 
+                words. Doesn't seem to make a big difference so might as well keep at 1
+            n_hidden (int): Size of the hidden layer.
+            num_layers (int): How many stacked LSTMs to use.
+            batch_size (int): Batch size so I can go and pick out the last hidden state
+                which is used for prediction
+            max_length (int): Maximum length for the notes, enables batch processing. 
+            chatty (bool): I forgot the word verbose, so this tells the function 
+                whether or not it should be printin          
+
+        Returns:
+            output_logits (tensor): Vector with the logits for each observation. Will 
+                be of size (nObs, nClasses).
+        TODO:
+            1) nice to have bi directional RNN
+    """
     cell = tf.contrib.rnn.BasicLSTMCell(n_hidden,state_is_tuple = True)
     cell = tf.contrib.rnn.DropoutWrapper(cell=cell, output_keep_prob = outputKeepProb, 
                                          input_keep_prob = inputKeepProb)
@@ -160,7 +226,41 @@ class Model:
     # def __init__(self, xPlaceHolder, yPlaceHolder, embeddings, hyperParamDict):
     def __init__(self, nColsInput, nLabels, embeddings, hyperParamDict, sizeList, chatty = False):
         """
-        This is a doc string
+        Creates the model by building the computationa graph. Please note that the code above
+        for the decorator was taken from Danijar Hafner's blog post at 
+        https://danijar.com/structuring-your-tensorflow-models/. It lets me create the model in 
+        a modular fashion and then doesn't recreate it everytime one of the attributes is called.
+        Example: 
+
+        Attributes:
+            y_last: The prediction part of the computationa graph. it runs the LSTM and the neural 
+                network at the end.
+            optimize: Runs adam optimization with the given learning rate and some gradient clipping.
+            loss_function: Computes the loss using cross entropy.
+
+
+        Args:
+            nColsInput (int): Maximum length for the notes, enables batch processing.
+            nLabels (int): How many labels are being used for prediction. The number of ICD9 codes
+            embeddings (tf variable): Word embeddings.
+            hyperParamDict: Dictionary for all the tunable parameters and information about the model
+                being built.
+            sizeList (list): Gives the size of the weight and bias matrices
+                that the fully connected nnets should use. The first element
+                should be the size of the last hiddent state from the LSTM
+                (or whatever the LSTM outputs) and the last element should be
+                the number of classes.
+                [200, 150, 75, 19] for example
+            chatty (bool): I forgot the word verbose, so this tells the function 
+                whether or not it should be printing
+            
+
+        Returns:
+            Model Class Object. Lets you encapsulate the model in one object and access it through
+                attributes.
+            
+        TODO:
+            1) Add example for the hyper parameter dict
         """
         # x = tf.placeholder(tf.int32, shape= (None, helper.max_length))
         # yTruth = tf.placeholder(tf.int32, shape = (None, helper.n_labels))
@@ -189,6 +289,19 @@ class Model:
 
     @define_scope#(initializer=tf.contrib.slim.xavier_initializer())
     def y_last(self):
+        """
+        Gets to logits by creating the computational graph to that point.
+        Example: 
+
+        Attributes:
+
+        Args:
+            
+        Returns:
+            
+        TODO:
+            1) 
+        """
 #         print(wtfStr)
         n_classes = int(self.yPlaceHolder.shape[1])
         x = self.xPlaceHolder
@@ -217,6 +330,20 @@ class Model:
 
     @define_scope
     def optimize(self):
+        """
+        Optimizer which uses adam optimization and gradient clipping
+        Example: 
+
+        Attributes:
+
+        Args:
+            
+
+        Returns:
+            
+        TODO:
+            1) 
+        """
         optimizer = tf.train.AdamOptimizer(
             learning_rate = self.hyperParamDict['learningRate'])
         # optimizer = tf.train.GradientDescentOptimizer(learning_rate = learning_rate) dis from hw3
@@ -233,6 +360,20 @@ class Model:
 
     @define_scope
     def loss_function(self):
+        """
+        Loss function which uses cross entropy and sigmoid
+        Example: 
+
+        Attributes:
+
+        Args:
+            
+
+        Returns:
+            
+        TODO:
+            1) 
+        """
         batchError = tf.nn.sigmoid_cross_entropy_with_logits(logits = self.y_last, 
                                                  labels = tf.cast(self.yPlaceHolder, tf.float32))
         loss_function = tf.reduce_mean(batchError)
@@ -254,9 +395,24 @@ class Model:
     
     def save(self, savePath, session):
         """
-        Saves the computation map so that it can be loaded later for use
-        in computation, or training.
-        Might remove stuff needed for training (x, trueWordsIdx)
+        Saves the model weights. Not sure yet how to reload the model
+        as a whole, but it's possible to load the weights and use them
+        for prediction. Saves all the placeholders needed to run the model,
+        weights and the trained embeddings.
+        Example: 
+
+        Attributes:
+
+        Args:
+            savePath (str): Where to save the model.
+            session (tf session obj): The function used to save needs a 
+                session....
+
+        Returns:
+            None
+            
+        TODO:
+            1) 
         """
         all_saver = tf.train.Saver()
         tf.add_to_collection('y_last', self.y_last)
@@ -270,22 +426,28 @@ class Model:
         all_saver.save(session, savePath)
         
         
-#     def loadWeights(self, session, saverMetaPath, saverCheckPointPath):
-# #         saveMetaPath = 'results/temp/bestModel.meta'
-# #         saverCheckPointPath = 'results/temp/'
-#         new_saver = tf.train.import_meta_graph(saverMetaPath)
-#         new_saver.restore(session, tf.train.latest_checkpoint(saverCheckPointPath))
-#         pretrainedEmbeddings = tf.get_collection('pretrainedEmbeddings')[0]
-#         self.pretrainedEmbeddings = tf.Variable(pretrainedEmbeddings)
-#         # print(tf.get_collection('y_last')[0])
-#         self.y_last = tf.get_collection('y_last')[0]
-#         # y_lastLoaded = tf.get_collection('y_last')[0]
-#         # self.y_last.setter(value = y_lastLoaded)
-#         # self.hyperParamDict = hyperParamDict
-#         # return(0)
 
 
 def reloadModel(session, saverMetaPath, saverCheckPointPath):
+    """
+    Loades the model weights saved by he model.save() function.
+    Example: 
+
+    Attributes:
+
+    Args:
+        session (tf session obj): The function used to save needs a 
+            session...
+        saverMetaPath (str): Path to the .meta file
+        saverCheckPointPath (str): Path to the folder which contains
+            the checkpoint data.
+
+    Returns:
+        weightDict (dict): Just a dict that contains the weights, trained
+            embeddings and the input placeholders
+    TODO:
+        1) 
+    """
     new_saver = tf.train.import_meta_graph(saverMetaPath)
     new_saver.restore(session, tf.train.latest_checkpoint(saverCheckPointPath))
     y_last = tf.get_collection('y_last')[0]

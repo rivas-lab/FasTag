@@ -8,6 +8,31 @@ import time
 
 
 def getBatch(x, y, trueWordIdxs, batch_size, batchNum):
+    """
+    Gets the next iteration in the batch for x and y and the indices of the true word
+    Example: 
+
+    Attributes:
+
+    Args:
+        x (tf placeholder): shape = (nObs, maxWordLength) holds all training data
+        y (tf placeholder): shape = (nObs, nClasses) holds the response variable
+        truWordIdxs (tf placeholder): shape = (nObs ,1) Holds index of last true word
+            for a given note.
+        batch_size (int): uhm... batch size.... yeah....
+        batchNum (int): Which batch are we on. This with batch_size lets us calc
+            the offset to be used for indexing.
+        
+    Returns:
+        batch_x (tf placeholder): shape = (nObs, maxWordLength) holds all training data
+        batch_y (tf placeholder): shape = (nObs, nClasses) holds the response variable
+        batchTrueWordIdxs (tf placeholder): shape = (nObs ,1) Holds index of last true word
+            for a given note.
+        offset (int): index where the beginning of the batch was taken from
+        
+    TODO:
+        1) Might wanna check that all obs are used only once.
+    """
     offset = min((batchNum * batch_size), y.shape[0])
     batch_x = x[offset:(offset + batch_size), :]
     batch_y = y[offset:(offset + batch_size), :]
@@ -20,13 +45,53 @@ def getBatch(x, y, trueWordIdxs, batch_size, batchNum):
 def trainModel(helperObj, embeddings, hyperParamDict, xDev, xTrain, yDev, yTrain, 
                 lastTrueWordIdx_dev, lastTrueWordIdx_train, training_epochs,
                output_path, batchSizeTrain, sizeList, maxIncreasingLossCount = 3, batchSizeDev = 3295, chatty = False):
+    """
+    This function creates and runs the model. Everything needed for creating it, weights, hyper parameters, etc
+    are passed in and the model is created accordingly. Then it is trained, and validated, and finally saved if a
+    well performing model is found. it will stop running after the validation loss increases maxIncreasingLossCount
+    times,  but this counter is reset after a new best model is found. Note that if the batch size for the training
+    or testing is too large, or the max note length is too large this can hog memory and crash
+    Example:
+        helperObj (ModelHelper): Helper object which holds various information for the model. Check out
+            src/taggerSystem/data_util.py for more information on this class
+        embeddings (tf variable): Word embeddings used for this model.
+        hyperParamDict (dict):  Dictionary which hods various tunable hyper parameters
+        xDev (tf placeholder): placeholder for the validation set data. shape = (nObs_dev, maxNoteLength)
+        xTrain (tf placeholder): placeholder for the training set data. shape = (nObs_train, maxNoteLength
+        yTrain (tf placeholder): placeholder for the taining set ground truth. shape = (nObs_train, nClasses)
+        yDev (tf placeholder): placeholder for the validation set ground truth. shape = (nObs_dev, nClasses
+        lastTrueWordIdx_dev (tf placeholder): placeholder which holds indices for the last nonPadded word
+            in the validation set
+        lastTrueWordIdx_train (tf placeholder):placeholder which holds indices for the last nonPadded word
+            in the trainig set
+        training_epochs (int): Max number of epochs. Most often does not hit this number though
+        output_path (str): Where to save literally everything. Model weights, predictions, data, etc
+        batchSizeTrain (int): Size to use for stochastic gradient descent
+        sizeList (list): This is important because the final layers weight sizes are stored here
+        maxIncreasingLossCount (int): How soon after continuous increases in loss should the model stop.
+            validation set loss is used for this.
+        batchSizeDev (int): similar to batchSizeTrain except for the validation set. Important if you
+            don't have a lot of memory and can't run it all at once.
+        chatty (bool): How much printing should be done. right now it's only binary
+
+
+    Attributes:
+
+    Args:
+        
+    Returns:
+        None: But it does save the model, it's predictions, trainig/dev loss, y data and true word indices.
+        
+    TODO:
+        1) add example of hyperparameter dict.
+    """
     totalBatchesDev = (xDev.shape[0]//batchSizeDev)
     total_batches = (xTrain.shape[0]//batchSizeTrain)
     epochAvgLoss = np.zeros(training_epochs)
     epochAvgLossValid = np.zeros(training_epochs)
     epochPredictions = np.zeros(shape = [training_epochs, yDev.shape[0], yDev.shape[1]])
     validLossIncreasingCount = 0
-    maxIncreasingLossCount = 3
+    # maxIncreasingLossCount = 3
     prevValidLoss = np.inf
     minValidLoss = np.inf
     tf.reset_default_graph()
