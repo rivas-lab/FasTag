@@ -4,7 +4,71 @@ from tensorflow.examples.tutorials.mnist import input_data
 
 
 
-def LSTM(x, weight, bias, trueWordIdxs, outputKeepProb, inputKeepProb, n_hidden, num_layers, batch_size, max_length, chatty = False):
+
+
+
+#Note: sizeList must have the n_hidden as the first size and n_classes
+# as the last size and then anything else in between is gravy
+def feedForwardNNet(sizeList, lstmHiddenState, chatty = False):
+    assert len(sizeList) in [2, 4], "This size list has not been coded up yet"
+    if len(sizeList) == 2:
+        U = tf.get_variable(name = 'U', 
+                    shape = (sizeList[0], sizeList[1]), 
+                    initializer = tf.contrib.layers.xavier_initializer())
+        bias = tf.get_variable(name = 'bias', shape = [sizeList[1]], 
+                    initializer = tf.constant_initializer(0))
+        print('hello')
+        if chatty:
+            print('U shape')
+            print(U.get_shape())
+            print('bias shape')
+            print(bias.get_shape())
+        output_logits = tf.add(tf.matmul(lstmHiddenState,U),bias)
+    if len(sizeList) == 4:
+        # 1/0
+        # 1/0
+        W_1 = tf.get_variable(name = 'W_1', 
+                            shape = (sizeList[0], sizeList[1]), 
+                        initializer = tf.contrib.layers.xavier_initializer())
+        b_1 = bias = tf.get_variable(name = 'b_1', shape = [sizeList[1]], 
+                               initializer = tf.constant_initializer(0))
+
+        W_2 = tf.get_variable(name = 'W_2', 
+                            shape = (sizeList[1], sizeList[2]), 
+                        initializer = tf.contrib.layers.xavier_initializer())
+        b_2 = bias = tf.get_variable(name = 'b_2', shape = [sizeList[2]], 
+                               initializer = tf.constant_initializer(0))
+
+        U = tf.get_variable(name = 'U', 
+                            shape = (sizeList[2], sizeList[3]), 
+                        initializer = tf.contrib.layers.xavier_initializer())
+        bias = tf.get_variable(name = 'bias', shape = [sizeList[3]], 
+                               initializer = tf.constant_initializer(0))
+        if chatty:
+            print(W_1.get_shape())
+            print('W_1 shape')
+            print(b_1.get_shape())
+            print('b_1 shape')
+            print(W_2.get_shape())
+            print('W_2 shape')
+            print(b_2.get_shape())
+            print('b_2 shape')
+            print(bias.get_shape())
+            print('U shape')
+            print(U.get_shape())
+            print('bias shape')
+            print(bias.get_shape())
+        output_logits = tf.nn.relu(tf.matmul(lstmHiddenState, W_1) + b_1)
+        output_logits = tf.nn.relu(tf.matmul(output_logits, W_2) + b_2)
+        output_logits = tf.nn.relu(tf.matmul(output_logits, U) + bias)
+    
+    return(output_logits)
+
+
+
+
+
+def LSTM(x, sizeList, trueWordIdxs, outputKeepProb, inputKeepProb, n_hidden, num_layers, batch_size, max_length, chatty = False):
     cell = tf.contrib.rnn.BasicLSTMCell(n_hidden,state_is_tuple = True)
     cell = tf.contrib.rnn.DropoutWrapper(cell=cell, output_keep_prob = outputKeepProb, 
                                          input_keep_prob = inputKeepProb)
@@ -44,7 +108,7 @@ def LSTM(x, weight, bias, trueWordIdxs, outputKeepProb, inputKeepProb, n_hidden,
     if chatty:
         print('output flattened shape')
         print(output_flattened.get_shape())
-    output_logits = tf.add(tf.matmul(output_flattened,weight),bias)
+    output_logits = feedForwardNNet(sizeList, output_flattened, chatty = chatty)
     if chatty:
         print('output wx + b')
         print(output_logits.get_shape())
@@ -94,7 +158,7 @@ def define_scope(function, scope=None, *args, **kwargs):
 class Model:
 
     # def __init__(self, xPlaceHolder, yPlaceHolder, embeddings, hyperParamDict):
-    def __init__(self, nColsInput, nLabels, embeddings, hyperParamDict, chatty = False):
+    def __init__(self, nColsInput, nLabels, embeddings, hyperParamDict, sizeList, chatty = False):
         """
         This is a doc string
         """
@@ -103,6 +167,10 @@ class Model:
         # y_steps = tf.placeholder(tf.int32, shape = (None, helper.n_labels))# not sure what this is
         # trueWordIdxs = tf.placeholder(tf.int32, shape = (None,1))# vector which holds true word
         self.chatty = chatty
+        assert (sizeList[0] == hyperParamDict['n_hidden']) and (sizeList[-1] == nLabels), \
+            "Size list must start with the number of hidden units and end with the number of labels"
+        self.sizeList = sizeList
+        self.hyperParamDict = hyperParamDict
         self.outputKeepProb = tf.placeholder(tf.float32, shape=(), name = 'outputKeepProb')
         self.inputKeepProb = tf.placeholder(tf.float32, shape=(), name = 'inputKeepProb')
         self.maxLength = nColsInput
@@ -114,7 +182,6 @@ class Model:
         self.trueWordIdxs = tf.placeholder(tf.int32, shape = (None,1), name = 'trueWordIdxs')
 #         self.embeddings = embeddings
         self.pretrainedEmbeddings = tf.Variable(embeddings)
-        self.hyperParamDict = hyperParamDict
         self.y_last
         self.loss_function
         self.optimize
@@ -125,23 +192,22 @@ class Model:
 #         print(wtfStr)
         n_classes = int(self.yPlaceHolder.shape[1])
         x = self.xPlaceHolder
-        U = tf.get_variable(name = 'U', 
-                            shape = (self.hyperParamDict['n_hidden'], n_classes), 
-                        initializer = tf.contrib.layers.xavier_initializer())
-        bias = tf.get_variable(name = 'bias', shape = [n_classes], 
-                               initializer = tf.constant_initializer(0))
+        # U = tf.get_variable(name = 'U', 
+        #                     shape = (self.hyperParamDict['n_hidden'], n_classes), 
+        #                 initializer = tf.contrib.layers.xavier_initializer())
+        # bias = tf.get_variable(name = 'bias', shape = [n_classes], 
+        #                        initializer = tf.constant_initializer(0))
+        # sizeList = [self.hyperParamDict['n_hidden'], n_classes]
 #         pretrainedEmbeddings = tf.Variable(self.embeddings)
         wordEmbeddings = tf.nn.embedding_lookup(params = self.pretrainedEmbeddings, ids = x)
         if self.chatty:
-            # print(self.chatty)
-            print(wordEmbeddings.get_shape())
             print('shape of embeddings')
             print(wordEmbeddings.get_shape())
-            print('U shape')
-            print(U.get_shape())
-            print('bias shape')
-            print(bias.get_shape())
-        y_last = LSTM(wordEmbeddings,U,bias, self.trueWordIdxs, self.outputKeepProb, self.inputKeepProb, 
+        #     print('U shape')
+        #     print(U.get_shape())
+        #     print('bias shape')
+        #     print(bias.get_shape())
+        y_last = LSTM(wordEmbeddings, self.sizeList, self.trueWordIdxs, self.outputKeepProb, self.inputKeepProb, 
             n_hidden = self.hyperParamDict['n_hidden'], num_layers = self.hyperParamDict['numLayers'],
             batch_size = self.hyperParamDict['batchSize'], max_length = self.maxLength, chatty = self.chatty)# TODO is y_last the correct thing to return?
         if self.chatty:

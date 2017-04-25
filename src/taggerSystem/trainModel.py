@@ -19,7 +19,7 @@ def getBatch(x, y, trueWordIdxs, batch_size, batchNum):
 
 def trainModel(helperObj, embeddings, hyperParamDict, xDev, xTrain, yDev, yTrain, 
                 lastTrueWordIdx_dev, lastTrueWordIdx_train, training_epochs,
-               output_path, batchSizeTrain, maxIncreasingLossCount = 3, batchSizeDev = 3295, chatty = False):
+               output_path, batchSizeTrain, sizeList, maxIncreasingLossCount = 3, batchSizeDev = 3295, chatty = False):
     totalBatchesDev = (xDev.shape[0]//batchSizeDev)
     total_batches = (xTrain.shape[0]//batchSizeTrain)
     epochAvgLoss = np.zeros(training_epochs)
@@ -31,7 +31,7 @@ def trainModel(helperObj, embeddings, hyperParamDict, xDev, xTrain, yDev, yTrain
     minValidLoss = np.inf
     tf.reset_default_graph()
     model = Model(nColsInput = helperObj.max_length, nLabels = helperObj.n_labels,
-             embeddings = embeddings, hyperParamDict = hyperParamDict, chatty = chatty)
+             embeddings = embeddings, hyperParamDict = hyperParamDict, sizeList = sizeList, chatty = chatty)
     # print('Here is xTrain')
     # print(xTrain)
     lastTrainObsIdx = xTrain.shape[0]
@@ -114,9 +114,9 @@ def trainModel(helperObj, embeddings, hyperParamDict, xDev, xTrain, yDev, yTrain
                 epochPredictions[epoch,:,:] = pred_y
                 epochAvgLossValid[epoch] = validLoss
                 epochAvgLoss[epoch] = totalBatchError/total_batches
-                f.write('average training loss %f'% (epochAvgLoss[epoch]))
-                f.write('test loss %f'%(validLoss))
-                f.write('Total run time was %3f'% (time.time() - start))
+                f.write('average training loss %f \n'% (epochAvgLoss[epoch]))
+                f.write('test loss %f \n'%(validLoss))
+                f.write('Total run time was %3f \n'% (time.time() - start))
                 print('average training loss %f'% (epochAvgLoss[epoch]))
                 print('test loss %f'%(validLoss))
     #             print('previous valid loss %f'%(prevValidLoss))
@@ -127,7 +127,7 @@ def trainModel(helperObj, embeddings, hyperParamDict, xDev, xTrain, yDev, yTrain
                 if validLoss <= minValidLoss:
                     validLossIncreasingCount = 0
                     minValidLoss = validLoss
-                    f.write('New best model found. Saving')
+                    f.write('New best model found. Saving\n')
                     print('New best model found. Saving')
                     print(output_path)
                     model.save(session = session, savePath = os.path.join(output_path, 'bestModel'))
@@ -140,7 +140,7 @@ def trainModel(helperObj, embeddings, hyperParamDict, xDev, xTrain, yDev, yTrain
                 prevValidLoss = validLoss
                 if validLossIncreasingCount == maxIncreasingLossCount:
                     print('Stopping early because of increasing validation loss')
-                    f.write('Stopping early because of increasing validation loss')
+                    f.write('Stopping early because of increasing validation loss\n')
                     # model.save(session = session, savePath = output_path)
     #                 f.write('Stopping early because of increasing validation loss')
                     break
