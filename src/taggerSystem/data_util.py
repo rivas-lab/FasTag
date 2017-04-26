@@ -193,7 +193,7 @@ class ModelHelper(object):
             os.makedirs(path)
         # Save the tok2id map.
         with open(os.path.join(path, "features.pkl"), "wb") as f:
-            pickle.dump([self.tok2id, self.max_length, self.icdDict], f)
+            pickle.dump([self.tok2id, self.max_length, self.icdDict], f, protocol=2)
 
     @classmethod
     def load(cls, path):
