@@ -13,6 +13,9 @@ def read_clinicalNote(path, codeIdx, textIdx, icdCodeList = []):
     Reads a input stream @fstream (e.g. output of `open(fname, 'r')`).
     @returns a list of examples [(tokens), (labels)]. @tokens and @labels are lists of string.
     """
+    # print('read_clinicalNote')
+    # print(path)
+    # 1/0
     expectedHeader = ['', 'HADM_ID', 'SUBJECT_ID', 'ICD9_CODE', 'CHARTDATE', 'DESCRIPTION', 'TEXT'] # old version.
     expectedHeader = ["","HADM_ID","SUBJECT_ID","ICD9_CODE","CHARTDATE","DESCRIPTION","TEXT","Level2ICD","TopLevelICD","V9"]
     # codeIdx = 9
@@ -20,6 +23,7 @@ def read_clinicalNote(path, codeIdx, textIdx, icdCodeList = []):
     ret = []
 
     current_toks, current_lbls = [], []
+    # print(path)
     with open(path, 'r') as csvfile:
         csvReader = csv.reader(csvfile, delimiter=',', quotechar='\"', skipinitialspace=True)
         assert next(csvReader) == expectedHeader #checking that the header matches what we expect. 
@@ -27,6 +31,7 @@ def read_clinicalNote(path, codeIdx, textIdx, icdCodeList = []):
             # print(row[codeIdx].split('-'))
             ret.append((row[textIdx].split(), row[codeIdx].split('-')))
             icdCodeList.extend(row[codeIdx].split('-'))
+    # 1/0
     return(ret, list(set(icdCodeList)))
 
 def load_word_vector_mapping(vocab_fstream, vector_fstream):
