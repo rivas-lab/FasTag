@@ -222,6 +222,8 @@ def trainModel(helperObj, embeddings, hyperParamDict, xDev, xTrain, yDev, yTrain
     np.savetxt(os.path.join(output_path, 'epochPredsShape.gz'), 
                         np.array(epochPredictions.shape), fmt='%i')
     np.savetxt(os.path.join(output_path, 'yDev.gz'),yDev)
+    np.savetxt(os.path.join(output_path, 'yTrain.gz'),yTrain)
     #np.save(os.path.join(modelRunOutputPath, 'xDev.npy'), xDev)
     np.savetxt(os.path.join(output_path, 'devTrueIdxs.gz'), lastTrueWordIdx_dev)
+    np.savetxt(os.path.join(output_path, 'trainTrueIdxs.gz'), lastTrueWordIdx_train)
                 
