@@ -10,12 +10,24 @@ from numpy import array, zeros, allclose
 import csv
 def read_clinicalNote(path, codeIdx, textIdx, icdCodeList = []):
     """
-    Reads a input stream @fstream (e.g. output of `open(fname, 'r')`).
-    @returns a list of examples [(tokens), (labels)]. @tokens and @labels are lists of string.
+    Reads in a clinical note and returns a list of tokens as well as the ICD9 codes 
+    associated with the file. 
+    Example: 
+
+    Attributes:
+
+    Args:
+        path str: Path to clinical note csv
+        codeIdx int: Column index which contains icd codes
+        textIdx int: Column index which contains textIdx
+        icdCodeList list: List which will contian all unique icd9 codes
+        
+
+    Returns:
+
+    TODO:
+        1)
     """
-    # print('read_clinicalNote')
-    # print(path)
-    # 1/0
     expectedHeader = ['', 'HADM_ID', 'SUBJECT_ID', 'ICD9_CODE', 'CHARTDATE', 'DESCRIPTION', 'TEXT'] # old version.
     expectedHeader = ["","HADM_ID","SUBJECT_ID","ICD9_CODE","CHARTDATE","DESCRIPTION","TEXT","Level2ICD","TopLevelICD","V9"]
     # codeIdx = 9
@@ -39,6 +51,19 @@ def load_word_vector_mapping(vocab_fstream, vector_fstream):
     Load word vector mapping using @vocab_fstream, @vector_fstream.
     Assumes each line of the vocab file matches with those of the vector
     file.
+    Example: 
+
+    Attributes:
+
+    Args:
+        vocab_fstream fstream: Stream to where the vocab file is
+        vector_fstream fstream: stream to where the word vector file is
+        
+
+    Returns:
+        ret dict: a dict which maps vocab to word vectors.
+    TODO:
+        1)
     """
     ret = OrderedDict()
     for vocab, vector in zip(vocab_fstream, vector_fstream):

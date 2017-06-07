@@ -120,10 +120,6 @@ def trainModel(helperObj, embeddings, hyperParamDict, xDev, xTrain, yDev, yTrain
                 totalBatchError = 0.0
                 avgBatchError = 0.0
                 for batchNum in range(total_batches + 1):
-                    # print("""
-                    # Before doing any actual training be sure that you're using all training 
-                    # data.
-                    # """)
                     batch_x, batch_y, batchTrueWordIdxs, offset = getBatch(x = xTrain,
                                                                    y = yTrain,
                                                                    trueWordIdxs = lastTrueWordIdx_train,
@@ -131,8 +127,6 @@ def trainModel(helperObj, embeddings, hyperParamDict, xDev, xTrain, yDev, yTrain
                                                                   batchNum = batchNum)
                     if (offset + batchSizeTrain) >= lastTrainObsIdx:
                         lastTrainObsUsed = True
-                    # print('Here is xBatch')
-                    # print(batch_x)
                     _, batchError = session.run([model.optimize, model.loss_function], 
                                         feed_dict={model.xPlaceHolder: batch_x, 
                                         model.yPlaceHolder: batch_y, 
@@ -141,15 +135,10 @@ def trainModel(helperObj, embeddings, hyperParamDict, xDev, xTrain, yDev, yTrain
                                         model.inputKeepProb: hyperParamDict['inputKeepProb']})
                     totalBatchError += batchError
                     if(batchNum%25 == 0):
-                        # f.write('running iteration %d with loss %3f \n'% (b, c))
-                        # print('Total run time was %3f'% (time.time() - start))
                         print('running iteration %d with loss %3f at time %3f'% (batchNum, batchError, (time.time() - start)))
                 avgBatchError = totalBatchError/total_batches
-    #             batchSizeDev = 3295
-    #             totalBatchesDev = (xDev.shape[0]//batchSizeDev)
                 pred_y = np.full(shape = yDev.shape, fill_value = -1.0, dtype = np.float32)
-                # print(' here is xDev')
-                # print(xDev)
+
                 if not lastTrainObsUsed:
                     print('Never used the last training observation.')
                     print('exiting now')

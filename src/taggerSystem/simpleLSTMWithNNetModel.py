@@ -305,27 +305,15 @@ class Model:
 #         print(wtfStr)
         n_classes = int(self.yPlaceHolder.shape[1])
         x = self.xPlaceHolder
-        # U = tf.get_variable(name = 'U', 
-        #                     shape = (self.hyperParamDict['n_hidden'], n_classes), 
-        #                 initializer = tf.contrib.layers.xavier_initializer())
-        # bias = tf.get_variable(name = 'bias', shape = [n_classes], 
-        #                        initializer = tf.constant_initializer(0))
-        # sizeList = [self.hyperParamDict['n_hidden'], n_classes]
-#         pretrainedEmbeddings = tf.Variable(self.embeddings)
         wordEmbeddings = tf.nn.embedding_lookup(params = self.pretrainedEmbeddings, ids = x)
         if self.chatty:
             print('shape of embeddings')
             print(wordEmbeddings.get_shape())
-        #     print('U shape')
-        #     print(U.get_shape())
-        #     print('bias shape')
-        #     print(bias.get_shape())
         y_last = LSTM(wordEmbeddings, self.sizeList, self.trueWordIdxs, self.outputKeepProb, self.inputKeepProb, 
             n_hidden = self.hyperParamDict['n_hidden'], num_layers = self.hyperParamDict['numLayers'],
             batch_size = self.hyperParamDict['batchSize'], max_length = self.maxLength, chatty = self.chatty)# TODO is y_last the correct thing to return?
         if self.chatty:
             print(y_last.get_shape())
-        # print('como estas bitches')
         return(y_last)
 
     @define_scope
