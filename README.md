@@ -9,10 +9,9 @@ We have used Azure NV6 and Amazon P2 in the past.
 
 ssh into the server and run `git clone https://github.com/rivas-lab/clinicalNoteTagger.git`. This should clone the repository into the instance.
 
-run `pip install --upgrade pip --user`, `pip install --upgrade virtualenv --user`, 
-Upgrade pip for your User portal on the server: pip install --upgrade pip --user
+Upgrade pip for your User portal on the server: `pip install --upgrade pip --user`, 
 
-Install VirtualEnv: pip install --upgrade virtualenv --user
+Install VirtualEnv: `pip install --upgrade virtualenv --user`, 
 
 Create a VirtualEnv environment for TensorFlow: 
 
