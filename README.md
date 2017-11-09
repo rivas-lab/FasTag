@@ -13,9 +13,11 @@ Upgrade pip for your User portal on the server: `pip install --upgrade pip --use
 
 Install VirtualEnv: `pip install --upgrade virtualenv --user`, 
 
+`pip install urllib3`
+
 Create a VirtualEnv environment for TensorFlow: 
 
-`virtualenv --system-site-packages ~/cnt`
+`virtualenv -p /usr/bin/python2.7 cnt`
 
 run echo $0 and find out if bash or tcsh
 
@@ -28,7 +30,7 @@ Install tensorflow `pip install --upgrade $TF_BINARY_URL`
 To come out of virtual Environment: deactivate
 
 ##Utility Commands
-
+cd
 1.	Run command: nohup jupyter notebook --no-browser --port=12345 > nohup.out &
 2.	Now open a new terminal window and run the command: 
 ssh -N -f -L localhost:8889:localhost:12345 sandeepayyar1@...
