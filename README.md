@@ -65,4 +65,8 @@ Any other time
 
 - When finishing manipulation in the jupyter notebook and stopping listening on `localhost:8889`, run `lsof -ti:8889 | xargs kill -9` on your local machine to clear port 8889.
 
-- Finally, execute the cells in the notebook [notetaggerBuild.ipynb](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/noteTaggerBuild.ipynb) which will read in the data, train the model, and run validation code. Model weights are also saved for reusing later. Please use [predictionEvaluation.ipynb](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/predictionEvaluation.ipynb) to evaluate trained predictions by the Clinical Note Tagger
+- Finally, execute the cells in the notebook [notetaggerBuild.ipynb](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/noteTaggerBuild.ipynb) which will read in the data, train the model, and run validation code.
+
+NOTE: Fix the ipynb to run the real model and not load off the features.pkl
+
+Model weights are also saved for reusing later. Please use [predictionEvaluation.ipynb](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/predictionEvaluation.ipynb) to evaluate trained predictions by the Clinical Note Tagger
