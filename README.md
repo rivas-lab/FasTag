@@ -1,7 +1,7 @@
 # The Clinical Note Tagger
 The Clinical Note Tagger was created by Oliver Bear Don't walk IV, Sandeep Ayyar, and Manuel Rivas for a class project in CS224N in the Winter of 2017. Please refer to [this paper](https://web.stanford.edu/class/cs224n/reports/2744196.pdf) for information on the Clinical Note Tagger was implemented.
 
-# Setup
+# Setup TensorFlow-GPU VirtualEnv
 
 Make sure that you have a GPU with at least 50GB RAM for training this neural network. Otherwise, the computations become intractable.
 
@@ -36,6 +36,24 @@ Any other time
 - run the appropriate environment activation, `source ~/cnt/bin/activate.csh` (for tcsh) or `source ~/cnt/bin/activate` (for bash)
 
 - To come out of virtual Environment: `deactivate`
+
+# Run Preprocessing
+
+- Download the script `createAdmissionNoteTable.R` from `src/textPreprocessing` to your local machine.
+
+- Gain access to the MIMIC-III database, and then [download the files labeled DIAGNOSES_ICD.csv and NOTEEVENTS.csv here](https://physionet.org/works/MIMICIIIClinicalDatabase/files/).
+
+- Replace the absolute paths to these two `.csv`s in lines 25 and 30 in the R script, and run the script. You should end up with three files: `icd9NotesDataTable_train.csv`, `icd9NotesDataTable_valid.csv`, and `icd9NotesDataTable.csv`.
+
+- `scp` these three files to the server by running these commands:
+
+`scp path/to/icd9NotesDataTable_train.csv username@domain:~/clinicalNoteTagger/data/`
+`scp path/to/icd9NotesDataTable_valid.csv username@domain:~/clinicalNoteTagger/data/`
+`scp path/to/icd9NotesDataTable.csv username@domain:~/clinicalNoteTagger/data/`
+
+- In a new terminal window, `ssh username@domain` and `cd` into `clinicalNoteTagger/data`. You should see the newly `scp`ed `.csv` files here. Then, run `unzip newgloveicd9.txt.zip`.
+
+- Now it's time to actually train the model. 
 
 # To Train
 
