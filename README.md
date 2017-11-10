@@ -23,20 +23,14 @@ run echo $0 and find out if bash or tcsh
 
 Activate Environment via `source ~/cnt/bin/activate.csh` (for tcsh) or `source ~/cnt/bin/activate` (for bash)
 
-`export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0rc0-cp27-none-linux_x86_64.whl`
+Install tensorflow `pip install --upgrade tensorflow-gpu`
 
-Install tensorflow `pip install --upgrade $TF_BINARY_URL`
+(To come out of virtual Environment: deactivate)
 
-To come out of virtual Environment: deactivate
+`jupyter notebook --no-browser`
+on local machine, run command with `xxxx` as the port that the jupyter notebook runs at
+`ssh -N -f -L localhost:8889:localhost:xxxx ssh-login@ssh_ip`
 
-##Utility Commands
-cd
-1.	Run command: nohup jupyter notebook --no-browser --port=12345 > nohup.out &
-2.	Now open a new terminal window and run the command: 
-ssh -N -f -L localhost:8889:localhost:12345 sandeepayyar1@...
-3.	Now in a browser tab, enter command: localhost:8889
-	This should open Jupyter with all the files present in that directory
-
-
+Now in a browser tab, enter address `https://localhost:8889`
 
 Execute the cells in the notebook [notetaggerBuild.ipynb](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/noteTaggerBuild.ipynb) which will read in the data, train the model, and run validation code. Model weights are also saved for reusing later. Please use [predictionEvaluation.ipynb](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/predictionEvaluation.ipynb) to evaluate trained predictions by the Clinical Note Tagger
