@@ -39,12 +39,12 @@ Any other time
 
 # To Train
 
-- Run `jupyter notebook --no-browser` on the server
+- Run `jupyter notebook --no-browser --port=8888; lsof -ti:8888 | xargs kill -9` on the server. This will boot up the instance on port 8888 on the server and instructs the server to clear the port for reuse after ending the notebook session.
 
-- The server should have an output like `The Jupyter Notebook is running at: https://[all ip addresses on your system]:xxxx`.
-
-- Run `ssh -N -f -L localhost:8889:localhost:xxxx ssh-login@ssh_ip` on your local machine
+- Run `ssh -N -f -L localhost:8889:localhost:8888 ssh-login@ssh_ip` on your local machine
 
 - In a browser tab, enter address `https://localhost:8889`. This should open up a jupyter notebook instance with all the files in the directory.
+
+- When finishing manipulation in the jupyter notebook and stopping listening on `localhost:8889`, run `lsof -ti:8889 | xargs kill -9` on your local machine to clear port 8889.
 
 - Finally, execute the cells in the notebook [notetaggerBuild.ipynb](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/noteTaggerBuild.ipynb) which will read in the data, train the model, and run validation code. Model weights are also saved for reusing later. Please use [predictionEvaluation.ipynb](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/predictionEvaluation.ipynb) to evaluate trained predictions by the Clinical Note Tagger
