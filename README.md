@@ -1,6 +1,8 @@
 # The Clinical Note Tagger
 The Clinical Note Tagger was created by Oliver Bear Don't walk IV, Sandeep Ayyar, and Manuel Rivas for a class project in CS224N in the Winter of 2017. Please refer to [this paper](https://web.stanford.edu/class/cs224n/reports/2744196.pdf) for information on the Clinical Note Tagger was implemented.
 
+## To Train on Default Dataset (MIMIC)
+
 # Setup Server with TensorFlow-GPU
 
 Make sure that you have a GPU with at least 50GB RAM for training this neural network. Otherwise, the computations become intractable.
@@ -29,7 +31,7 @@ We have used Azure NV6 and Amazon P2 (with Deep Learning AMI) in the past. The b
 
 - Now it's time to actually train the model. 
 
-# To Train
+# Train
 
 - Run `jupyter notebook --no-browser --port=8888; lsof -ti:8888 | xargs kill -9` on the server. This will boot up the instance on port 8888 on the server and instructs the server to clear the port for reuse after ending the notebook session.
 
