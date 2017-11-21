@@ -1,41 +1,11 @@
 # The Clinical Note Tagger
 The Clinical Note Tagger was created by Oliver Bear Don't walk IV, Sandeep Ayyar, and Manuel Rivas for a class project in CS224N in the Winter of 2017. Please refer to [this paper](https://web.stanford.edu/class/cs224n/reports/2744196.pdf) for information on the Clinical Note Tagger was implemented.
 
-# Setup TensorFlow-GPU VirtualEnv
+# Setup Server with TensorFlow-GPU
 
 Make sure that you have a GPU with at least 50GB RAM for training this neural network. Otherwise, the computations become intractable.
 
-We have used Azure NV6 and Amazon P2 in the past.
-
-First time setting up instance:
-
-- `ssh` into the server and run `git clone https://github.com/rivas-lab/clinicalNoteTagger.git`. This should clone the repository into the instance.
-
-- Upgrade pip for your User portal on the server: `pip install --upgrade pip --user`, 
-
-- Install VirtualEnv: `pip install --upgrade virtualenv --user`, 
-
-- `pip install urllib3`
-
-- Create a VirtualEnv environment for TensorFlow: 
-
-`virtualenv -p /usr/bin/python2.7 cnt`
-
-- run echo $0 and find out if bash or tcsh
-
-- Activate Environment via `source ~/cnt/bin/activate.csh` (for tcsh) or `source ~/cnt/bin/activate` (for bash)
-
-- Install tensorflow `pip install --upgrade tensorflow-gpu`
-
-- To come out of virtual Environment: `deactivate`
-
-Any other time
-
-- `ssh` into the server
-
-- run the appropriate environment activation, `source ~/cnt/bin/activate.csh` (for tcsh) or `source ~/cnt/bin/activate` (for bash)
-
-- To come out of virtual Environment: `deactivate`
+We have used Azure NV6 and Amazon P2 (with Deep Learning AMI) in the past. The benefit of the Deep Learning AMI is that it comes with a version of TensorFlow-GPU installed with all of the necessary NVIDIA GPU driver prerequisites also functioning.
 
 # Run Preprocessing
 
