@@ -48,7 +48,11 @@ Any other time
 - `scp` these three files to the server by running these commands:
 
 `scp path/to/icd9NotesDataTable_train.csv username@domain:~/clinicalNoteTagger/data/`
+
+
 `scp path/to/icd9NotesDataTable_valid.csv username@domain:~/clinicalNoteTagger/data/`
+
+
 `scp path/to/icd9NotesDataTable.csv username@domain:~/clinicalNoteTagger/data/`
 
 - In a new terminal window, `ssh username@domain` and `cd` into `clinicalNoteTagger/data`. You should see the newly `scp`ed `.csv` files here. Then, run `unzip newgloveicd9.txt.zip`.
