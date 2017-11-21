@@ -3,19 +3,19 @@ The Clinical Note Tagger was created by Oliver Bear Don't walk IV, Sandeep Ayyar
 
 ## To Train on Default Dataset (MIMIC)
 
-# Setup Server with TensorFlow-GPU
+### Setup Server with TensorFlow-GPU
 
 Make sure that you have a GPU with at least 50GB RAM for training this neural network. Otherwise, the computations become intractable.
 
 We have used Azure NV6 and Amazon P2 (with Deep Learning AMI) in the past. The benefit of the Deep Learning AMI is that it comes with a version of TensorFlow-GPU installed with all of the necessary NVIDIA GPU driver prerequisites also functioning.
 
-# Run Preprocessing
+### Run Preprocessing
 
-- Download the script `createAdmissionNoteTable.R` from `src/textPreprocessing` to your local machine.
+- Download the script `createAdmissionNoteTable.R` from `src/textPreprocessing` to your local machine. This script is meant to process the MIMIC database and extract only the relevant information (notes and corresponding ICD-9 codes).
 
 - Gain access to the MIMIC-III database, and then [download the files labeled DIAGNOSES_ICD.csv and NOTEEVENTS.csv here](https://physionet.org/works/MIMICIIIClinicalDatabase/files/).
 
-- Replace the absolute paths to these two `.csv`s in lines 25 and 30 in the R script, and run the script. You should end up with three files: `icd9NotesDataTable_train.csv`, `icd9NotesDataTable_valid.csv`, and `icd9NotesDataTable.csv`.
+- Replace the absolute paths to these two `.csv`s in lines 25 and 30 in the R script, and run the script. You should end up with three files: `icd9NotesDataTable_train.csv`, `icd9NotesDataTable_valid.csv`, and `icd9NotesDataTable.csv`. These will be your training and validation sets.
 
 - `scp` these three files to the server by running these commands:
 
@@ -27,15 +27,15 @@ We have used Azure NV6 and Amazon P2 (with Deep Learning AMI) in the past. The b
 
 `scp path/to/icd9NotesDataTable.csv username@domain:~/clinicalNoteTagger/data/`
 
-- In a new terminal window, `ssh username@domain` and `cd` into `clinicalNoteTagger/data`. You should see the newly `scp`ed `.csv` files here. Then, run `unzip newgloveicd9.txt.zip`.
+- In a new terminal window, `ssh username@domain` and `cd` into `clinicalNoteTagger/data`. You should see the newly `scp`ed `.csv` files here. Then, run `unzip newgloveicd9.txt.zip`. This generates the length-300 word vectors that the words in the notes will be converted to.
 
 - Now it's time to actually train the model. 
 
-# Train
+### Train
 
 - Run `jupyter notebook --no-browser --port=8888; lsof -ti:8888 | xargs kill -9` on the server. This will boot up the instance on port 8888 on the server and instructs the server to clear the port for reuse after ending the notebook session.
 
-- Run `ssh -N -f -L localhost:8889:localhost:8888 ssh-login@ssh_ip` on your local machine
+- Run `ssh -N -f -L localhost:8889:localhost:8888 ssh-login@ssh_ip` on your local machine (use `-i  path/to/.pem/file` if necessary)
 
 - In a browser tab, enter address `https://localhost:8889`. This should open up a jupyter notebook instance with all the files in the directory.
 
