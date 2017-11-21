@@ -44,3 +44,7 @@ We have used Azure NV6 and Amazon P2 (with Deep Learning AMI) in the past. The b
 - Finally, execute the cells in the notebook [notetaggerBuild.ipynb](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/noteTaggerBuild.ipynb) which will read in the data and train the model.
 
 Model weights are also saved for reusing later. Please use [predictionEvaluation.ipynb](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/predictionEvaluation.ipynb) to evaluate trained predictions by the Clinical Note Tagger.
+
+## To Train on Other Datasets
+
+Coming soon to a repo near you
