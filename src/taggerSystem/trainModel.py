@@ -91,7 +91,7 @@ def trainModel(helperObj, embeddings, hyperParamDict, xDev, xTrain, yDev, yTrain
     epochAvgLossValid = np.zeros(training_epochs)
     epochPredictions = np.zeros(shape = [training_epochs, yDev.shape[0], yDev.shape[1]])
     validLossIncreasingCount = 0
-    # maxIncreasingLossCount = 3
+    maxIncreasingLossCount = 3
     prevValidLoss = np.inf
     minValidLoss = np.inf
     tf.reset_default_graph()
