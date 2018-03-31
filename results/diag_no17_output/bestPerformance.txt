@@ -1,0 +1,4 @@
+Precsion score averaged over samples 0.698145 
+Recall score averaged over samples 0.649248 
+F1 score averaged over samples 0.657070 
+Rank loss 0.155008 
