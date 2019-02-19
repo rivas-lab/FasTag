@@ -1,5 +1,5 @@
 # FasTag
-The FasTag clinical note tagger was created by Oliver Bear Don't walk IV, Sandeep Ayyar, and Manuel Rivas for a class project in CS224N in the Winter of 2017. Please refer to [this paper](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/obdw4_sa_cd224n.pdf) for information on how the clinical note tagger was implemented.
+The FasTag clinical note tagger was created by Oliver Bear Don't Walk IV, Sandeep Ayyar, and Manuel Rivas for a class project in CS224N in the Winter of 2017. Please refer to [this paper](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/obdw4_sa_cd224n.pdf) for information on how the clinical note tagger was implemented.
 
 ## To Train on Default Dataset (MIMIC)
 
