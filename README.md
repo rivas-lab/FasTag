@@ -1,5 +1,5 @@
 # FasTag
-The FasTag clinical note tagger was created by Oliver Bear Don't walk IV, Sandeep Ayyar, and Manuel Rivas for a class project in CS224N in the Winter of 2017. Please refer to [this paper](https://web.stanford.edu/class/cs224n/reports/2744196.pdf) for information on the Clinical Note Tagger was implemented.
+The FasTag clinical note tagger was created by Oliver Bear Don't walk IV, Sandeep Ayyar, and Manuel Rivas for a class project in CS224N in the Winter of 2017. Please refer to [this paper](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/obdw4_sa_cd224n.pdf) for information on how the clinical note tagger was implemented.
 
 ## To Train on Default Dataset (MIMIC)
 
@@ -7,11 +7,11 @@ The FasTag clinical note tagger was created by Oliver Bear Don't walk IV, Sandee
 
 Make sure that you have a GPU with at least 50GB RAM for training this neural network. Otherwise, the computations become intractable.
 
-We have used Azure NV6 and Amazon P2 (with Deep Learning AMI) in the past. The benefit of the Deep Learning AMI is that it comes with a version of TensorFlow-GPU installed with all of the necessary NVIDIA GPU driver prerequisites also functioning.
+We have used Azure NV6 and Amazon P2 (with Deep Learning AMI) in the past. The benefit of the Deep Learning AMI is that it comes with a version of TensorFlow-GPU installed with all of the necessary NVIDIA/CUDA GPU driver prerequisites also functioning.
 
 ### Run Preprocessing
 
-- Download the script `createAdmissionNoteTable.R` from `src/textPreprocessing` to your local machine. This script is meant to process the MIMIC database and extract only the relevant information (notes and corresponding ICD-9 codes).
+- Clone the repository to your local machine. The script `createAdmissionNoteTable.R` from `src/textPreprocessing` is meant to process the MIMIC database and extract only the relevant information (notes and corresponding ICD-9 codes).
 
 - Gain access to the MIMIC-III database, and then [download the files labeled DIAGNOSES_ICD.csv and NOTEEVENTS.csv here](https://physionet.org/works/MIMICIIIClinicalDatabase/files/).
 
