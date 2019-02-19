@@ -11,7 +11,7 @@ We have used Azure NV6 and Amazon P2 (with Deep Learning AMI) in the past. The b
 
 ### Run Preprocessing
 
-- Clone the repository to your local machine. The script `createAdmissionNoteTable.R` from `src/textPreprocessing` is meant to process the MIMIC database and extract only the relevant information (notes and corresponding ICD-9 codes).
+- Clone the repository to both your local machine and the compute instance. The script `createAdmissionNoteTable.R` from `src/textPreprocessing` is meant to process the MIMIC database and extract only the relevant information (notes and corresponding ICD-9 codes).
 
 - Gain access to the MIMIC-III database, and then [download the files labeled DIAGNOSES_ICD.csv and NOTEEVENTS.csv here](https://physionet.org/works/MIMICIIIClinicalDatabase/files/).
 
@@ -29,7 +29,7 @@ We have used Azure NV6 and Amazon P2 (with Deep Learning AMI) in the past. The b
 
 - In a new terminal window, `ssh username@domain` and `cd` into `clinicalNoteTagger/data`. You should see the newly `scp`ed `.csv` files here. Then, run `unzip newgloveicd9.txt.zip`. This generates the length-300 word vectors that the words in the notes will be converted to.
 
-- Now it's time to actually train the model. 
+- Now it's time to actually train the model.
 
 ### Train
 
@@ -45,6 +45,8 @@ We have used Azure NV6 and Amazon P2 (with Deep Learning AMI) in the past. The b
 
 Model weights are also saved for reusing later. Please use [predictionEvaluation.ipynb](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/predictionEvaluation.ipynb) to evaluate trained predictions by the Clinical Note Tagger.
 
-## To Train on Other Datasets
+## Other Datasets
 
-Coming soon to a repo near you
+FasTag can handle other datasets besides that of MIMIC, as long as they have notes in one column and labels (hyphen-separated if multiple for one row, e.g. 1-2) in another. These numbers are inputted in the third coding cell in the tagger-building notebooks, e.g. `hi`. You can observe the similarities differences between `g` and `g` in order to see how general the procedure is.
+
+Prediction evaluation notebooks can be run for datasets that are validated on their respective data, and cross-check notebooks can be run for training on one dataset and testing on another (but, you must ensure that the labels are consistent).
