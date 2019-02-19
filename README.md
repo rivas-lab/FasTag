@@ -31,7 +31,7 @@ We have used Azure NV6 and Amazon P2 (with Deep Learning AMI) in the past. The b
 
 - Now it's time to actually train the model.
 
-### Train
+### Building the model
 
 - Run `jupyter notebook --no-browser --port=8888; lsof -ti:8888 | xargs kill -9` on the server. This will boot up the instance on port 8888 on the server and instructs the server to clear the port for reuse after ending the notebook session.
 
@@ -41,12 +41,14 @@ We have used Azure NV6 and Amazon P2 (with Deep Learning AMI) in the past. The b
 
 - When finishing manipulation in the jupyter notebook and stopping listening on `localhost:8889`, run `lsof -ti:8889 | xargs kill -9` on your local machine to clear port 8889.
 
-- Finally, execute the cells in the notebook [notetaggerBuild.ipynb](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/noteTaggerBuild.ipynb) which will read in the data and train the model.
+- Finally, execute the cells in the notebook [`mimic.ipynb`](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/builds/mimic.ipynb) in the [`builds`](https://github.com/rivas-lab/clinicalNoteTagger/tree/master/builds) folder which will read in the data and train the model.
 
-Model weights are also saved for reusing later. Please use [predictionEvaluation.ipynb](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/predictionEvaluation.ipynb) to evaluate trained predictions by the Clinical Note Tagger.
+### Evaluating the model
+
+At the end of the notebook, model weights are also saved for reusing later. Use [`prediction_evaluation_mimic.ipynb`](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/prediction_evaluations/prediction_evaluation_mimic.ipynb) in the [`prediction_evaluations`](https://github.com/rivas-lab/clinicalNoteTagger/tree/master/prediction_evaluations) folder to evaluate trained predictions by the Clinical Note Tagger.
 
 ## Other Datasets
 
-FasTag can handle other datasets besides that of MIMIC, as long as they have notes in one column and labels (hyphen-separated if multiple for one row, e.g. 1-2) in another. These numbers are inputted in the third coding cell in the tagger-building notebooks, e.g. `hi`. You can observe the similarities differences between `g` and `g` in order to see how general the procedure is.
+FasTag can handle other datasets besides that of MIMIC, as long as they have notes in one column of your dataset and labels (hyphen-separated if multiple for one row, e.g. 1-2) in another. These numbers are inputted in the third coding cell in the [`builds`](https://github.com/rivas-lab/clinicalNoteTagger/tree/master/builds) notebooks, e.g. [`mimic.ipynb`](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/builds/mimic.ipynb). You can observe the similarities differences between [`mimic.ipynb`](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/builds/mimic.ipynb) and [`csu.ipynb`](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/builds/csu.ipynb), for example, in order to see how general the procedure is for building models.
 
-Prediction evaluation notebooks can be run for datasets that are validated on their respective data, and cross-check notebooks can be run for training on one dataset and testing on another (but, you must ensure that the labels are consistent).
+[`prediction_evaluations`](https://github.com/rivas-lab/clinicalNoteTagger/tree/master/prediction_evaluations) notebooks can be run for datasets that are validated on their respective data, and [`crosschecks`](https://github.com/rivas-lab/clinicalNoteTagger/tree/master/crosschecks) notebooks can be run for evaluating models that you have built using [`builds`](https://github.com/rivas-lab/clinicalNoteTagger/tree/master/builds) notebooks but wish to test on other datasets (but, you must ensure that the labels are consistent).
