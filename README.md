@@ -7,7 +7,7 @@ FasTag is a text classification document for the rapid triaging of clinical docu
 For citation and more information refer to:
 
 FasTag application:
->[A. Lopez Pineda, O. J. Bear Don't Walk IV, G. R. Venkataraman, A. M. Zehnder et al. (2019) "FasTag: a deep learning approach to facilitate rapid classification of human and veterinary clinical narratives"](https://www.biorxiv.org/content/10.1101/429720v2) (under review) 
+>[A. Lopez Pineda, O. J. Bear Don't Walk IV, G. R. Venkataraman, A. M. Zehnder et al. (2019) "Deep learning facilitates rapid classification of human and veterinary clinical narratives".](https://www.biorxiv.org/content/10.1101/429720v2) (under review) 
 
 FasTag initial implementation:
 >[S. Ayyar, O. J. Bear Don't Walk IV (2017). "Tagging Patient Notes with ICD-9 Codes".](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/obdw4_sa_cd224n.pdf)
