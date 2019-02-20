@@ -1,5 +1,16 @@
 # FasTag
-The FasTag clinical note tagger was created by Oliver Bear Don't Walk IV, Sandeep Ayyar, and Manuel Rivas for a class project in CS224N in the Winter of 2017. Please refer to [this paper](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/obdw4_sa_cd224n.pdf) for information on how the clinical note tagger was implemented.
+
+## Description
+FasTag is a text classification document for the rapid triaging of clinical documents.
+
+## Citation
+For citation and more information refer to:
+
+FasTag application:
+>[A. Lopez Pineda, O. J. Bear Don't Walk IV, G. R. Venkataraman, A. M. Zehnder et al. (2019) "FasTag: a deep learning approach to facilitate rapid classification of human and veterinary clinical narratives"](https://www.biorxiv.org/content/10.1101/429720v2) (under review) 
+
+FasTag initial implementation:
+>[S. Ayyar, O. J. Bear Don't Walk IV (2017). "Tagging Patient Notes with ICD-9 Codes".](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/obdw4_sa_cd224n.pdf)
 
 ## To Train on Default Dataset (MIMIC)
 
@@ -52,3 +63,11 @@ At the end of the notebook, model weights are also saved for reusing later. Use 
 FasTag can handle other datasets besides that of MIMIC, as long as your dataset of choice has clinical notes in one column and labels (hyphen-separated if multiple for one row, e.g. "1-2" or "cat:1-cat:2") in another. The numbers associated with these columns are inputted in the third coding cell in [`builds`](https://github.com/rivas-lab/clinicalNoteTagger/tree/master/builds) notebooks, e.g. [`mimic.ipynb`](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/builds/mimic.ipynb). You can observe the similarities differences between [`mimic.ipynb`](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/builds/mimic.ipynb) and [`csu.ipynb`](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/builds/csu.ipynb), for example, in order to see how general the procedure is for building models, and can plug-and-play your dataset as needed.
 
 [`prediction_evaluations`](https://github.com/rivas-lab/clinicalNoteTagger/tree/master/prediction_evaluations) notebooks can be run for datasets that are validated on their respective data, and [`crosschecks`](https://github.com/rivas-lab/clinicalNoteTagger/tree/master/crosschecks) notebooks can be run for evaluating models that you have built using [`builds`](https://github.com/rivas-lab/clinicalNoteTagger/tree/master/builds) notebooks but wish to test on other datasets (but, you must ensure that the labels are consistent).
+
+
+##  Development status
+The FasTag clinical note tagger was created in the Rivas Lab at Stanford University by Oliver Bear Don't Walk IV, Sandeep Ayyar, and Manuel Rivas for a class project in CS224N in the Winter of 2017. It was extended and continues to develop under Guhan Venkataraman in the same lab.
+
+### Active developers
+* Guhan Venkataraman (guhan[at]stanford[dot]edu)
+
