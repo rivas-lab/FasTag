@@ -58,6 +58,8 @@ We have used Azure NV6 and Amazon P2 (with Deep Learning AMI) in the past. The b
 
 At the end of the notebook, model weights are also saved for reusing later. Use [`prediction_evaluation_mimic.ipynb`](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/prediction_evaluations/prediction_evaluation_mimic.ipynb) in the [`prediction_evaluations`](https://github.com/rivas-lab/clinicalNoteTagger/tree/master/prediction_evaluations) folder to evaluate trained predictions by the Clinical Note Tagger.
 
+There is also a [notebook](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/builds/DT_RF_classification.ipynb) that shows how we trained relevant baseline classifiers (Decision Trees [DTs] and Random Forests [RFs]) and performed a hyperparameter search to determine the best performance.
+
 ## Other Datasets
 
 FasTag can handle other datasets besides that of MIMIC, as long as your dataset of choice has clinical notes in one column and labels (hyphen-separated if multiple for one row, e.g. "1-2" or "cat:1-cat:2") in another. The numbers associated with these columns are inputted in the third coding cell in [`builds`](https://github.com/rivas-lab/clinicalNoteTagger/tree/master/builds) notebooks, e.g. [`mimic.ipynb`](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/builds/mimic.ipynb). You can observe the similarities differences between [`mimic.ipynb`](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/builds/mimic.ipynb) and [`csu.ipynb`](https://github.com/rivas-lab/clinicalNoteTagger/blob/master/builds/csu.ipynb), for example, in order to see how general the procedure is for building models, and can plug-and-play your dataset as needed.
